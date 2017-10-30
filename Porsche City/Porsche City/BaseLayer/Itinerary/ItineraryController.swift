@@ -20,6 +20,11 @@ class ItineraryController: UIViewController
         self.loadConfig()
     }
     
+    deinit
+    {
+        print("Deinit: ItineraryController")
+    }
+    
     //MARK: CONFIG
     fileprivate func loadConfig()
     {

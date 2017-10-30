@@ -85,34 +85,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SAa-uY-uc5">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="520"/>
                                 <connections>
                                     <segue destination="xat-Ay-bHn" kind="embed" identifier="ProfileTableController" id="jcp-tE-b5P"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxr-Wy-Ep7">
+                                <rect key="frame" x="16" y="528" width="343" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="awh-yX-cJm"/>
+                                </constraints>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="wxr-Wy-Ep7" firstAttribute="leading" secondItem="rHf-hj-jnA" secondAttribute="leading" constant="16" id="7KW-2c-bcU"/>
                             <constraint firstItem="SAa-uY-uc5" firstAttribute="trailing" secondItem="rHf-hj-jnA" secondAttribute="trailing" id="FYo-aF-ejK"/>
                             <constraint firstItem="SAa-uY-uc5" firstAttribute="leading" secondItem="rHf-hj-jnA" secondAttribute="leading" id="Ikp-3Y-5W6"/>
-                            <constraint firstItem="SAa-uY-uc5" firstAttribute="bottom" secondItem="rHf-hj-jnA" secondAttribute="bottom" id="ULC-3j-4iZ"/>
+                            <constraint firstItem="rHf-hj-jnA" firstAttribute="trailing" secondItem="wxr-Wy-Ep7" secondAttribute="trailing" constant="16" id="QWU-s1-vlb"/>
+                            <constraint firstItem="rHf-hj-jnA" firstAttribute="bottom" secondItem="wxr-Wy-Ep7" secondAttribute="bottom" constant="20" id="cKV-nO-whG"/>
+                            <constraint firstItem="wxr-Wy-Ep7" firstAttribute="top" secondItem="SAa-uY-uc5" secondAttribute="bottom" constant="8" id="t6c-qy-mef"/>
                             <constraint firstItem="SAa-uY-uc5" firstAttribute="top" secondItem="rHf-hj-jnA" secondAttribute="top" id="zH9-YZ-wsI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rHf-hj-jnA"/>
                     </view>
                     <navigationItem key="navigationItem" id="XYK-7n-uL3"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="btnLogout" destination="wxr-Wy-Ep7" id="3Fx-VT-P9R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fee-0m-OMF" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="476" y="807"/>
+            <point key="canvasLocation" x="476" y="806.44677661169419"/>
         </scene>
         <!--Profile Table Controller-->
         <scene sceneID="f7k-Wn-AKV">
             <objects>
                 <tableViewController storyboardIdentifier="ProfileTableController" id="xat-Ay-bHn" customClass="ProfileTableController" customModule="Porsche_City" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="RcY-Rz-rQQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="520"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <connections>

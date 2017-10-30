@@ -20,6 +20,11 @@ class HomeController: UIViewController
         self.loadConfig()
     }
     
+    deinit
+    {
+        print("Deinit: HomeTableController")
+    }
+    
     //MARK: CONFIG
     fileprivate func loadConfig()
     {

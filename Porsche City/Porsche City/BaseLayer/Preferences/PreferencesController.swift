@@ -20,6 +20,11 @@ class PreferencesController: UIViewController
         self.loadConfig()
     }
     
+    deinit
+    {
+        print("Deinit: PreferencesController")
+    }
+    
     //MARK: CONFIG
     fileprivate func loadConfig()
     {

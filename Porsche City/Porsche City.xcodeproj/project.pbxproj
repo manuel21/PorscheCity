@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF0482701FA7CD8500325EB7 /* TableViews+Porsche.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF04826F1FA7CD8500325EB7 /* TableViews+Porsche.swift */; };
+		FF37A8721FA7D47D0046D7D5 /* Views+Porsche.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37A8711FA7D47D0046D7D5 /* Views+Porsche.swift */; };
 		FF840BA11FA79A0A00C63159 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF840BA01FA79A0A00C63159 /* AppDelegate.swift */; };
 		FF840BA61FA79A0A00C63159 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF840BA41FA79A0A00C63159 /* Main.storyboard */; };
 		FF840BA81FA79A0A00C63159 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF840BA71FA79A0A00C63159 /* Assets.xcassets */; };
@@ -23,9 +25,19 @@
 		FFB040751FA7A7B900038E18 /* ProfileTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB040741FA7A7B900038E18 /* ProfileTableController.swift */; };
 		FFB040781FA7A7D400038E18 /* ItineraryTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB040771FA7A7D400038E18 /* ItineraryTableController.swift */; };
 		FFB0407A1FA7AFD500038E18 /* NavyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB040791FA7AFD500038E18 /* NavyController.swift */; };
+		FFB1EE1D1FA7DBB50022D685 /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB1EE1B1FA7DBB50022D685 /* ImageViewCell.swift */; };
+		FFB1EE1E1FA7DBB50022D685 /* ImageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB1EE1C1FA7DBB50022D685 /* ImageViewCell.xib */; };
+		FFB1EE211FA7DC310022D685 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB1EE1F1FA7DC300022D685 /* CollectionCell.swift */; };
+		FFB1EE221FA7DC310022D685 /* CollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB1EE201FA7DC310022D685 /* CollectionCell.xib */; };
+		FFB1EE251FA7DC470022D685 /* horizontalItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB1EE231FA7DC470022D685 /* horizontalItem.swift */; };
+		FFB1EE261FA7DC470022D685 /* horizontalItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB1EE241FA7DC470022D685 /* horizontalItem.xib */; };
+		FFC0EAA41FA7E10200C4ED9F /* CollectionCell_Clone.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFC0EAA21FA7E10200C4ED9F /* CollectionCell_Clone.xib */; };
+		FFC0EAA51FA7E10200C4ED9F /* CollectionCell_Clone.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC0EAA31FA7E10200C4ED9F /* CollectionCell_Clone.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF04826F1FA7CD8500325EB7 /* TableViews+Porsche.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableViews+Porsche.swift"; sourceTree = "<group>"; };
+		FF37A8711FA7D47D0046D7D5 /* Views+Porsche.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Views+Porsche.swift"; sourceTree = "<group>"; };
 		FF840B9D1FA79A0A00C63159 /* Porsche City.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Porsche City.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF840BA01FA79A0A00C63159 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF840BA51FA79A0A00C63159 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -44,6 +56,14 @@
 		FFB040741FA7A7B900038E18 /* ProfileTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableController.swift; sourceTree = "<group>"; };
 		FFB040771FA7A7D400038E18 /* ItineraryTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryTableController.swift; sourceTree = "<group>"; };
 		FFB040791FA7AFD500038E18 /* NavyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavyController.swift; sourceTree = "<group>"; };
+		FFB1EE1B1FA7DBB50022D685 /* ImageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
+		FFB1EE1C1FA7DBB50022D685 /* ImageViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewCell.xib; sourceTree = "<group>"; };
+		FFB1EE1F1FA7DC300022D685 /* CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
+		FFB1EE201FA7DC310022D685 /* CollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionCell.xib; sourceTree = "<group>"; };
+		FFB1EE231FA7DC470022D685 /* horizontalItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = horizontalItem.swift; sourceTree = "<group>"; };
+		FFB1EE241FA7DC470022D685 /* horizontalItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = horizontalItem.xib; sourceTree = "<group>"; };
+		FFC0EAA21FA7E10200C4ED9F /* CollectionCell_Clone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionCell_Clone.xib; sourceTree = "<group>"; };
+		FFC0EAA31FA7E10200C4ED9F /* CollectionCell_Clone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell_Clone.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +167,9 @@
 		FFB040671FA7A6A700038E18 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				FFB1EE1A1FA7DBB50022D685 /* Cells */,
+				FF37A8711FA7D47D0046D7D5 /* Views+Porsche.swift */,
+				FF04826F1FA7CD8500325EB7 /* TableViews+Porsche.swift */,
 				FFB040791FA7AFD500038E18 /* NavyController.swift */,
 				FFB040681FA7A6AE00038E18 /* Storyboard.swift */,
 			);
@@ -191,6 +214,21 @@
 				FFB040771FA7A7D400038E18 /* ItineraryTableController.swift */,
 			);
 			path = Table;
+			sourceTree = "<group>";
+		};
+		FFB1EE1A1FA7DBB50022D685 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FFC0EAA31FA7E10200C4ED9F /* CollectionCell_Clone.swift */,
+				FFC0EAA21FA7E10200C4ED9F /* CollectionCell_Clone.xib */,
+				FFB1EE1F1FA7DC300022D685 /* CollectionCell.swift */,
+				FFB1EE201FA7DC310022D685 /* CollectionCell.xib */,
+				FFB1EE231FA7DC470022D685 /* horizontalItem.swift */,
+				FFB1EE241FA7DC470022D685 /* horizontalItem.xib */,
+				FFB1EE1B1FA7DBB50022D685 /* ImageViewCell.swift */,
+				FFB1EE1C1FA7DBB50022D685 /* ImageViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,8 +290,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFB1EE1E1FA7DBB50022D685 /* ImageViewCell.xib in Resources */,
 				FF840BAB1FA79A0A00C63159 /* LaunchScreen.storyboard in Resources */,
+				FFC0EAA41FA7E10200C4ED9F /* CollectionCell_Clone.xib in Resources */,
+				FFB1EE261FA7DC470022D685 /* horizontalItem.xib in Resources */,
 				FF840BA81FA79A0A00C63159 /* Assets.xcassets in Resources */,
+				FFB1EE221FA7DC310022D685 /* CollectionCell.xib in Resources */,
 				FF840BA61FA79A0A00C63159 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,18 +307,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF37A8721FA7D47D0046D7D5 /* Views+Porsche.swift in Sources */,
 				FFB040781FA7A7D400038E18 /* ItineraryTableController.swift in Sources */,
+				FFB1EE251FA7DC470022D685 /* horizontalItem.swift in Sources */,
 				FFB040641FA7A5A500038E18 /* ProfileController.swift in Sources */,
 				FFB0406F1FA7A78300038E18 /* HomeTableController.swift in Sources */,
+				FFB1EE211FA7DC310022D685 /* CollectionCell.swift in Sources */,
 				FFB0407A1FA7AFD500038E18 /* NavyController.swift in Sources */,
+				FF0482701FA7CD8500325EB7 /* TableViews+Porsche.swift in Sources */,
 				FFB040751FA7A7B900038E18 /* ProfileTableController.swift in Sources */,
 				FFB040661FA7A5B100038E18 /* ItineraryController.swift in Sources */,
 				FFB040601FA7A58500038E18 /* PreferencesController.swift in Sources */,
 				FFB040691FA7A6AE00038E18 /* Storyboard.swift in Sources */,
+				FFC0EAA51FA7E10200C4ED9F /* CollectionCell_Clone.swift in Sources */,
 				FFB040711FA7A79200038E18 /* PreferencesTableController.swift in Sources */,
 				FFB040731FA7A7A400038E18 /* CitySelectionTableController.swift in Sources */,
 				FF840BA11FA79A0A00C63159 /* AppDelegate.swift in Sources */,
 				FFB0405E1FA7A51A00038E18 /* HomeController.swift in Sources */,
+				FFB1EE1D1FA7DBB50022D685 /* ImageViewCell.swift in Sources */,
 				FFB040621FA7A59700038E18 /* CitySelectionController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

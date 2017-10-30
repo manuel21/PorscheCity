@@ -11,6 +11,7 @@ import UIKit
 class ProfileController: UIViewController
 {
     //MARK: PROPERTIES & OUTLETS
+    @IBOutlet weak fileprivate var btnLogout: UIButton!
     fileprivate var vcTable: ProfileTableController!
     
     //MARK: LIFE CYCLE
@@ -20,12 +21,20 @@ class ProfileController: UIViewController
         self.loadConfig()
     }
     
+    deinit
+    {
+        print("Deinit: ProfileController")
+    }
+    
     //MARK: CONFIG
     fileprivate func loadConfig()
     {
         //title
         self.title = "Thilo Koslowski"
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        
+        //Border
+        self.btnLogout.setBorderAndCornerRadius()
         
         //Left Button
         let BtnProfile = UIButton(frame: CGRect(x: 0, y: 0, width: 32, height: 32))

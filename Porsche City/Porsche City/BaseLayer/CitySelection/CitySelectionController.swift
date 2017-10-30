@@ -20,6 +20,11 @@ class CitySelectionController: UIViewController
         self.loadConfig()
     }
     
+    deinit
+    {
+        print("Deinit: CitySelectionController")
+    }
+    
     //MARK: CONFIG
     fileprivate func loadConfig()
     {
