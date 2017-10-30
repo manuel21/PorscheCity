@@ -1,0 +1,467 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FF840BA11FA79A0A00C63159 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF840BA01FA79A0A00C63159 /* AppDelegate.swift */; };
+		FF840BA61FA79A0A00C63159 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF840BA41FA79A0A00C63159 /* Main.storyboard */; };
+		FF840BA81FA79A0A00C63159 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF840BA71FA79A0A00C63159 /* Assets.xcassets */; };
+		FF840BAB1FA79A0A00C63159 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF840BA91FA79A0A00C63159 /* LaunchScreen.storyboard */; };
+		FFB0405E1FA7A51A00038E18 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0405D1FA7A51A00038E18 /* HomeController.swift */; };
+		FFB040601FA7A58500038E18 /* PreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0405F1FA7A58500038E18 /* PreferencesController.swift */; };
+		FFB040621FA7A59700038E18 /* CitySelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB040611FA7A59700038E18 /* CitySelectionController.swift */; };
+		FFB040641FA7A5A500038E18 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB040631FA7A5A500038E18 /* ProfileController.swift */; };
+		FFB040661FA7A5B100038E18 /* ItineraryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB040651FA7A5B100038E18 /* ItineraryController.swift */; };
+		FFB040691FA7A6AE00038E18 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB040681FA7A6AE00038E18 /* Storyboard.swift */; };
+		FFB0406F1FA7A78300038E18 /* HomeTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0406E1FA7A78300038E18 /* HomeTableController.swift */; };
+		FFB040711FA7A79200038E18 /* PreferencesTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB040701FA7A79200038E18 /* PreferencesTableController.swift */; };
+		FFB040731FA7A7A400038E18 /* CitySelectionTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB040721FA7A7A400038E18 /* CitySelectionTableController.swift */; };
+		FFB040751FA7A7B900038E18 /* ProfileTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB040741FA7A7B900038E18 /* ProfileTableController.swift */; };
+		FFB040781FA7A7D400038E18 /* ItineraryTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB040771FA7A7D400038E18 /* ItineraryTableController.swift */; };
+		FFB0407A1FA7AFD500038E18 /* NavyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB040791FA7AFD500038E18 /* NavyController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FF840B9D1FA79A0A00C63159 /* Porsche City.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Porsche City.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF840BA01FA79A0A00C63159 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FF840BA51FA79A0A00C63159 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FF840BA71FA79A0A00C63159 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FF840BAA1FA79A0A00C63159 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FF840BAC1FA79A0A00C63159 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFB0405D1FA7A51A00038E18 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		FFB0405F1FA7A58500038E18 /* PreferencesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesController.swift; sourceTree = "<group>"; };
+		FFB040611FA7A59700038E18 /* CitySelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySelectionController.swift; sourceTree = "<group>"; };
+		FFB040631FA7A5A500038E18 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		FFB040651FA7A5B100038E18 /* ItineraryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryController.swift; sourceTree = "<group>"; };
+		FFB040681FA7A6AE00038E18 /* Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
+		FFB0406E1FA7A78300038E18 /* HomeTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableController.swift; sourceTree = "<group>"; };
+		FFB040701FA7A79200038E18 /* PreferencesTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesTableController.swift; sourceTree = "<group>"; };
+		FFB040721FA7A7A400038E18 /* CitySelectionTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySelectionTableController.swift; sourceTree = "<group>"; };
+		FFB040741FA7A7B900038E18 /* ProfileTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableController.swift; sourceTree = "<group>"; };
+		FFB040771FA7A7D400038E18 /* ItineraryTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryTableController.swift; sourceTree = "<group>"; };
+		FFB040791FA7AFD500038E18 /* NavyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavyController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FF840B9A1FA79A0900C63159 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FF840B941FA79A0900C63159 = {
+			isa = PBXGroup;
+			children = (
+				FF840B9F1FA79A0A00C63159 /* Porsche City */,
+				FF840B9E1FA79A0A00C63159 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FF840B9E1FA79A0A00C63159 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FF840B9D1FA79A0A00C63159 /* Porsche City.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FF840B9F1FA79A0A00C63159 /* Porsche City */ = {
+			isa = PBXGroup;
+			children = (
+				FF840BA01FA79A0A00C63159 /* AppDelegate.swift */,
+				FFB040671FA7A6A700038E18 /* Helpers */,
+				FFB040571FA7A4F300038E18 /* BaseLayer */,
+				FF840BA41FA79A0A00C63159 /* Main.storyboard */,
+				FF840BA71FA79A0A00C63159 /* Assets.xcassets */,
+				FF840BA91FA79A0A00C63159 /* LaunchScreen.storyboard */,
+				FF840BAC1FA79A0A00C63159 /* Info.plist */,
+			);
+			path = "Porsche City";
+			sourceTree = "<group>";
+		};
+		FFB040571FA7A4F300038E18 /* BaseLayer */ = {
+			isa = PBXGroup;
+			children = (
+				FFB040581FA7A4F300038E18 /* Home */,
+				FFB0405B1FA7A4F300038E18 /* Profile */,
+				FFB040591FA7A4F300038E18 /* Preferences */,
+				FFB0405A1FA7A4F300038E18 /* CitySelection */,
+				FFB0405C1FA7A4F300038E18 /* Itinerary */,
+			);
+			path = BaseLayer;
+			sourceTree = "<group>";
+		};
+		FFB040581FA7A4F300038E18 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FFB0406D1FA7A75E00038E18 /* Table */,
+				FFB0405D1FA7A51A00038E18 /* HomeController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FFB040591FA7A4F300038E18 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				FFB0406C1FA7A74E00038E18 /* Table */,
+				FFB0405F1FA7A58500038E18 /* PreferencesController.swift */,
+			);
+			path = Preferences;
+			sourceTree = "<group>";
+		};
+		FFB0405A1FA7A4F300038E18 /* CitySelection */ = {
+			isa = PBXGroup;
+			children = (
+				FFB0406A1FA7A73300038E18 /* Table */,
+				FFB040611FA7A59700038E18 /* CitySelectionController.swift */,
+			);
+			path = CitySelection;
+			sourceTree = "<group>";
+		};
+		FFB0405B1FA7A4F300038E18 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				FFB0406B1FA7A73E00038E18 /* Table */,
+				FFB040631FA7A5A500038E18 /* ProfileController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		FFB0405C1FA7A4F300038E18 /* Itinerary */ = {
+			isa = PBXGroup;
+			children = (
+				FFB040761FA7A7C800038E18 /* Table */,
+				FFB040651FA7A5B100038E18 /* ItineraryController.swift */,
+			);
+			path = Itinerary;
+			sourceTree = "<group>";
+		};
+		FFB040671FA7A6A700038E18 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FFB040791FA7AFD500038E18 /* NavyController.swift */,
+				FFB040681FA7A6AE00038E18 /* Storyboard.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FFB0406A1FA7A73300038E18 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				FFB040721FA7A7A400038E18 /* CitySelectionTableController.swift */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
+		FFB0406B1FA7A73E00038E18 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				FFB040741FA7A7B900038E18 /* ProfileTableController.swift */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
+		FFB0406C1FA7A74E00038E18 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				FFB040701FA7A79200038E18 /* PreferencesTableController.swift */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
+		FFB0406D1FA7A75E00038E18 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				FFB0406E1FA7A78300038E18 /* HomeTableController.swift */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
+		FFB040761FA7A7C800038E18 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				FFB040771FA7A7D400038E18 /* ItineraryTableController.swift */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FF840B9C1FA79A0900C63159 /* Porsche City */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF840BAF1FA79A0A00C63159 /* Build configuration list for PBXNativeTarget "Porsche City" */;
+			buildPhases = (
+				FF840B991FA79A0900C63159 /* Sources */,
+				FF840B9A1FA79A0900C63159 /* Frameworks */,
+				FF840B9B1FA79A0900C63159 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Porsche City";
+			productName = "Porsche City";
+			productReference = FF840B9D1FA79A0A00C63159 /* Porsche City.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FF840B951FA79A0900C63159 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = mxnuel;
+				TargetAttributes = {
+					FF840B9C1FA79A0900C63159 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = FF840B981FA79A0900C63159 /* Build configuration list for PBXProject "Porsche City" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FF840B941FA79A0900C63159;
+			productRefGroup = FF840B9E1FA79A0A00C63159 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FF840B9C1FA79A0900C63159 /* Porsche City */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FF840B9B1FA79A0900C63159 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF840BAB1FA79A0A00C63159 /* LaunchScreen.storyboard in Resources */,
+				FF840BA81FA79A0A00C63159 /* Assets.xcassets in Resources */,
+				FF840BA61FA79A0A00C63159 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FF840B991FA79A0900C63159 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFB040781FA7A7D400038E18 /* ItineraryTableController.swift in Sources */,
+				FFB040641FA7A5A500038E18 /* ProfileController.swift in Sources */,
+				FFB0406F1FA7A78300038E18 /* HomeTableController.swift in Sources */,
+				FFB0407A1FA7AFD500038E18 /* NavyController.swift in Sources */,
+				FFB040751FA7A7B900038E18 /* ProfileTableController.swift in Sources */,
+				FFB040661FA7A5B100038E18 /* ItineraryController.swift in Sources */,
+				FFB040601FA7A58500038E18 /* PreferencesController.swift in Sources */,
+				FFB040691FA7A6AE00038E18 /* Storyboard.swift in Sources */,
+				FFB040711FA7A79200038E18 /* PreferencesTableController.swift in Sources */,
+				FFB040731FA7A7A400038E18 /* CitySelectionTableController.swift in Sources */,
+				FF840BA11FA79A0A00C63159 /* AppDelegate.swift in Sources */,
+				FFB0405E1FA7A51A00038E18 /* HomeController.swift in Sources */,
+				FFB040621FA7A59700038E18 /* CitySelectionController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FF840BA41FA79A0A00C63159 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF840BA51FA79A0A00C63159 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FF840BA91FA79A0A00C63159 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF840BAA1FA79A0A00C63159 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FF840BAD1FA79A0A00C63159 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FF840BAE1FA79A0A00C63159 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FF840BB01FA79A0A00C63159 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9M43JR8595;
+				INFOPLIST_FILE = "Porsche City/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.definityfirst.Porsche-City";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FF840BB11FA79A0A00C63159 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9M43JR8595;
+				INFOPLIST_FILE = "Porsche City/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.definityfirst.Porsche-City";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FF840B981FA79A0900C63159 /* Build configuration list for PBXProject "Porsche City" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF840BAD1FA79A0A00C63159 /* Debug */,
+				FF840BAE1FA79A0A00C63159 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF840BAF1FA79A0A00C63159 /* Build configuration list for PBXNativeTarget "Porsche City" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF840BB01FA79A0A00C63159 /* Debug */,
+				FF840BB11FA79A0A00C63159 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FF840B951FA79A0900C63159 /* Project object */;
+}

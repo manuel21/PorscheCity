@@ -1,0 +1,41 @@
+//
+//  PreferencesController.swift
+//  Porsche City
+//
+//  Created by Manuel Salinas on 10/30/17.
+//  Copyright © 2017 mxnuel. All rights reserved.
+//
+
+import UIKit
+
+class PreferencesController: UIViewController
+{
+    //MARK: PROPERTIES & OUTLETS
+    fileprivate var vcTable: PreferencesTableController!
+    
+    //MARK: LIFE CYCLE
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        self.loadConfig()
+    }
+    
+    //MARK: CONFIG
+    fileprivate func loadConfig()
+    {
+        //title
+        self.title = "Preferences"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    //MARK: ACTIONS
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let id = segue.identifier , id == "PreferencesTableController" {
+            
+            self.vcTable = segue.destination as! PreferencesTableController
+        }
+    }
+}
