@@ -19,7 +19,7 @@ class HomeController: UIViewController
         super.viewDidLoad()
         self.loadConfig()
     }
-    
+
     deinit
     {
         print("Deinit: HomeTableController")
@@ -29,8 +29,15 @@ class HomeController: UIViewController
     fileprivate func loadConfig()
     {
         //title
-        self.title = "City home"
+        self.title = "Beverly Hills"
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.addGestureRecognizer(ActionsTapGestureRecognizer(onTap: {
+          
+            let vcSelection = Storyboard.getInstanceOf(CitySelectionController.self)
+            let navBar = NavyController(rootViewController: vcSelection)
+            
+            self.present(navBar, animated: true, completion: nil)
+        }))
         
         //Left Button
         let BtnProfile = UIButton(frame: CGRect(x: 0, y: 0, width: 32, height: 32))

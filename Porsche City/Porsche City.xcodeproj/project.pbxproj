@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		FF0482701FA7CD8500325EB7 /* TableViews+Porsche.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF04826F1FA7CD8500325EB7 /* TableViews+Porsche.swift */; };
 		FF37A8721FA7D47D0046D7D5 /* Views+Porsche.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37A8711FA7D47D0046D7D5 /* Views+Porsche.swift */; };
+		FF6002B71FA807940055782D /* ValetParkingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6002B61FA807940055782D /* ValetParkingController.swift */; };
+		FF6002B91FA807BE0055782D /* HotelCheckInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6002B81FA807BE0055782D /* HotelCheckInController.swift */; };
+		FF6002BB1FA807E30055782D /* RideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6002BA1FA807E30055782D /* RideController.swift */; };
+		FF6002BD1FA807F30055782D /* RoomKeyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6002BC1FA807F30055782D /* RoomKeyController.swift */; };
+		FF6002C01FA808C40055782D /* Modals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF6002BE1FA808C40055782D /* Modals.storyboard */; };
+		FF6002C21FA81D500055782D /* ActionsTapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6002C11FA81D500055782D /* ActionsTapGestureRecognizer.swift */; };
 		FF840BA11FA79A0A00C63159 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF840BA01FA79A0A00C63159 /* AppDelegate.swift */; };
 		FF840BA61FA79A0A00C63159 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF840BA41FA79A0A00C63159 /* Main.storyboard */; };
 		FF840BA81FA79A0A00C63159 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF840BA71FA79A0A00C63159 /* Assets.xcassets */; };
@@ -38,6 +44,12 @@
 /* Begin PBXFileReference section */
 		FF04826F1FA7CD8500325EB7 /* TableViews+Porsche.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableViews+Porsche.swift"; sourceTree = "<group>"; };
 		FF37A8711FA7D47D0046D7D5 /* Views+Porsche.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Views+Porsche.swift"; sourceTree = "<group>"; };
+		FF6002B61FA807940055782D /* ValetParkingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValetParkingController.swift; sourceTree = "<group>"; };
+		FF6002B81FA807BE0055782D /* HotelCheckInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelCheckInController.swift; sourceTree = "<group>"; };
+		FF6002BA1FA807E30055782D /* RideController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideController.swift; sourceTree = "<group>"; };
+		FF6002BC1FA807F30055782D /* RoomKeyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomKeyController.swift; sourceTree = "<group>"; };
+		FF6002BF1FA808C40055782D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Modals.storyboard; sourceTree = "<group>"; };
+		FF6002C11FA81D500055782D /* ActionsTapGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionsTapGestureRecognizer.swift; sourceTree = "<group>"; };
 		FF840B9D1FA79A0A00C63159 /* Porsche City.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Porsche City.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF840BA01FA79A0A00C63159 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF840BA51FA79A0A00C63159 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -84,6 +96,17 @@
 			path = Landscape;
 			sourceTree = "<group>";
 		};
+		FF6002B51FA807440055782D /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				FF6002B61FA807940055782D /* ValetParkingController.swift */,
+				FF6002B81FA807BE0055782D /* HotelCheckInController.swift */,
+				FF6002BA1FA807E30055782D /* RideController.swift */,
+				FF6002BC1FA807F30055782D /* RoomKeyController.swift */,
+			);
+			path = Modals;
+			sourceTree = "<group>";
+		};
 		FF840B941FA79A0900C63159 = {
 			isa = PBXGroup;
 			children = (
@@ -106,10 +129,12 @@
 				FF840BA01FA79A0A00C63159 /* AppDelegate.swift */,
 				FFB040671FA7A6A700038E18 /* Helpers */,
 				FF6002B41FA806960055782D /* Landscape */,
+				FF6002B51FA807440055782D /* Modals */,
 				FFB040571FA7A4F300038E18 /* BaseLayer */,
 				FF840BA41FA79A0A00C63159 /* Main.storyboard */,
-				FF840BA71FA79A0A00C63159 /* Assets.xcassets */,
+				FF6002BE1FA808C40055782D /* Modals.storyboard */,
 				FF840BA91FA79A0A00C63159 /* LaunchScreen.storyboard */,
+				FF840BA71FA79A0A00C63159 /* Assets.xcassets */,
 				FF840BAC1FA79A0A00C63159 /* Info.plist */,
 			);
 			path = "Porsche City";
@@ -176,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				FFB1EE1A1FA7DBB50022D685 /* Cells */,
+				FF6002C11FA81D500055782D /* ActionsTapGestureRecognizer.swift */,
 				FF37A8711FA7D47D0046D7D5 /* Views+Porsche.swift */,
 				FF04826F1FA7CD8500325EB7 /* TableViews+Porsche.swift */,
 				FFB040791FA7AFD500038E18 /* NavyController.swift */,
@@ -298,6 +324,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF6002C01FA808C40055782D /* Modals.storyboard in Resources */,
 				FFB1EE1E1FA7DBB50022D685 /* ImageViewCell.xib in Resources */,
 				FF840BAB1FA79A0A00C63159 /* LaunchScreen.storyboard in Resources */,
 				FFC0EAA41FA7E10200C4ED9F /* CollectionCell_Clone.xib in Resources */,
@@ -318,11 +345,15 @@
 				FF37A8721FA7D47D0046D7D5 /* Views+Porsche.swift in Sources */,
 				FFB040781FA7A7D400038E18 /* ItineraryTableController.swift in Sources */,
 				FFB1EE251FA7DC470022D685 /* horizontalItem.swift in Sources */,
+				FF6002B71FA807940055782D /* ValetParkingController.swift in Sources */,
+				FF6002BD1FA807F30055782D /* RoomKeyController.swift in Sources */,
 				FFB040641FA7A5A500038E18 /* ProfileController.swift in Sources */,
 				FFB0406F1FA7A78300038E18 /* HomeTableController.swift in Sources */,
 				FFB1EE211FA7DC310022D685 /* CollectionCell.swift in Sources */,
+				FF6002BB1FA807E30055782D /* RideController.swift in Sources */,
 				FFB0407A1FA7AFD500038E18 /* NavyController.swift in Sources */,
 				FF0482701FA7CD8500325EB7 /* TableViews+Porsche.swift in Sources */,
+				FF6002C21FA81D500055782D /* ActionsTapGestureRecognizer.swift in Sources */,
 				FFB040751FA7A7B900038E18 /* ProfileTableController.swift in Sources */,
 				FFB040661FA7A5B100038E18 /* ItineraryController.swift in Sources */,
 				FFB040601FA7A58500038E18 /* PreferencesController.swift in Sources */,
@@ -334,12 +365,21 @@
 				FFB0405E1FA7A51A00038E18 /* HomeController.swift in Sources */,
 				FFB1EE1D1FA7DBB50022D685 /* ImageViewCell.swift in Sources */,
 				FFB040621FA7A59700038E18 /* CitySelectionController.swift in Sources */,
+				FF6002B91FA807BE0055782D /* HotelCheckInController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		FF6002BE1FA808C40055782D /* Modals.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF6002BF1FA808C40055782D /* Base */,
+			);
+			name = Modals.storyboard;
+			sourceTree = "<group>";
+		};
 		FF840BA41FA79A0A00C63159 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

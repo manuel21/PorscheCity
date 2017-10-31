@@ -3,6 +3,12 @@
 
 import UIKit
 
+enum StoryboardName: String
+{
+    case main = "Main"
+    case modals = "Modals"
+}
+
 class Storyboard: NSObject
 {
     ///Get instance from Storyboard

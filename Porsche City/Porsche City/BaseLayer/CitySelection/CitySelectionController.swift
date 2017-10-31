@@ -44,10 +44,19 @@ class CitySelectionController: UIViewController
         heightConstraint.isActive = true
         widthConstraint.isActive = true
         navigationItem.leftBarButtonItem =  barBtnProfile
+        
+        //Close Button
+        let barBtnClose = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action:#selector(self.close))
+        self.navigationItem.rightBarButtonItem = barBtnClose
     }
     
     //MARK: ACTIONS
-
+    //MARK: ACTIONS
+    @objc fileprivate func close()
+    {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
      {

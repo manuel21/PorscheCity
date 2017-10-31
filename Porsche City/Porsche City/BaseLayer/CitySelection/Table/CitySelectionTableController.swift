@@ -14,6 +14,8 @@ class CitySelectionTableController: UITableViewController
     {
         super.viewDidLoad()
         self.tableView.hideEmtpyCells()
+        self.tableView.separatorColor = .clear
+        self.tableView.register(UINib(nibName: "ImageViewCell", bundle: nil), forCellReuseIdentifier: "ImageViewCell")
     }
     
     deinit
@@ -28,26 +30,15 @@ class CitySelectionTableController: UITableViewController
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = UITableViewCell(style: .default, reuseIdentifier:"Cell")
-        
-        //Color for selected cell
-        let selectedColor = UIView()
-        selectedColor.layer.backgroundColor = UIColor.white.cgColor
-        cell.selectedBackgroundView = selectedColor
-        
-        cell.textLabel?.text = "hola"
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ImageViewCell") as! ImageViewCell
+        cell.selectionStyle = .none
+        cell.imageBody.image = indexPath.row %  2 == 0 ? #imageLiteral(resourceName: "selectionCell_1") : #imageLiteral(resourceName: "selectionCell_2")
+            
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-    {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return 50
+        return 250
     }
 }

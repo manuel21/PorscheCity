@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Valet Parking Controller-->
+        <scene sceneID="rT1-9C-H1K">
+            <objects>
+                <viewController storyboardIdentifier="ValetParkingController" id="prD-W2-aAG" customClass="ValetParkingController" customModule="Porsche_City" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nhX-CJ-jFd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgValet" translatesAutoresizingMaskIntoConstraints="NO" id="9Ik-FK-s1r">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rX-Bf-tOh">
+                                <rect key="frame" x="324" y="50" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="RAG-Fb-VlQ"/>
+                                    <constraint firstAttribute="height" constant="35" id="gnq-Ja-nAO"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="iconClose"/>
+                                <connections>
+                                    <action selector="close" destination="prD-W2-aAG" eventType="touchUpInside" id="aEe-8x-3BZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4rX-Bf-tOh" firstAttribute="top" secondItem="YD6-Ua-KbY" secondAttribute="top" constant="30" id="4EU-23-fga"/>
+                            <constraint firstItem="YD6-Ua-KbY" firstAttribute="trailing" secondItem="4rX-Bf-tOh" secondAttribute="trailing" constant="16" id="6eB-yC-UTg"/>
+                            <constraint firstItem="9Ik-FK-s1r" firstAttribute="top" secondItem="nhX-CJ-jFd" secondAttribute="top" id="Edu-F6-Y4m"/>
+                            <constraint firstItem="9Ik-FK-s1r" firstAttribute="leading" secondItem="YD6-Ua-KbY" secondAttribute="leading" id="Y4g-lD-ouS"/>
+                            <constraint firstItem="9Ik-FK-s1r" firstAttribute="trailing" secondItem="YD6-Ua-KbY" secondAttribute="trailing" id="ZLE-Xg-izu"/>
+                            <constraint firstItem="9Ik-FK-s1r" firstAttribute="bottom" secondItem="YD6-Ua-KbY" secondAttribute="bottom" id="zhu-8i-Sau"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YD6-Ua-KbY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gri-lJ-2aZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dLp-hl-xop" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1135" y="-182"/>
+        </scene>
+        <!--Hotel Check In Controller-->
+        <scene sceneID="XNJ-Eh-pAr">
+            <objects>
+                <viewController storyboardIdentifier="HotelCheckInController" id="6vH-S0-UUW" customClass="HotelCheckInController" customModule="Porsche_City" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nff-KG-JI6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgheckin" translatesAutoresizingMaskIntoConstraints="NO" id="MoE-XL-K6d">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="467"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7X-Gf-n7L">
+                                <rect key="frame" x="324" y="50" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="4eN-qm-aWJ"/>
+                                    <constraint firstAttribute="height" constant="35" id="ZCE-g0-jde"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="iconClose"/>
+                                <connections>
+                                    <action selector="close" destination="6vH-S0-UUW" eventType="touchUpInside" id="rfe-Ef-SKU"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VmO-n8-qzm">
+                                <rect key="frame" x="0.0" y="467" width="375" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="ObH-Mr-J4m"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="saq-qE-U7W">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="D2R-AD-Tg0">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="6vH-S0-UUW" id="eP2-w7-Xqh"/>
+                                    <outlet property="delegate" destination="6vH-S0-UUW" id="beI-tZ-iA9"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VmO-n8-qzm" firstAttribute="top" secondItem="MoE-XL-K6d" secondAttribute="bottom" id="2So-P4-JdR"/>
+                            <constraint firstItem="VmO-n8-qzm" firstAttribute="trailing" secondItem="nE6-Ab-Vcd" secondAttribute="trailing" id="5ep-eZ-3es"/>
+                            <constraint firstItem="MoE-XL-K6d" firstAttribute="leading" secondItem="nE6-Ab-Vcd" secondAttribute="leading" id="7ZA-sm-SCM"/>
+                            <constraint firstItem="MoE-XL-K6d" firstAttribute="top" secondItem="Nff-KG-JI6" secondAttribute="top" id="ACs-v7-P7d"/>
+                            <constraint firstItem="VmO-n8-qzm" firstAttribute="leading" secondItem="nE6-Ab-Vcd" secondAttribute="leading" id="NdR-eD-ztL"/>
+                            <constraint firstItem="nE6-Ab-Vcd" firstAttribute="trailing" secondItem="N7X-Gf-n7L" secondAttribute="trailing" constant="16" id="UEK-pf-pc6"/>
+                            <constraint firstItem="MoE-XL-K6d" firstAttribute="trailing" secondItem="nE6-Ab-Vcd" secondAttribute="trailing" id="cF7-d4-zeg"/>
+                            <constraint firstItem="N7X-Gf-n7L" firstAttribute="top" secondItem="nE6-Ab-Vcd" secondAttribute="top" constant="30" id="dL5-rG-d6O"/>
+                            <constraint firstItem="VmO-n8-qzm" firstAttribute="bottom" secondItem="nE6-Ab-Vcd" secondAttribute="bottom" id="iM3-fO-0fK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nE6-Ab-Vcd"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hl6-18-pqD"/>
+                    <connections>
+                        <outlet property="collection" destination="VmO-n8-qzm" id="bfG-iJ-kKW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qzd-Ua-DX8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-370.39999999999998" y="-182.15892053973016"/>
+        </scene>
+        <!--Ride Controller-->
+        <scene sceneID="uvB-GT-sZn">
+            <objects>
+                <viewController storyboardIdentifier="RideController" id="ccm-xS-fwT" customClass="RideController" customModule="Porsche_City" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Gn-0q-hIX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgRide" translatesAutoresizingMaskIntoConstraints="NO" id="Vym-Fh-AQy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vnJ-1C-9lj">
+                                <rect key="frame" x="324" y="50" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="7y2-lF-Nm3"/>
+                                    <constraint firstAttribute="height" constant="35" id="k4o-vV-lPn"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="iconClose"/>
+                                <connections>
+                                    <action selector="close" destination="ccm-xS-fwT" eventType="touchUpInside" id="DbV-S4-dK6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Vym-Fh-AQy" firstAttribute="bottom" secondItem="NDV-L4-Oq0" secondAttribute="bottom" id="Shk-sN-LNf"/>
+                            <constraint firstItem="Vym-Fh-AQy" firstAttribute="trailing" secondItem="NDV-L4-Oq0" secondAttribute="trailing" id="dVj-Xg-ETS"/>
+                            <constraint firstItem="Vym-Fh-AQy" firstAttribute="leading" secondItem="NDV-L4-Oq0" secondAttribute="leading" id="gkw-K4-Koc"/>
+                            <constraint firstItem="vnJ-1C-9lj" firstAttribute="top" secondItem="NDV-L4-Oq0" secondAttribute="top" constant="30" id="nOC-gH-Ga4"/>
+                            <constraint firstItem="NDV-L4-Oq0" firstAttribute="trailing" secondItem="vnJ-1C-9lj" secondAttribute="trailing" constant="16" id="q2p-09-byp"/>
+                            <constraint firstItem="Vym-Fh-AQy" firstAttribute="top" secondItem="2Gn-0q-hIX" secondAttribute="top" id="wHf-GP-lWJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NDV-L4-Oq0"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FP5-yn-nw2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6UL-bV-yxF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="326" y="-182"/>
+        </scene>
+        <!--Room Key Controller-->
+        <scene sceneID="6Ne-M5-ByT">
+            <objects>
+                <viewController storyboardIdentifier="RoomKeyController" id="rbz-lS-llT" customClass="RoomKeyController" customModule="Porsche_City" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mmj-HJ-gYr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgRomKey" translatesAutoresizingMaskIntoConstraints="NO" id="7K6-yp-wBJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BC8-0m-9Ma">
+                                <rect key="frame" x="324" y="50" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="hGk-WW-1N7"/>
+                                    <constraint firstAttribute="height" constant="35" id="viY-b8-jws"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="iconClose"/>
+                                <connections>
+                                    <action selector="close" destination="rbz-lS-llT" eventType="touchUpInside" id="OGY-W0-fy0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7K6-yp-wBJ" firstAttribute="bottom" secondItem="N9F-dx-2bx" secondAttribute="bottom" id="5ek-8x-VWJ"/>
+                            <constraint firstItem="BC8-0m-9Ma" firstAttribute="top" secondItem="N9F-dx-2bx" secondAttribute="top" constant="30" id="EGF-fk-B9v"/>
+                            <constraint firstItem="7K6-yp-wBJ" firstAttribute="top" secondItem="Mmj-HJ-gYr" secondAttribute="top" id="XyS-DC-47v"/>
+                            <constraint firstItem="N9F-dx-2bx" firstAttribute="trailing" secondItem="BC8-0m-9Ma" secondAttribute="trailing" constant="16" id="e1m-0G-Zny"/>
+                            <constraint firstItem="7K6-yp-wBJ" firstAttribute="leading" secondItem="N9F-dx-2bx" secondAttribute="leading" id="nHB-8c-G5e"/>
+                            <constraint firstItem="7K6-yp-wBJ" firstAttribute="trailing" secondItem="N9F-dx-2bx" secondAttribute="trailing" id="zLC-Cf-SeX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="N9F-dx-2bx"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="TdO-Pp-3dW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZgM-bJ-Eqc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1090" y="-182"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="iconClose" width="256" height="256"/>
+        <image name="imgRide" width="562" height="1000"/>
+        <image name="imgRomKey" width="562" height="1000"/>
+        <image name="imgValet" width="562" height="1000"/>
+        <image name="imgheckin" width="562" height="702"/>
+    </resources>
+</document>
