@@ -12,6 +12,7 @@ class HomeController: UIViewController
 {
     //MARK: PROPERTIES & OUTLETS
     fileprivate var vcTable: HomeTableController!
+    fileprivate var vcLandscape: LandscapeNavViewController!
     
     //MARK: LIFE CYCLE
     override func viewDidLoad()
@@ -64,6 +65,17 @@ class HomeController: UIViewController
         heightConstraint.isActive = true
         widthConstraint.isActive = true
         navigationItem.leftBarButtonItem =  barBtnProfile
+        
+        //Config for Landscape mode
+        NotificationCenter.default.addObserver(self, selector: #selector(HomeController.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        
+        let vcLandscapeScreen:LandscapeNavViewController = Storyboard.getInstanceFromStoryboard("Main")
+        self.vcLandscape = vcLandscapeScreen
+        self.vcLandscape.OnDidMoveFromLandscape = { stage in
+            
+            self.showModal(stage)
+        }
+        
     }
     
     //MARK: ACTIONS
@@ -71,10 +83,49 @@ class HomeController: UIViewController
     {
         let vcProfile = Storyboard.getInstanceOf(ProfileController.self)
         let navBar = NavyController(rootViewController: vcProfile)
-        
         self.present(navBar, animated: true, completion: nil)
     }
+    @objc func rotated()
+    {
+        if UIDeviceOrientationIsLandscape(UIDevice.current.orientation)
+        {
+            print("Landscape")            
+            self.navigationController?.present(vcLandscape, animated: true, completion: nil)
+        }
+        
+        if UIDeviceOrientationIsPortrait(UIDevice.current.orientation)
+        {
+            print("Portrait")
+        }
+    }
     
+    fileprivate func showModal(_ stage: Int)
+    {
+        if stage > 1 && stage <= 4
+        {
+            let vcParking: ValetParkingController = Storyboard.getInstanceFromStoryboard("Modals")
+            self.present(vcParking, animated: true, completion: nil)
+        }
+        else if stage == 5
+        {
+            let vcHotelCheckin: HotelCheckInController = Storyboard.getInstanceFromStoryboard("Modals")
+            self.present(vcHotelCheckin, animated: true, completion: nil)
+        }
+        else if stage == 6
+        {
+            let vcRide: RideController = Storyboard.getInstanceFromStoryboard("Modals")
+            self.present(vcRide, animated: true, completion: nil)
+        }
+        else if stage == 7
+        {
+            let vcRoomKey: RoomKeyController = Storyboard.getInstanceFromStoryboard("Modals")
+            self.present(vcRoomKey, animated: true, completion: nil)
+        }
+        else if stage == 8
+        {
+            
+        }
+    }
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
@@ -83,4 +134,5 @@ class HomeController: UIViewController
             self.vcTable = segue.destination as! HomeTableController
         }
     }
+    
 }
