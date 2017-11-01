@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E0C69141FAA23D10054397F /* LandscapeNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0C69131FAA23D10054397F /* LandscapeNavViewController.swift */; };
+		8E0C69161FAA3F1E0054397F /* JourneyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0C69151FAA3F1E0054397F /* JourneyCell.swift */; };
 		FF0482701FA7CD8500325EB7 /* TableViews+Porsche.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF04826F1FA7CD8500325EB7 /* TableViews+Porsche.swift */; };
 		FF37A8721FA7D47D0046D7D5 /* Views+Porsche.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37A8711FA7D47D0046D7D5 /* Views+Porsche.swift */; };
 		FF6002B71FA807940055782D /* ValetParkingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6002B61FA807940055782D /* ValetParkingController.swift */; };
@@ -42,6 +44,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E0C69131FAA23D10054397F /* LandscapeNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeNavViewController.swift; sourceTree = "<group>"; };
+		8E0C69151FAA3F1E0054397F /* JourneyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyCell.swift; sourceTree = "<group>"; };
 		FF04826F1FA7CD8500325EB7 /* TableViews+Porsche.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableViews+Porsche.swift"; sourceTree = "<group>"; };
 		FF37A8711FA7D47D0046D7D5 /* Views+Porsche.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Views+Porsche.swift"; sourceTree = "<group>"; };
 		FF6002B61FA807940055782D /* ValetParkingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValetParkingController.swift; sourceTree = "<group>"; };
@@ -89,9 +93,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FF6002B41FA806960055782D /* Landscape */ = {
+		8E0C69121FAA23C00054397F /* Landscape */ = {
 			isa = PBXGroup;
 			children = (
+				8E0C69131FAA23D10054397F /* LandscapeNavViewController.swift */,
+				8E0C69151FAA3F1E0054397F /* JourneyCell.swift */,
 			);
 			path = Landscape;
 			sourceTree = "<group>";
@@ -126,9 +132,9 @@
 		FF840B9F1FA79A0A00C63159 /* Porsche City */ = {
 			isa = PBXGroup;
 			children = (
+				8E0C69121FAA23C00054397F /* Landscape */,
 				FF840BA01FA79A0A00C63159 /* AppDelegate.swift */,
 				FFB040671FA7A6A700038E18 /* Helpers */,
-				FF6002B41FA806960055782D /* Landscape */,
 				FF6002B51FA807440055782D /* Modals */,
 				FFB040571FA7A4F300038E18 /* BaseLayer */,
 				FF840BA41FA79A0A00C63159 /* Main.storyboard */,
@@ -354,11 +360,13 @@
 				FFB0407A1FA7AFD500038E18 /* NavyController.swift in Sources */,
 				FF0482701FA7CD8500325EB7 /* TableViews+Porsche.swift in Sources */,
 				FF6002C21FA81D500055782D /* ActionsTapGestureRecognizer.swift in Sources */,
+				8E0C69161FAA3F1E0054397F /* JourneyCell.swift in Sources */,
 				FFB040751FA7A7B900038E18 /* ProfileTableController.swift in Sources */,
 				FFB040661FA7A5B100038E18 /* ItineraryController.swift in Sources */,
 				FFB040601FA7A58500038E18 /* PreferencesController.swift in Sources */,
 				FFB040691FA7A6AE00038E18 /* Storyboard.swift in Sources */,
 				FFC0EAA51FA7E10200C4ED9F /* CollectionCell_Clone.swift in Sources */,
+				8E0C69141FAA23D10054397F /* LandscapeNavViewController.swift in Sources */,
 				FFB040711FA7A79200038E18 /* PreferencesTableController.swift in Sources */,
 				FFB040731FA7A7A400038E18 /* CitySelectionTableController.swift in Sources */,
 				FF840BA11FA79A0A00C63159 /* AppDelegate.swift in Sources */,
