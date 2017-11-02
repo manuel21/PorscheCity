@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreMotion
 
 class LandscapeNavViewController: UIViewController
 {
@@ -20,15 +21,40 @@ class LandscapeNavViewController: UIViewController
     let defaultBackground = UIColor(displayP3Red: 25/255, green: 31/255, blue: 34/255, alpha: 1.0)
     var origin:CGFloat = 0.0
     var initialNavBarHeight:CGFloat = 0.0
+    
     var StageIdx: Int = 0 {
         didSet{
+            guard StageIdx < self.imgsJourney.count else {
+                
+                self.StageIdx = self.imgsJourney.count - 1
+                return
+            }
+            
             self.UpdateScreen()
             self.HideBottomNavBar()
             self.collectionView.scrollToItem(at: IndexPath(item: StageIdx, section: 0), at: .centeredHorizontally, animated: true)
             self.collectionView.reloadData()
             
-            if StageIdx == 1
+            if StageIdx == 0
             {
+                self.journeyTimer?.stopJourney()
+                self.stepCounter?.stopsMotionTimer()
+            }
+            else if StageIdx == 1
+            {
+                //Starts journey
+                if self.journeyBySeconds == true
+                {
+                    if self.journeyTimer?.isTraveling == false
+                    {
+                        self.journeyTimer?.startJourney()
+                    }
+                }
+                else
+                {
+                    self.stepCounter?.initPedometer()
+                }
+                //Send notification
                 (UIApplication.shared.delegate as? AppDelegate)?.createNotification(type: .restaurantHost)
             }
             else if StageIdx == 2
@@ -39,21 +65,46 @@ class LandscapeNavViewController: UIViewController
             {
                 (UIApplication.shared.delegate as? AppDelegate)?.createNotification(type: .shuttleDriver)
             }
+            else if StageIdx == 8
+            {
+                self.stepCounter?.stopsMotionTimer()
+            }
         }
     }
     @IBOutlet weak var lblTitle: UIView!    
     @IBOutlet weak var lblTitleDown: UIView!
     
+    //Movement    
+    @IBOutlet weak var lblSteps: UILabel!
+    
+    //Journey timer
+    var journeyTimer:TimerStep?
+    
+    //Step counter
+    var stepCounter: StepCounter?
     //Callbacks
     var OnDidMoveFromLandscape:((_ stage: Int)->())?
+    
+    //Config
+    var journeyBySeconds = true
+    var vcConfig: ConfigurationController?
     
     //MARK: LIFE CYCLE
     override func viewDidLoad()
     {
         super.viewDidLoad()
         self.loadConfig()
+        self.configureTimer()
+        self.configureStepCounter()
     }
 
+    override func viewWillAppear(_ animated: Bool)
+    {
+        if self.journeyTimer?.isTraveling == true
+        {
+            self.journeyTimer?.startJourney()
+        }
+    }
     //MARK: CONFIGURATION
     fileprivate func loadConfig()
     {
@@ -85,9 +136,54 @@ class LandscapeNavViewController: UIViewController
         //UI measures
         self.origin = self.collectionView.frame.origin.y
         self.initialNavBarHeight = self.collectionView.frame.height
+        
+        //Configuration
+        self.vcConfig = Storyboard.getInstanceFromStoryboard("Main")
+        self.vcConfig?.onSetConfiguration = { seconds, steps in
+            
+            self.journeyTimer?.timeStep = Double(seconds)
+            self.stepCounter?.numberOfSteps = steps
+        }
+        self.vcConfig?.onJourneyByTime = { journeyByTime in
+            
+            self.journeyBySeconds = journeyByTime
+        }
         //Hide nav bar
         self.HideBottomNavBar()
     }
+    
+    fileprivate func configureStepCounter()
+    {
+        self.stepCounter = StepCounter(numberOfSteps: 10)
+        self.stepCounter?.onDidCoverDistance = { stage in
+        
+            self.StageIdx = stage
+        }
+        
+    }
+    fileprivate func configureTimer()
+    {
+        //Create timer
+        self.journeyTimer = TimerStep(journeyStages:self.imgsJourney.count, timeStep: 3)
+        self.journeyTimer?.OnJourneyStarted = { stage in
+            
+            print("Journey started at stage: \(stage)")
+        }
+        self.journeyTimer?.OnJourneyPaused = { stage in
+            
+            print("Journey paused at stage: \(stage)")
+        }
+        self.journeyTimer?.OnMoveStage = { stage in
+            print(stage)
+            self.StageIdx = stage
+        }
+        self.journeyTimer?.OnJourneyDidEnded = { 
+            
+            print("Journey stoped")
+        }
+    }
+    
+    
     //MARK: ACTIONS
     @objc func OnMainScreenPressed()
     {
@@ -145,6 +241,7 @@ class LandscapeNavViewController: UIViewController
         if UIDeviceOrientationIsPortrait(UIDevice.current.orientation)
         {
             print("Portrait")
+            self.journeyTimer?.pauseJourney()
             dismiss(animated: true, completion: {
                 self.HideBottomNavBar()
                 self.OnDidMoveFromLandscape?(self.StageIdx)
@@ -164,7 +261,7 @@ class LandscapeNavViewController: UIViewController
         //UI particular updates
         self.lblTitle.isHidden = StageIdx == 0 ? false : true
         self.lblTitleDown.isHidden = StageIdx == 0 ? false : true
-    }
+    }    
 }
 
 extension LandscapeNavViewController: UICollectionViewDelegate, UICollectionViewDataSource
@@ -187,5 +284,18 @@ extension LandscapeNavViewController: UICollectionViewDelegate, UICollectionView
     {
         self.StageIdx = indexPath.row
         self.collectionView.reloadData()
+    }
+}
+
+extension LandscapeNavViewController: UIGestureRecognizerDelegate
+{
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool
+    {
+        guard  self.StageIdx == 0 else {
+            
+            return false
+        }
+        self.present(self.vcConfig!, animated: true, completion: nil)
+        return true
     }
 }

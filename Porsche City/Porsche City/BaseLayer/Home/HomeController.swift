@@ -89,7 +89,8 @@ class HomeController: UIViewController
     {
         if UIDeviceOrientationIsLandscape(UIDevice.current.orientation)
         {
-            print("Landscape")            
+            print("Landscape")
+            guard self.presentedViewController == nil else {return}
             self.navigationController?.present(vcLandscape, animated: true, completion: nil)
         }
         
