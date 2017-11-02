@@ -38,18 +38,21 @@ class LandscapeNavViewController: UIViewController
             if StageIdx == 0
             {
                 self.journeyTimer?.stopJourney()
+                self.stepCounter?.stopsMotionTimer()
             }
             else if StageIdx == 1
             {
                 //Starts journey
-                if self.journeyTimer?.isTraveling == false
+                if self.journeyBySeconds == true
                 {
-                    self.journeyTimer?.startJourney()
+                    if self.journeyTimer?.isTraveling == false
+                    {
+                        self.journeyTimer?.startJourney()
+                    }
                 }
-
-                if let stepCounter = self.stepCounter {
-                    
-                    stepCounter.initPedometer()
+                else
+                {
+                    self.stepCounter?.initPedometer()
                 }
                 //Send notification
                 (UIApplication.shared.delegate as? AppDelegate)?.createNotification(type: .restaurantHost)
@@ -82,12 +85,16 @@ class LandscapeNavViewController: UIViewController
     //Callbacks
     var OnDidMoveFromLandscape:((_ stage: Int)->())?
     
+    //Config
+    var journeyBySeconds = true
+    var vcConfig: ConfigurationController?
+    
     //MARK: LIFE CYCLE
     override func viewDidLoad()
     {
         super.viewDidLoad()
         self.loadConfig()
-        //self.configureTimer()
+        self.configureTimer()
         self.configureStepCounter()
     }
 
@@ -130,6 +137,17 @@ class LandscapeNavViewController: UIViewController
         self.origin = self.collectionView.frame.origin.y
         self.initialNavBarHeight = self.collectionView.frame.height
         
+        //Configuration
+        self.vcConfig = Storyboard.getInstanceFromStoryboard("Main")
+        self.vcConfig?.onSetConfiguration = { seconds, steps in
+            
+            self.journeyTimer?.timeStep = Double(seconds)
+            self.stepCounter?.numberOfSteps = steps
+        }
+        self.vcConfig?.onJourneyByTime = { journeyByTime in
+            
+            self.journeyBySeconds = journeyByTime
+        }
         //Hide nav bar
         self.HideBottomNavBar()
     }
@@ -272,7 +290,12 @@ extension LandscapeNavViewController: UICollectionViewDelegate, UICollectionView
 extension LandscapeNavViewController: UIGestureRecognizerDelegate
 {
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool
-    {        
+    {
+        guard  self.StageIdx == 0 else {
+            
+            return false
+        }
+        self.present(self.vcConfig!, animated: true, completion: nil)
         return true
     }
 }

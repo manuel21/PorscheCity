@@ -46,12 +46,14 @@ class TimerStep: NSObject
     
     public func pauseJourney()
     {
+        guard self.timer != nil else {return}
         self.timer.invalidate()
         self.OnJourneyPaused?(self.counter)
     }
     
     public func stopJourney()
     {
+        guard self.timer != nil else {return}
         self.timer.invalidate()
         self.isTraveling = false
         self.timeInterval = 0
