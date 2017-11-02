@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreMotion
 
 class LandscapeNavViewController: UIViewController
 {
@@ -20,8 +21,15 @@ class LandscapeNavViewController: UIViewController
     let defaultBackground = UIColor(displayP3Red: 25/255, green: 31/255, blue: 34/255, alpha: 1.0)
     var origin:CGFloat = 0.0
     var initialNavBarHeight:CGFloat = 0.0
+    
     var StageIdx: Int = 0 {
         didSet{
+            guard StageIdx < self.imgsJourney.count else {
+                
+                self.StageIdx = self.imgsJourney.count - 1
+                return
+            }
+            
             self.UpdateScreen()
             self.HideBottomNavBar()
             self.collectionView.scrollToItem(at: IndexPath(item: StageIdx, section: 0), at: .centeredHorizontally, animated: true)
@@ -31,6 +39,15 @@ class LandscapeNavViewController: UIViewController
     @IBOutlet weak var lblTitle: UIView!    
     @IBOutlet weak var lblTitleDown: UIView!
     
+    //Movement
+    var pedometer = CMPedometer()
+    var pedometerData = CMPedometerData()
+    var motionTimer = Timer()
+    var numberOfSteps = 0
+    @IBOutlet weak var lblSteps: UILabel!
+    
+    //Journey timer
+    var journeyTimer:TimerStep?
     //Callbacks
     var OnDidMoveFromLandscape:((_ stage: Int)->())?
     
@@ -39,8 +56,16 @@ class LandscapeNavViewController: UIViewController
     {
         super.viewDidLoad()
         self.loadConfig()
+        self.configureTimer()
     }
 
+    override func viewWillAppear(_ animated: Bool)
+    {
+        if self.journeyTimer?.isTraveling == true
+        {
+            self.journeyTimer?.startJourney()
+        }
+    }
     //MARK: CONFIGURATION
     fileprivate func loadConfig()
     {
@@ -72,8 +97,64 @@ class LandscapeNavViewController: UIViewController
         //UI measures
         self.origin = self.collectionView.frame.origin.y
         self.initialNavBarHeight = self.collectionView.frame.height
+        
+        
+        
         //Hide nav bar
         self.HideBottomNavBar()
+    }
+    
+    fileprivate func configureTimer()
+    {
+        //Create timer
+        self.journeyTimer = TimerStep(journeyStages:self.imgsJourney.count, timeStep: 3)
+        self.journeyTimer?.OnJourneyStarted = { stage in
+            
+            print("Journey started at stage: \(stage)")
+        }
+        self.journeyTimer?.OnJourneyPaused = { stage in
+            
+            print("Journey paused at stage: \(stage)")
+        }
+        self.journeyTimer?.OnMoveStage = { stage in
+            print(stage)
+            self.StageIdx = stage
+        }
+    }
+    
+    func initPedometer()
+    {
+        self.lblSteps.text = "Steps: Not available";
+        if CMPedometer.isStepCountingAvailable() == true
+        {
+            self.startMotionTimer()
+            pedometer.startUpdates(from: Date(), withHandler: { (data, error) in
+                if let pedometerData = data {
+                    print("Pull data")
+                    self.numberOfSteps = Int(pedometerData.numberOfSteps)
+                }
+                else
+                {
+                    self.stopsMotionTimer()
+                    self.lblSteps.text = "Not available"
+                }
+            })
+        }
+    }
+    func startMotionTimer()
+    {
+        print("Started motion timer")
+        if motionTimer.isValid == false
+        {
+            motionTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true, block: { (timer) in
+                self.displayPedometerData()
+            })
+        }
+    }
+    func stopsMotionTimer()
+    {
+        self.motionTimer.invalidate()
+        self.displayPedometerData()
     }
     //MARK: ACTIONS
     @objc func OnMainScreenPressed()
@@ -132,6 +213,7 @@ class LandscapeNavViewController: UIViewController
         if UIDeviceOrientationIsPortrait(UIDevice.current.orientation)
         {
             print("Portrait")
+            self.journeyTimer?.pauseJourney()
             dismiss(animated: true, completion: {
                 self.HideBottomNavBar()
                 self.OnDidMoveFromLandscape?(self.StageIdx)
@@ -151,6 +233,11 @@ class LandscapeNavViewController: UIViewController
         //UI particular updates
         self.lblTitle.isHidden = StageIdx == 0 ? false : true
         self.lblTitleDown.isHidden = StageIdx == 0 ? false : true
+    }
+    
+    func displayPedometerData()
+    {
+        lblSteps.text = "Steps: \(numberOfSteps)"
     }
 }
 
@@ -174,5 +261,14 @@ extension LandscapeNavViewController: UICollectionViewDelegate, UICollectionView
     {
         self.StageIdx = indexPath.row
         self.collectionView.reloadData()
+        if self.StageIdx == 1
+        {
+            self.initPedometer()
+            if self.journeyTimer?.isTraveling == false
+            {
+                self.journeyTimer?.startJourney()
+            }
+        }
+        
     }
 }
