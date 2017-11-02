@@ -33,12 +33,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         notif.categoryIdentifier = "imageCategory"
         notif.sound = UNNotificationSound.default()
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         
         let request = UNNotificationRequest(identifier: "localNotif", content: notif, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request) { (error) in
-            print(error ?? "error when registering notification")
+            print(error ?? "success registering notification")
         }
     }
     
@@ -56,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        createNotification(type: .restaurantHost)
+//        createNotification(type: .restaurantHost)
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
