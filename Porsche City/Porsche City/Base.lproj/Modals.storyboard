@@ -202,9 +202,50 @@
             </objects>
             <point key="canvasLocation" x="1090" y="-182"/>
         </scene>
+        <!--Checkout Controller-->
+        <scene sceneID="fvp-Mo-29F">
+            <objects>
+                <viewController storyboardIdentifier="CheckoutController" id="IRc-Nu-p8q" customClass="CheckoutController" customModule="Porsche_City" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uBo-ob-fJm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgCheckout" translatesAutoresizingMaskIntoConstraints="NO" id="tID-Lj-ubs">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLY-OZ-cyp">
+                                <rect key="frame" x="324" y="50" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="Sag-gy-PPi"/>
+                                    <constraint firstAttribute="height" constant="35" id="zon-sL-yRM"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="iconClose"/>
+                                <connections>
+                                    <action selector="close" destination="IRc-Nu-p8q" eventType="touchUpInside" id="9iv-Vp-MsH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vLY-OZ-cyp" firstAttribute="top" secondItem="EGt-Zp-tJu" secondAttribute="top" constant="30" id="2UM-pd-apu"/>
+                            <constraint firstItem="tID-Lj-ubs" firstAttribute="trailing" secondItem="EGt-Zp-tJu" secondAttribute="trailing" id="40N-QP-15H"/>
+                            <constraint firstItem="tID-Lj-ubs" firstAttribute="leading" secondItem="EGt-Zp-tJu" secondAttribute="leading" id="fUL-Ro-VoJ"/>
+                            <constraint firstItem="tID-Lj-ubs" firstAttribute="bottom" secondItem="EGt-Zp-tJu" secondAttribute="bottom" id="qrG-9n-gdq"/>
+                            <constraint firstItem="tID-Lj-ubs" firstAttribute="top" secondItem="uBo-ob-fJm" secondAttribute="top" id="uOJ-zd-Gqy"/>
+                            <constraint firstItem="EGt-Zp-tJu" firstAttribute="trailing" secondItem="vLY-OZ-cyp" secondAttribute="trailing" constant="16" id="yik-R3-ybg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EGt-Zp-tJu"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4At-Yk-TIR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wEe-7k-tVo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1826" y="-182"/>
+        </scene>
     </scenes>
     <resources>
         <image name="iconClose" width="256" height="256"/>
+        <image name="imgCheckout" width="562" height="1000"/>
         <image name="imgRide" width="562" height="1000"/>
         <image name="imgRomKey" width="562" height="1000"/>
         <image name="imgValet" width="562" height="1000"/>
