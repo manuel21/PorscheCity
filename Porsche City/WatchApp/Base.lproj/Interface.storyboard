@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13529" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13507"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WatchApp" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="imageCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="xSo-r4-ChG">
+            <objects>
+                <notificationController id="ac8-Da-z5g">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="JH1-8u-oSZ"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="personCategory" id="bfz-Af-YJ2"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="JH1-8u-oSZ" id="3ZW-if-csd"/>
+                        <segue destination="aqt-vT-Ahn" kind="relationship" relationship="dynamicNotificationInterface" id="H11-cd-xbw"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="202" y="936"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="WatchApp" customModuleProvider="target">
+                    <items>
+                        <imageView width="136" height="115" alignment="left" id="jzZ-hr-zS5"/>
+                    </items>
+                    <connections>
+                        <outlet property="interfaceImage" destination="jzZ-hr-zS5" id="mEc-wD-NCn"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="Nln-5U-HU8">
+            <objects>
+                <controller id="aqt-vT-Ahn" customClass="NotificationController" customModule="WatchApp_Extension">
+                    <items>
+                        <imageView height="146" alignment="left" image="person" id="9fF-6A-qDx"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="506" y="937.5"/>
+        </scene>
+    </scenes>
+</document>
