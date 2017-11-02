@@ -1,14 +1,14 @@
 //
-//  RoomKeyController.swift
+//  CheckoutController.swift
 //  Porsche City
 //
-//  Created by Manuel Salinas on 10/30/17.
+//  Created by Manuel Salinas on 11/1/17.
 //  Copyright © 2017 mxnuel. All rights reserved.
 //
 
 import UIKit
 
-class RoomKeyController: UIViewController
+class CheckoutController: UIViewController
 {
     //MARK: PROPERTIES & OUTLETS
     
@@ -33,7 +33,7 @@ class RoomKeyController: UIViewController
     
     deinit
     {
-        print("Deinit: RoomKeyController")
+        print("Deinit: CheckoutController")
     }
     
     //MARK: CONFIG
