@@ -123,7 +123,8 @@ class HomeController: UIViewController
         }
         else if stage == 8
         {
-            
+            let vcCheckout: CheckoutController = Storyboard.getInstanceFromStoryboard("Modals")
+            self.present(vcCheckout, animated: true, completion: nil)
         }
     }
     // MARK: - Navigation
