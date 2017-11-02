@@ -55,6 +55,8 @@ class TimerStep: NSObject
         self.timer.invalidate()
         self.isTraveling = false
         self.timeInterval = 0
+        self.counter = 1
+        self.OnJourneyDidEnded?()
     }
     
     @objc private func checkTimeInterval()
@@ -74,8 +76,6 @@ class TimerStep: NSObject
         guard self.counter != self.journeyStages else {
             
             self.stopJourney()
-            self.counter = 1
-            self.OnJourneyDidEnded?()
             return
         }
         
