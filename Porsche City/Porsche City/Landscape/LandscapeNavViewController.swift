@@ -26,6 +26,19 @@ class LandscapeNavViewController: UIViewController
             self.HideBottomNavBar()
             self.collectionView.scrollToItem(at: IndexPath(item: StageIdx, section: 0), at: .centeredHorizontally, animated: true)
             self.collectionView.reloadData()
+            
+            if StageIdx == 1
+            {
+                (UIApplication.shared.delegate as? AppDelegate)?.createNotification(type: .restaurantHost)
+            }
+            else if StageIdx == 2
+            {
+                (UIApplication.shared.delegate as? AppDelegate)?.createNotification(type: .restaurantValet)
+            }
+            else if StageIdx == 6
+            {
+                (UIApplication.shared.delegate as? AppDelegate)?.createNotification(type: .shuttleDriver)
+            }
         }
     }
     @IBOutlet weak var lblTitle: UIView!    
