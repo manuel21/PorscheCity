@@ -9,6 +9,17 @@
 /* Begin PBXBuildFile section */
 		8E0C69141FAA23D10054397F /* LandscapeNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0C69131FAA23D10054397F /* LandscapeNavViewController.swift */; };
 		8E0C69161FAA3F1E0054397F /* JourneyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0C69151FAA3F1E0054397F /* JourneyCell.swift */; };
+		5632640E1FA95C2400C16A37 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5632640C1FA95C2400C16A37 /* Interface.storyboard */; };
+		563264101FA95C2400C16A37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5632640F1FA95C2400C16A37 /* Assets.xcassets */; };
+		563264171FA95C2400C16A37 /* WatchApp Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 563264161FA95C2400C16A37 /* WatchApp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5632641C1FA95C2400C16A37 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5632641B1FA95C2400C16A37 /* InterfaceController.swift */; };
+		5632641E1FA95C2400C16A37 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5632641D1FA95C2400C16A37 /* ExtensionDelegate.swift */; };
+		563264201FA95C2400C16A37 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5632641F1FA95C2400C16A37 /* NotificationController.swift */; };
+		563264221FA95C2400C16A37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 563264211FA95C2400C16A37 /* Assets.xcassets */; };
+		563264271FA95C2400C16A37 /* WatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5632640A1FA95C2400C16A37 /* WatchApp.app */; };
+		563264301FAA90E000C16A37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5632640F1FA95C2400C16A37 /* Assets.xcassets */; };
+		563264331FAAA0A200C16A37 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563264321FAAA0A200C16A37 /* Enums.swift */; };
+		563264341FAAA0B000C16A37 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563264321FAAA0A200C16A37 /* Enums.swift */; };
 		FF0482701FA7CD8500325EB7 /* TableViews+Porsche.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF04826F1FA7CD8500325EB7 /* TableViews+Porsche.swift */; };
 		FF27BC731FAA9F04005061C9 /* CheckoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF27BC721FAA9F04005061C9 /* CheckoutController.swift */; };
 		FF37A8721FA7D47D0046D7D5 /* Views+Porsche.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37A8711FA7D47D0046D7D5 /* Views+Porsche.swift */; };
@@ -44,9 +55,63 @@
 		FFC0EAA51FA7E10200C4ED9F /* CollectionCell_Clone.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC0EAA31FA7E10200C4ED9F /* CollectionCell_Clone.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		563264181FA95C2400C16A37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF840B951FA79A0900C63159 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 563264151FA95C2400C16A37;
+			remoteInfo = "WatchApp Extension";
+		};
+		563264251FA95C2400C16A37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF840B951FA79A0900C63159 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 563264091FA95C2400C16A37;
+			remoteInfo = WatchApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5632642D1FA95C2400C16A37 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				563264171FA95C2400C16A37 /* WatchApp Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5632642F1FA95C2400C16A37 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				563264271FA95C2400C16A37 /* WatchApp.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		8E0C69131FAA23D10054397F /* LandscapeNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeNavViewController.swift; sourceTree = "<group>"; };
 		8E0C69151FAA3F1E0054397F /* JourneyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyCell.swift; sourceTree = "<group>"; };
+		5632640A1FA95C2400C16A37 /* WatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5632640D1FA95C2400C16A37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		5632640F1FA95C2400C16A37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		563264111FA95C2400C16A37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		563264161FA95C2400C16A37 /* WatchApp Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WatchApp Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5632641B1FA95C2400C16A37 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		5632641D1FA95C2400C16A37 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		5632641F1FA95C2400C16A37 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		563264211FA95C2400C16A37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		563264231FA95C2400C16A37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		563264241FA95C2400C16A37 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		563264321FAAA0A200C16A37 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		FF04826F1FA7CD8500325EB7 /* TableViews+Porsche.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableViews+Porsche.swift"; sourceTree = "<group>"; };
 		FF27BC721FAA9F04005061C9 /* CheckoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutController.swift; sourceTree = "<group>"; };
 		FF37A8711FA7D47D0046D7D5 /* Views+Porsche.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Views+Porsche.swift"; sourceTree = "<group>"; };
@@ -85,6 +150,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		563264131FA95C2400C16A37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FF840B9A1FA79A0900C63159 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -95,6 +167,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5632640B1FA95C2400C16A37 /* WatchApp */ = {
+			isa = PBXGroup;
+			children = (
+				5632640C1FA95C2400C16A37 /* Interface.storyboard */,
+				5632640F1FA95C2400C16A37 /* Assets.xcassets */,
+				563264111FA95C2400C16A37 /* Info.plist */,
+			);
+			path = WatchApp;
+			sourceTree = "<group>";
+		};
+		5632641A1FA95C2400C16A37 /* WatchApp Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5632641B1FA95C2400C16A37 /* InterfaceController.swift */,
+				5632641D1FA95C2400C16A37 /* ExtensionDelegate.swift */,
+				5632641F1FA95C2400C16A37 /* NotificationController.swift */,
+				563264211FA95C2400C16A37 /* Assets.xcassets */,
+				563264231FA95C2400C16A37 /* Info.plist */,
+				563264241FA95C2400C16A37 /* PushNotificationPayload.apns */,
+			);
+			path = "WatchApp Extension";
+			sourceTree = "<group>";
+		};
+		563264311FAAA08D00C16A37 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				563264321FAAA0A200C16A37 /* Enums.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		8E0C69121FAA23C00054397F /* Landscape */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +223,8 @@
 			isa = PBXGroup;
 			children = (
 				FF840B9F1FA79A0A00C63159 /* Porsche City */,
+				5632640B1FA95C2400C16A37 /* WatchApp */,
+				5632641A1FA95C2400C16A37 /* WatchApp Extension */,
 				FF840B9E1FA79A0A00C63159 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -128,6 +233,8 @@
 			isa = PBXGroup;
 			children = (
 				FF840B9D1FA79A0A00C63159 /* Porsche City.app */,
+				5632640A1FA95C2400C16A37 /* WatchApp.app */,
+				563264161FA95C2400C16A37 /* WatchApp Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -136,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				8E0C69121FAA23C00054397F /* Landscape */,
+				563264311FAAA08D00C16A37 /* Enums */,
 				FF840BA01FA79A0A00C63159 /* AppDelegate.swift */,
 				FFB040671FA7A6A700038E18 /* Helpers */,
 				FF6002B51FA807440055782D /* Modals */,
@@ -277,6 +385,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		563264091FA95C2400C16A37 /* WatchApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5632642E1FA95C2400C16A37 /* Build configuration list for PBXNativeTarget "WatchApp" */;
+			buildPhases = (
+				563264081FA95C2400C16A37 /* Resources */,
+				5632642D1FA95C2400C16A37 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				563264191FA95C2400C16A37 /* PBXTargetDependency */,
+			);
+			name = WatchApp;
+			productName = WatchApp;
+			productReference = 5632640A1FA95C2400C16A37 /* WatchApp.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		563264151FA95C2400C16A37 /* WatchApp Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5632642C1FA95C2400C16A37 /* Build configuration list for PBXNativeTarget "WatchApp Extension" */;
+			buildPhases = (
+				563264121FA95C2400C16A37 /* Sources */,
+				563264131FA95C2400C16A37 /* Frameworks */,
+				563264141FA95C2400C16A37 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WatchApp Extension";
+			productName = "WatchApp Extension";
+			productReference = 563264161FA95C2400C16A37 /* WatchApp Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		FF840B9C1FA79A0900C63159 /* Porsche City */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF840BAF1FA79A0A00C63159 /* Build configuration list for PBXNativeTarget "Porsche City" */;
@@ -284,10 +426,12 @@
 				FF840B991FA79A0900C63159 /* Sources */,
 				FF840B9A1FA79A0900C63159 /* Frameworks */,
 				FF840B9B1FA79A0900C63159 /* Resources */,
+				5632642F1FA95C2400C16A37 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				563264261FA95C2400C16A37 /* PBXTargetDependency */,
 			);
 			name = "Porsche City";
 			productName = "Porsche City";
@@ -300,10 +444,18 @@
 		FF840B951FA79A0900C63159 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
+				LastSwiftUpdateCheck = 0910;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = mxnuel;
 				TargetAttributes = {
+					563264091FA95C2400C16A37 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					563264151FA95C2400C16A37 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
 					FF840B9C1FA79A0900C63159 = {
 						CreatedOnToolsVersion = 9.0.1;
 						ProvisioningStyle = Automatic;
@@ -324,11 +476,31 @@
 			projectRoot = "";
 			targets = (
 				FF840B9C1FA79A0900C63159 /* Porsche City */,
+				563264091FA95C2400C16A37 /* WatchApp */,
+				563264151FA95C2400C16A37 /* WatchApp Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		563264081FA95C2400C16A37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				563264101FA95C2400C16A37 /* Assets.xcassets in Resources */,
+				5632640E1FA95C2400C16A37 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		563264141FA95C2400C16A37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				563264301FAA90E000C16A37 /* Assets.xcassets in Resources */,
+				563264221FA95C2400C16A37 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FF840B9B1FA79A0900C63159 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -347,12 +519,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		563264121FA95C2400C16A37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				563264201FA95C2400C16A37 /* NotificationController.swift in Sources */,
+				5632641E1FA95C2400C16A37 /* ExtensionDelegate.swift in Sources */,
+				563264341FAAA0B000C16A37 /* Enums.swift in Sources */,
+				5632641C1FA95C2400C16A37 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FF840B991FA79A0900C63159 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				FF37A8721FA7D47D0046D7D5 /* Views+Porsche.swift in Sources */,
 				FFB040781FA7A7D400038E18 /* ItineraryTableController.swift in Sources */,
+				563264331FAAA0A200C16A37 /* Enums.swift in Sources */,
 				FFB1EE251FA7DC470022D685 /* horizontalItem.swift in Sources */,
 				FF6002B71FA807940055782D /* ValetParkingController.swift in Sources */,
 				FF6002BD1FA807F30055782D /* RoomKeyController.swift in Sources */,
@@ -383,7 +567,28 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		563264191FA95C2400C16A37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 563264151FA95C2400C16A37 /* WatchApp Extension */;
+			targetProxy = 563264181FA95C2400C16A37 /* PBXContainerItemProxy */;
+		};
+		563264261FA95C2400C16A37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 563264091FA95C2400C16A37 /* WatchApp */;
+			targetProxy = 563264251FA95C2400C16A37 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		5632640C1FA95C2400C16A37 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5632640D1FA95C2400C16A37 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		FF6002BE1FA808C40055782D /* Modals.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -411,6 +616,78 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		563264281FA95C2400C16A37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9M43JR8595;
+				IBSC_MODULE = WatchApp_Extension;
+				INFOPLIST_FILE = WatchApp/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.definityfirst.Porsche-City.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.1;
+			};
+			name = Debug;
+		};
+		563264291FA95C2400C16A37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9M43JR8595;
+				IBSC_MODULE = WatchApp_Extension;
+				INFOPLIST_FILE = WatchApp/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.definityfirst.Porsche-City.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.1;
+			};
+			name = Release;
+		};
+		5632642A1FA95C2400C16A37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "WatchApp Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.definityfirst.Porsche-City.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.1;
+			};
+			name = Debug;
+		};
+		5632642B1FA95C2400C16A37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "WatchApp Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.definityfirst.Porsche-City.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.1;
+			};
+			name = Release;
+		};
 		FF840BAD1FA79A0A00C63159 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -551,6 +828,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5632642C1FA95C2400C16A37 /* Build configuration list for PBXNativeTarget "WatchApp Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5632642A1FA95C2400C16A37 /* Debug */,
+				5632642B1FA95C2400C16A37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5632642E1FA95C2400C16A37 /* Build configuration list for PBXNativeTarget "WatchApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				563264281FA95C2400C16A37 /* Debug */,
+				563264291FA95C2400C16A37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FF840B981FA79A0900C63159 /* Build configuration list for PBXProject "Porsche City" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
