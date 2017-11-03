@@ -294,12 +294,13 @@ extension LandscapeNavViewController: UIGestureRecognizerDelegate
 {
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool
     {
-        guard  self.StageIdx == 0 else {
-            
-            return false
-        }
-        self.manualMode = false
-        self.present(self.vcConfig!, animated: true, completion: nil)
         return true
+//        guard  self.StageIdx == 0 else {
+//
+//            return false
+//        }
+//        self.manualMode = false
+//        self.present(self.vcConfig!, animated: true, completion: nil)
+//        return true
     }
 }
