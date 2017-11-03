@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56313D8D1FAC03F300336AF0 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56313D8C1FAC03F300336AF0 /* Toast.swift */; };
 		5632640E1FA95C2400C16A37 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5632640C1FA95C2400C16A37 /* Interface.storyboard */; };
 		563264101FA95C2400C16A37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5632640F1FA95C2400C16A37 /* Assets.xcassets */; };
 		563264171FA95C2400C16A37 /* WatchApp Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 563264161FA95C2400C16A37 /* WatchApp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -101,6 +102,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		56313D8C1FAC03F300336AF0 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		5632640A1FA95C2400C16A37 /* WatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5632640D1FA95C2400C16A37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		5632640F1FA95C2400C16A37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -173,6 +175,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56313D8B1FAC03F200336AF0 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				56313D8C1FAC03F300336AF0 /* Toast.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
 		5632640B1FA95C2400C16A37 /* WatchApp */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +269,7 @@
 		FF840B9F1FA79A0A00C63159 /* Porsche City */ = {
 			isa = PBXGroup;
 			children = (
+				56313D8B1FAC03F200336AF0 /* Controls */,
 				8E0C69121FAA23C00054397F /* Landscape */,
 				563264311FAAA08D00C16A37 /* Enums */,
 				FF840BA01FA79A0A00C63159 /* AppDelegate.swift */,
@@ -568,6 +579,7 @@
 				FF6002C21FA81D500055782D /* ActionsTapGestureRecognizer.swift in Sources */,
 				8E0C69161FAA3F1E0054397F /* JourneyCell.swift in Sources */,
 				FFB040751FA7A7B900038E18 /* ProfileTableController.swift in Sources */,
+				56313D8D1FAC03F300336AF0 /* Toast.swift in Sources */,
 				FFB040661FA7A5B100038E18 /* ItineraryController.swift in Sources */,
 				FFB040601FA7A58500038E18 /* PreferencesController.swift in Sources */,
 				8E8607BB1FABBC5200B92685 /* ConfigurationController.swift in Sources */,

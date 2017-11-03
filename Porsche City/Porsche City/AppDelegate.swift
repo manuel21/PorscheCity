@@ -35,7 +35,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         let request = UNNotificationRequest(identifier: "localNotif", content: notif, trigger: trigger)
         UNUserNotificationCenter.current().add(request) { (error) in
-            print(error ?? "success registering notification")
+            if (error == nil) {
+//                Toast.showInView((self.window!.rootViewController!.presentedViewController ?? self.window!.rootViewController!).view, withText: "Notification Scheduled")
+            } else {
+                print(error!)
+            }
         }
     }
     
