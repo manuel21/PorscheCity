@@ -14,7 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         UNUserNotificationCenter.current().delegate = self
@@ -27,16 +26,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     public func createNotification(type: NotificationType) {
         let notif = UNMutableNotificationContent()
-        notif.body = "test"
-        notif.title = "title"
+        notif.body = "testing"
+        notif.title = "New Porsche City Notification"
         notif.userInfo = ["NotificationType": type.rawValue];
         notif.categoryIdentifier = "imageCategory"
         notif.sound = UNNotificationSound.default()
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-        
         let request = UNNotificationRequest(identifier: "localNotif", content: notif, trigger: trigger)
-        
         UNUserNotificationCenter.current().add(request) { (error) in
             print(error ?? "success registering notification")
         }
