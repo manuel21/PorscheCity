@@ -54,6 +54,7 @@
 		FFB1EE221FA7DC310022D685 /* CollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB1EE201FA7DC310022D685 /* CollectionCell.xib */; };
 		FFB1EE251FA7DC470022D685 /* horizontalItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB1EE231FA7DC470022D685 /* horizontalItem.swift */; };
 		FFB1EE261FA7DC470022D685 /* horizontalItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB1EE241FA7DC470022D685 /* horizontalItem.xib */; };
+		FFBC69061FABFFCE008AE1C9 /* CheckoutSuccessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC69051FABFFCE008AE1C9 /* CheckoutSuccessController.swift */; };
 		FFC0EAA41FA7E10200C4ED9F /* CollectionCell_Clone.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFC0EAA21FA7E10200C4ED9F /* CollectionCell_Clone.xib */; };
 		FFC0EAA51FA7E10200C4ED9F /* CollectionCell_Clone.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC0EAA31FA7E10200C4ED9F /* CollectionCell_Clone.swift */; };
 /* End PBXBuildFile section */
@@ -151,6 +152,7 @@
 		FFB1EE201FA7DC310022D685 /* CollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionCell.xib; sourceTree = "<group>"; };
 		FFB1EE231FA7DC470022D685 /* horizontalItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = horizontalItem.swift; sourceTree = "<group>"; };
 		FFB1EE241FA7DC470022D685 /* horizontalItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = horizontalItem.xib; sourceTree = "<group>"; };
+		FFBC69051FABFFCE008AE1C9 /* CheckoutSuccessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutSuccessController.swift; sourceTree = "<group>"; };
 		FFC0EAA21FA7E10200C4ED9F /* CollectionCell_Clone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionCell_Clone.xib; sourceTree = "<group>"; };
 		FFC0EAA31FA7E10200C4ED9F /* CollectionCell_Clone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell_Clone.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -232,6 +234,7 @@
 				FF6002BA1FA807E30055782D /* RideController.swift */,
 				FF6002BC1FA807F30055782D /* RoomKeyController.swift */,
 				FF27BC721FAA9F04005061C9 /* CheckoutController.swift */,
+				FFBC69051FABFFCE008AE1C9 /* CheckoutSuccessController.swift */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 				FF27BC731FAA9F04005061C9 /* CheckoutController.swift in Sources */,
 				FF6002BB1FA807E30055782D /* RideController.swift in Sources */,
 				FFB0407A1FA7AFD500038E18 /* NavyController.swift in Sources */,
+				FFBC69061FABFFCE008AE1C9 /* CheckoutSuccessController.swift in Sources */,
 				FF0482701FA7CD8500325EB7 /* TableViews+Porsche.swift in Sources */,
 				FF6002C21FA81D500055782D /* ActionsTapGestureRecognizer.swift in Sources */,
 				8E0C69161FAA3F1E0054397F /* JourneyCell.swift in Sources */,

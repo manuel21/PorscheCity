@@ -54,6 +54,6 @@ class ItineraryTableController: UITableViewController
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return indexPath.row == 1 ? 200 : 500
+        return indexPath.row == 1 ? 200 : 400
     }
 }

@@ -26,7 +26,7 @@ class HomeTableController: UITableViewController
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 3
+        return 2
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
@@ -57,6 +57,6 @@ class HomeTableController: UITableViewController
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return indexPath.row == 1 ? 200 : 450
+        return indexPath.row == 1 ? 200 : 300
     }
 }
