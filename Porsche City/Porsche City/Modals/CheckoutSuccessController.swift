@@ -1,17 +1,16 @@
 //
-//  CheckoutController.swift
+//  CheckoutSuccessController.swift
 //  Porsche City
 //
-//  Created by Manuel Salinas on 11/1/17.
+//  Created by Manuel Salinas on 11/2/17.
 //  Copyright © 2017 mxnuel. All rights reserved.
 //
 
 import UIKit
 
-class CheckoutController: UIViewController
+class CheckoutSuccessController: UIViewController
 {
     //MARK: PROPERTIES & OUTLETS
-    var onDeinit:(() -> ())?
     
     //MARK: LIFE CYCLE
     override func viewDidLoad()
@@ -34,8 +33,7 @@ class CheckoutController: UIViewController
     
     deinit
     {
-        print("Deinit: CheckoutController")
-        self.onDeinit?()
+        print("Deinit: CheckoutSuccessController")
     }
     
     //MARK: CONFIG
@@ -45,17 +43,6 @@ class CheckoutController: UIViewController
     
     //MARK: ACTIONS
     @IBAction func close()
-    {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func sendNotification()
-    {
-        //TODO: Gera call your notification here
-        print("Send checkout notification")
-    }
-    
-    @IBAction func checkout(_ sender: Any)
     {
         self.dismiss(animated: true, completion: nil)
     }

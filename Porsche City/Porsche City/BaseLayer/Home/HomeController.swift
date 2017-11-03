@@ -104,27 +104,33 @@ class HomeController: UIViewController
     {
         if stage > 1 && stage <= 4
         {
-            let vcParking: ValetParkingController = Storyboard.getInstanceFromStoryboard("Modals")
+            let vcParking: ValetParkingController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
             self.present(vcParking, animated: true, completion: nil)
         }
         else if stage == 5
         {
-            let vcHotelCheckin: HotelCheckInController = Storyboard.getInstanceFromStoryboard("Modals")
+            let vcHotelCheckin: HotelCheckInController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
             self.present(vcHotelCheckin, animated: true, completion: nil)
         }
         else if stage == 6
         {
-            let vcRide: RideController = Storyboard.getInstanceFromStoryboard("Modals")
+            let vcRide: RideController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
             self.present(vcRide, animated: true, completion: nil)
         }
         else if stage == 7
         {
-            let vcRoomKey: RoomKeyController = Storyboard.getInstanceFromStoryboard("Modals")
+            let vcRoomKey: RoomKeyController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
             self.present(vcRoomKey, animated: true, completion: nil)
         }
         else if stage == 8
         {
-            let vcCheckout: CheckoutController = Storyboard.getInstanceFromStoryboard("Modals")
+            let vcCheckout: CheckoutController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
+            vcCheckout.onDeinit = {
+                
+                let vcCheckoutSuccess: CheckoutSuccessController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
+                self.present(vcCheckoutSuccess, animated: true, completion: nil)
+            }
+            
             self.present(vcCheckout, animated: true, completion: nil)
         }
     }
