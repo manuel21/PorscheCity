@@ -21,7 +21,7 @@ class LandscapeNavViewController: UIViewController
     let defaultBackground = UIColor(displayP3Red: 25/255, green: 31/255, blue: 34/255, alpha: 1.0)
     var origin:CGFloat = 0.0
     var initialNavBarHeight:CGFloat = 0.0
-    
+    var manualMode = true
     var StageIdx: Int = 0 {
         didSet{
             guard StageIdx < self.imgsJourney.count else {
@@ -42,6 +42,10 @@ class LandscapeNavViewController: UIViewController
             }
             else if StageIdx == 1
             {
+                //Send notification
+                (UIApplication.shared.delegate as? AppDelegate)?.createNotification(type: .restaurantHost)
+                
+                guard self.manualMode == false else {return}
                 //Starts journey
                 if self.journeyBySeconds == true
                 {
@@ -54,8 +58,7 @@ class LandscapeNavViewController: UIViewController
                 {
                     self.stepCounter?.initPedometer()
                 }
-                //Send notification
-                (UIApplication.shared.delegate as? AppDelegate)?.createNotification(type: .restaurantHost)
+                
             }
             else if StageIdx == 2
             {
@@ -295,6 +298,7 @@ extension LandscapeNavViewController: UIGestureRecognizerDelegate
             
             return false
         }
+        self.manualMode = false
         self.present(self.vcConfig!, animated: true, completion: nil)
         return true
     }
