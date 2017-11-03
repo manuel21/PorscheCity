@@ -51,7 +51,7 @@ class CheckoutController: UIViewController
     
     @IBAction func sendNotification()
     {
-        //TODO: Gera call your notification here
+        (UIApplication.shared.delegate as? AppDelegate)?.createNotification(type: .hotelValet)
         print("Send checkout notification")
     }
     
