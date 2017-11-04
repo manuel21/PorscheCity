@@ -19,6 +19,7 @@
 		563264301FAA90E000C16A37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5632640F1FA95C2400C16A37 /* Assets.xcassets */; };
 		563264331FAAA0A200C16A37 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563264321FAAA0A200C16A37 /* Enums.swift */; };
 		563264341FAAA0B000C16A37 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563264321FAAA0A200C16A37 /* Enums.swift */; };
+		5666A2DC1FAE29440074BB56 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5666A2DB1FAE29440074BB56 /* Utils.swift */; };
 		8E0C69141FAA23D10054397F /* LandscapeNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0C69131FAA23D10054397F /* LandscapeNavViewController.swift */; };
 		8E0C69161FAA3F1E0054397F /* JourneyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0C69151FAA3F1E0054397F /* JourneyCell.swift */; };
 		8E0C69181FAA9FB40054397F /* TimerStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0C69171FAA9FB30054397F /* TimerStep.swift */; };
@@ -116,6 +117,7 @@
 		563264231FA95C2400C16A37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		563264241FA95C2400C16A37 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		563264321FAAA0A200C16A37 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		5666A2DB1FAE29440074BB56 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		8E0C69131FAA23D10054397F /* LandscapeNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeNavViewController.swift; sourceTree = "<group>"; };
 		8E0C69151FAA3F1E0054397F /* JourneyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyCell.swift; sourceTree = "<group>"; };
 		8E0C69171FAA9FB30054397F /* TimerStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerStep.swift; sourceTree = "<group>"; };
@@ -216,6 +218,14 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		5666A2DA1FAE28F70074BB56 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5666A2DB1FAE29440074BB56 /* Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		8E0C69121FAA23C00054397F /* Landscape */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +282,7 @@
 		FF840B9F1FA79A0A00C63159 /* Porsche City */ = {
 			isa = PBXGroup;
 			children = (
+				5666A2DA1FAE28F70074BB56 /* Utils */,
 				56313D8B1FAC03F200336AF0 /* Controls */,
 				8E0C69121FAA23C00054397F /* Landscape */,
 				563264311FAAA08D00C16A37 /* Enums */,
@@ -574,6 +585,7 @@
 				FFB040641FA7A5A500038E18 /* ProfileController.swift in Sources */,
 				FFB0406F1FA7A78300038E18 /* HomeTableController.swift in Sources */,
 				8E55B1491FAB74A5005E89E6 /* StepCounter.swift in Sources */,
+				5666A2DC1FAE29440074BB56 /* Utils.swift in Sources */,
 				FFB1EE211FA7DC310022D685 /* CollectionCell.swift in Sources */,
 				FF27BC731FAA9F04005061C9 /* CheckoutController.swift in Sources */,
 				FF6002BB1FA807E30055782D /* RideController.swift in Sources */,

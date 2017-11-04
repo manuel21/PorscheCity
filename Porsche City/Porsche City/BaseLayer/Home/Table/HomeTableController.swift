@@ -70,7 +70,7 @@ class HomeTableController: UITableViewController
         }
         else if indexPath.row == 1
         {
-            return 310
+            return 300
         }
         else
         {

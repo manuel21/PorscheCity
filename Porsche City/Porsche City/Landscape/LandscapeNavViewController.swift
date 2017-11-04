@@ -236,12 +236,12 @@ class LandscapeNavViewController: UIViewController
     
     @objc func OnRotation()
     {
-        if UIDeviceOrientationIsLandscape(UIDevice.current.orientation)
+        if Utils.isLandscape()
         {
             print("Landscape")
         }
         
-        if UIDeviceOrientationIsPortrait(UIDevice.current.orientation)
+        if Utils.isPortrait()
         {
             print("Portrait")
             self.journeyTimer?.pauseJourney()

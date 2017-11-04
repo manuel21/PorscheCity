@@ -88,38 +88,50 @@ class HomeController: UIViewController
     
     @objc func openSomething()
     {
-        
+        showModal(vcLandscape.StageIdx)
     }
     
     @objc func rotated()
     {
-        if UIDeviceOrientationIsLandscape(UIDevice.current.orientation)
+        if Utils.isLandscape()
         {
             print("Landscape")
-            guard self.presentedViewController == nil else {return}
+            if presentedViewController is LandscapeNavViewController {
+                return
+            }
+            
+//            if self.presentedViewController != nil {return}
+            if self.presentedViewController != nil {
+                self.presentedViewController?.dismiss(animated: false, completion: nil)
+            }
+            
             self.navigationController?.present(vcLandscape, animated: true, completion: nil)
             self.wasOnceOnLandscape = true
         }
         
-        if UIDeviceOrientationIsPortrait(UIDevice.current.orientation)
+        if Utils.isPortrait()
         {
             print("Portrait")
            
             if self.wasOnceOnLandscape == true
             {
                 //Right Button
-                let BtnBell = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-                BtnBell.setImage(#imageLiteral(resourceName: "iconBell"), for: .normal)
-                BtnBell.contentMode = .scaleAspectFit
-                BtnBell.addTarget(self, action: #selector(self.openSomething), for: .touchUpInside)
-            
-                let barBtnBell = UIBarButtonItem(customView: BtnBell)
-                let widthConstraintRight = BtnBell.widthAnchor.constraint(equalToConstant: 50)
-                let heightConstraintRight = BtnBell.heightAnchor.constraint(equalToConstant: 50)
-                heightConstraintRight.isActive = true
-                widthConstraintRight.isActive = true
-            
-                navigationItem.rightBarButtonItem = barBtnBell
+                if (vcLandscape.StageIdx > 1) {
+                    let BtnBell = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+                    BtnBell.setImage(#imageLiteral(resourceName: "iconBell"), for: .normal)
+                    BtnBell.contentMode = .scaleAspectFit
+                    BtnBell.addTarget(self, action: #selector(self.openSomething), for: .touchUpInside)
+                
+                    let barBtnBell = UIBarButtonItem(customView: BtnBell)
+                    let widthConstraintRight = BtnBell.widthAnchor.constraint(equalToConstant: 50)
+                    let heightConstraintRight = BtnBell.heightAnchor.constraint(equalToConstant: 50)
+                    heightConstraintRight.isActive = true
+                    widthConstraintRight.isActive = true
+                
+                    navigationItem.rightBarButtonItem = barBtnBell
+                } else {
+                    navigationItem.rightBarButtonItem = nil
+                }
             }
         }
     }
@@ -128,26 +140,36 @@ class HomeController: UIViewController
     {
         if stage > 1 && stage <= 4
         {
+            if presentedViewController is ValetParkingController {return}
+            
             let vcParking: ValetParkingController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
             self.present(vcParking, animated: true, completion: nil)
         }
         else if stage == 5
         {
+            if presentedViewController is HotelCheckInController {return}
+            
             let vcHotelCheckin: HotelCheckInController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
             self.present(vcHotelCheckin, animated: true, completion: nil)
         }
         else if stage == 6
         {
+            if presentedViewController is RideController {return}
+            
             let vcRide: RideController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
             self.present(vcRide, animated: true, completion: nil)
         }
         else if stage == 7
         {
+            if presentedViewController is RoomKeyController {return}
+            
             let vcRoomKey: RoomKeyController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
             self.present(vcRoomKey, animated: true, completion: nil)
         }
         else if stage == 8
         {
+            if presentedViewController is CheckoutController {return}
+            
             let vcCheckout: CheckoutController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
             vcCheckout.onDeinit = {
                 
