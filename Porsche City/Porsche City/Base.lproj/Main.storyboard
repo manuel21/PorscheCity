@@ -127,33 +127,6 @@
                                     <outlet property="delegate" destination="rrn-wU-cgh" id="9m6-nx-xAT"/>
                                 </connections>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3E-4c-b3u">
-                                <rect key="frame" x="0.0" y="162" width="262" height="85"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviewing itinerary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0w-TZ-k7A">
-                                        <rect key="frame" x="8" y="45" width="157" height="21"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <color key="textColor" red="0.92146831750869751" green="0.92162626981735229" blue="0.92145836353302002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CP4-cN-5Qs">
-                                        <rect key="frame" x="8" y="16" width="157" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.63117265701293945" green="0.63520365953445435" blue="0.64342409372329712" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.069962017238140106" green="0.090124763548374176" blue="0.098527006804943085" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="d0w-TZ-k7A" firstAttribute="leading" secondItem="b3E-4c-b3u" secondAttribute="leading" constant="8" id="D6o-kf-2fd"/>
-                                    <constraint firstItem="d0w-TZ-k7A" firstAttribute="top" secondItem="CP4-cN-5Qs" secondAttribute="bottom" constant="8" symbolic="YES" id="PKV-JK-qTA"/>
-                                    <constraint firstItem="CP4-cN-5Qs" firstAttribute="leading" secondItem="d0w-TZ-k7A" secondAttribute="leading" id="PsS-Ca-uva"/>
-                                    <constraint firstAttribute="height" constant="85" id="d67-Jf-YuO"/>
-                                    <constraint firstAttribute="width" constant="262" id="kWu-Fs-5bw"/>
-                                    <constraint firstItem="CP4-cN-5Qs" firstAttribute="trailing" secondItem="d0w-TZ-k7A" secondAttribute="trailing" id="ow6-Em-9Tv"/>
-                                    <constraint firstItem="CP4-cN-5Qs" firstAttribute="top" secondItem="b3E-4c-b3u" secondAttribute="top" constant="16" id="vfZ-gq-Nxa"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UyN-Q6-48t">
                                 <rect key="frame" x="0.0" y="279" width="262" height="85"/>
                                 <subviews>
@@ -198,14 +171,41 @@
                                 <color key="textColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3E-4c-b3u">
+                                <rect key="frame" x="0.0" y="154" width="262" height="85"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviewing itinerary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0w-TZ-k7A">
+                                        <rect key="frame" x="8" y="45" width="157" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" red="0.92146831750869751" green="0.92162626981735229" blue="0.92145836353302002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CP4-cN-5Qs">
+                                        <rect key="frame" x="8" y="16" width="157" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.63117265701293945" green="0.63520365953445435" blue="0.64342409372329712" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.069962017238140106" green="0.090124763548374176" blue="0.098527006804943085" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="d0w-TZ-k7A" firstAttribute="leading" secondItem="b3E-4c-b3u" secondAttribute="leading" constant="8" id="D6o-kf-2fd"/>
+                                    <constraint firstItem="d0w-TZ-k7A" firstAttribute="top" secondItem="CP4-cN-5Qs" secondAttribute="bottom" constant="8" symbolic="YES" id="PKV-JK-qTA"/>
+                                    <constraint firstItem="CP4-cN-5Qs" firstAttribute="leading" secondItem="d0w-TZ-k7A" secondAttribute="leading" id="PsS-Ca-uva"/>
+                                    <constraint firstAttribute="height" constant="85" id="d67-Jf-YuO"/>
+                                    <constraint firstAttribute="width" constant="262" id="kWu-Fs-5bw"/>
+                                    <constraint firstItem="CP4-cN-5Qs" firstAttribute="trailing" secondItem="d0w-TZ-k7A" secondAttribute="trailing" id="ow6-Em-9Tv"/>
+                                    <constraint firstItem="CP4-cN-5Qs" firstAttribute="top" secondItem="b3E-4c-b3u" secondAttribute="top" constant="16" id="vfZ-gq-Nxa"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.081601329147815704" green="0.10582613199949265" blue="0.11425111442804337" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="b3E-4c-b3u" firstAttribute="leading" secondItem="DyJ-JE-PN9" secondAttribute="leading" id="2l4-O7-Z2J"/>
                             <constraint firstItem="lGS-05-4VJ" firstAttribute="leading" secondItem="DyJ-JE-PN9" secondAttribute="leading" constant="13" id="5DL-5p-HGh"/>
                             <constraint firstItem="2F6-iB-PKV" firstAttribute="leading" secondItem="DyJ-JE-PN9" secondAttribute="leading" id="GQp-HW-dLz"/>
-                            <constraint firstItem="b3E-4c-b3u" firstAttribute="top" secondItem="DyJ-JE-PN9" secondAttribute="top" constant="162" id="IKv-QI-BZn"/>
-                            <constraint firstItem="b3E-4c-b3u" firstAttribute="top" secondItem="UyN-Q6-48t" secondAttribute="bottom" constant="-202" id="W3i-Q8-0za"/>
+                            <constraint firstItem="b3E-4c-b3u" firstAttribute="top" secondItem="DyJ-JE-PN9" secondAttribute="top" constant="154" id="IKv-QI-BZn"/>
+                            <constraint firstItem="UyN-Q6-48t" firstAttribute="top" secondItem="b3E-4c-b3u" secondAttribute="bottom" constant="40" id="NgZ-Ft-Uj8"/>
                             <constraint firstItem="akn-sS-Sus" firstAttribute="trailing" secondItem="DyJ-JE-PN9" secondAttribute="trailing" id="Xm9-fL-apj"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lGS-05-4VJ" secondAttribute="trailing" constant="20" symbolic="YES" id="ZSf-hj-SQ7"/>
                             <constraint firstItem="akn-sS-Sus" firstAttribute="leading" secondItem="DyJ-JE-PN9" secondAttribute="leading" id="b6c-tm-3V5"/>
@@ -214,7 +214,7 @@
                             <constraint firstItem="akn-sS-Sus" firstAttribute="bottom" secondItem="DyJ-JE-PN9" secondAttribute="bottom" id="kZC-UA-5CL"/>
                             <constraint firstItem="akn-sS-Sus" firstAttribute="top" secondItem="DyJ-JE-PN9" secondAttribute="top" id="koQ-p4-67T"/>
                             <constraint firstItem="UyN-Q6-48t" firstAttribute="leading" secondItem="DyJ-JE-PN9" secondAttribute="leading" id="qOs-hz-Ek4"/>
-                            <constraint firstItem="2F6-iB-PKV" firstAttribute="top" secondItem="b3E-4c-b3u" secondAttribute="bottom" id="tAK-p5-f5l"/>
+                            <constraint firstItem="2F6-iB-PKV" firstAttribute="top" secondItem="b3E-4c-b3u" secondAttribute="bottom" constant="8" id="tAK-p5-f5l"/>
                             <constraint firstItem="2F6-iB-PKV" firstAttribute="trailing" secondItem="DyJ-JE-PN9" secondAttribute="trailing" id="uCC-no-Mbl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DyJ-JE-PN9"/>
@@ -277,7 +277,6 @@
                                                 <color key="titleColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
                                             <connections>
-                                                <action selector="cancel:" destination="rFj-Rc-JYs" eventType="touchUpInside" id="QQx-MS-4Ja"/>
                                                 <action selector="setConfig:" destination="rFj-Rc-JYs" eventType="touchUpInside" id="Oi8-7D-6dB"/>
                                             </connections>
                                         </button>

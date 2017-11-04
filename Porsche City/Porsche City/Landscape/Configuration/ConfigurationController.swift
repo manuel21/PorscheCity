@@ -19,6 +19,7 @@ class ConfigurationController: UIViewController
     var seconds = 10
     var steps = 0
     var onSetConfiguration:((_ seconds:Int, _ steps:Int)->())?
+    var onCancel:(()->())?
     var onJourneyByTime:((_ journeyByTime: Bool)->())?
     override func viewDidLoad()
     {
@@ -80,6 +81,7 @@ class ConfigurationController: UIViewController
     
     @IBAction func cancel(_ sender: Any)
     {
+        self.onCancel?()
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -89,6 +91,10 @@ class ConfigurationController: UIViewController
         self.resignFirstResponder()
         self.onSetConfiguration?(self.switchSeconds.isOn == true ? self.seconds : 0, self.switchSteps.isOn == true ? self.steps : 0)
         self.onJourneyByTime?(self.switchSeconds.isOn == true)
+        if(self.switchSeconds.isOn == false && self.switchSteps.isOn == false)
+        {
+            self.onCancel?()
+        }
         self.dismiss(animated: true, completion: nil)
     }
 }
