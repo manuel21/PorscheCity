@@ -14,4 +14,6 @@ public enum NotificationType: Int {
     case hotelCheckIn = 2
     case shuttleDriver = 3
     case hotelValet = 4
+    case porscheValet = 5
+    case porscheValet2 = 6
 }

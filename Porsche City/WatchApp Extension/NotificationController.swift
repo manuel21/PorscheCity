@@ -40,6 +40,7 @@ class NotificationController: WKUserNotificationInterfaceController {
         // After populating your dynamic notification interface call the completion block.
         if let rawType = notification.request.content.userInfo["NotificationType"] as? Int,
             let type = NotificationType(rawValue: rawType) {
+            
             var imageName = ""
             switch type {
             case .hotelCheckIn:
@@ -52,6 +53,10 @@ class NotificationController: WKUserNotificationInterfaceController {
                 imageName = "restaurantValet"
             case .shuttleDriver:
                 imageName = "shuttleDriver"
+            case .porscheValet:
+                imageName = "porscheValet"
+            case .porscheValet2:
+                imageName = "porscheValet2"
             }
             
             interfaceImage.setImageNamed(imageName)
