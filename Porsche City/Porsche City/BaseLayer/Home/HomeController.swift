@@ -13,6 +13,7 @@ class HomeController: UIViewController
     //MARK: PROPERTIES & OUTLETS
     fileprivate var vcTable: HomeTableController!
     fileprivate var vcLandscape: LandscapeNavViewController!
+    fileprivate var wasOnceOnLandscape = false
     
     //MARK: LIFE CYCLE
     override func viewDidLoad()
@@ -69,13 +70,12 @@ class HomeController: UIViewController
         //Config for Landscape mode
         NotificationCenter.default.addObserver(self, selector: #selector(HomeController.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
         
-        let vcLandscapeScreen:LandscapeNavViewController = Storyboard.getInstanceFromStoryboard("Main")
+        let vcLandscapeScreen = Storyboard.getInstanceOf(LandscapeNavViewController.self)
         self.vcLandscape = vcLandscapeScreen
         self.vcLandscape.OnDidMoveFromLandscape = { stage in
             
             self.showModal(stage)
         }
-        
     }
     
     //MARK: ACTIONS
@@ -85,6 +85,12 @@ class HomeController: UIViewController
         let navBar = NavyController(rootViewController: vcProfile)
         self.present(navBar, animated: true, completion: nil)
     }
+    
+    @objc func openSomething()
+    {
+        
+    }
+    
     @objc func rotated()
     {
         if UIDeviceOrientationIsLandscape(UIDevice.current.orientation)
@@ -92,11 +98,29 @@ class HomeController: UIViewController
             print("Landscape")
             guard self.presentedViewController == nil else {return}
             self.navigationController?.present(vcLandscape, animated: true, completion: nil)
+            self.wasOnceOnLandscape = true
         }
         
         if UIDeviceOrientationIsPortrait(UIDevice.current.orientation)
         {
             print("Portrait")
+           
+            if self.wasOnceOnLandscape == true
+            {
+                //Right Button
+                let BtnBell = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+                BtnBell.setImage(#imageLiteral(resourceName: "iconBell"), for: .normal)
+                BtnBell.contentMode = .scaleAspectFit
+                BtnBell.addTarget(self, action: #selector(self.openSomething), for: .touchUpInside)
+            
+                let barBtnBell = UIBarButtonItem(customView: BtnBell)
+                let widthConstraintRight = BtnBell.widthAnchor.constraint(equalToConstant: 50)
+                let heightConstraintRight = BtnBell.heightAnchor.constraint(equalToConstant: 50)
+                heightConstraintRight.isActive = true
+                widthConstraintRight.isActive = true
+            
+                navigationItem.rightBarButtonItem = barBtnBell
+            }
         }
     }
     

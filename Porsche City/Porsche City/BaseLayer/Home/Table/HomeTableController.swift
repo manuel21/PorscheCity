@@ -26,17 +26,25 @@ class HomeTableController: UITableViewController
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 2
+        return 3
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        if indexPath.row %  2 == 0
+        if indexPath.row == 0
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ImageViewCell") as! ImageViewCell
+            cell.selectionStyle = .none
+            cell.imageBody.image = #imageLiteral(resourceName: "imgStartJoruney")
+        
+            return cell
+        }
+        else if indexPath.row == 1
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ImageViewCell") as! ImageViewCell
             cell.selectionStyle = .none
             cell.imageBody.image = #imageLiteral(resourceName: "imgHomeCell")
-        
+            
             return cell
         }
         else
@@ -54,9 +62,19 @@ class HomeTableController: UITableViewController
         self.navigationController?.pushViewController(vcItinerary, animated: true)
     }
     
-    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return indexPath.row == 1 ? 200 : 300
+        if indexPath.row == 0
+        {
+            return 100
+        }
+        else if indexPath.row == 1
+        {
+            return 310
+        }
+        else
+        {
+            return 300
+        }
     }
 }

@@ -31,6 +31,13 @@ class RideController: UIViewController
         UIApplication.shared.isStatusBarHidden = false
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator)
+    {
+        let orientationValue = UIInterfaceOrientation.portrait.rawValue
+        UIDevice.current.setValue(orientationValue, forKey: "orientation")
+    }
+
+    
     deinit
     {
         print("Deinit: RideController")
