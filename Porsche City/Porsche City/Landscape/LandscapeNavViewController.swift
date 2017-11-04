@@ -132,7 +132,7 @@ class LandscapeNavViewController: UIViewController
         imgTitles.forEach { (title) in
             self.imgsJourney.append(UIImage(named:title) ?? UIImage())
         }
-        imgTitles = ["imgDefaultBackground","imgJ1","imgDefaultBackground","imgDefaultBackground","imgJ4","imgDefaultBackground","imgDefaultBackground","imgJ7","imgDefaultBackground"]
+        imgTitles = ["imgDefaultBackground","imgJ1","imgJ2","imgJ3","imgJ4","imgJ5","imgJ6","imgJ7","imgJ8"]
         imgTitles.forEach { (title) in
             self.imgsBottomNav.append(UIImage(named:title) ?? UIImage())
         }
@@ -143,14 +143,20 @@ class LandscapeNavViewController: UIViewController
         //Configuration
         self.vcConfig = Storyboard.getInstanceFromStoryboard("Main")
         self.vcConfig?.onSetConfiguration = { seconds, steps in
-            
+            self.manualMode = false
             self.journeyTimer?.timeStep = Double(seconds)
             self.stepCounter?.numberOfSteps = steps
+        }
+        self.vcConfig?.onCancel = {
+            
+            self.manualMode = true
         }
         self.vcConfig?.onJourneyByTime = { journeyByTime in
             
             self.journeyBySeconds = journeyByTime
         }
+        //Hide steps
+        self.lblSteps.isHidden = true
         //Hide nav bar
         self.HideBottomNavBar()
     }
@@ -294,13 +300,11 @@ extension LandscapeNavViewController: UIGestureRecognizerDelegate
 {
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool
     {
+        guard  self.StageIdx == 0 else {
+
+            return false
+        }
+        self.present(self.vcConfig!, animated: true, completion: nil)
         return true
-//        guard  self.StageIdx == 0 else {
-//
-//            return false
-//        }
-//        self.manualMode = false
-//        self.present(self.vcConfig!, animated: true, completion: nil)
-//        return true
     }
 }
