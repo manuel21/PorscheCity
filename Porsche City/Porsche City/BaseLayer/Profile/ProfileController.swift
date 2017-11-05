@@ -44,7 +44,10 @@ class ProfileController: UIViewController
         
         //Left Button
         let BtnProfile = UIButton(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
-        BtnProfile.setImage(#imageLiteral(resourceName: "iconUserProfile"), for: .normal)
+        var imgProfile: UIImage = #imageLiteral(resourceName: "Richard")
+        let height = (imgProfile.cgImage?.height ?? 50) / 2
+        imgProfile = maskRoundedImage(image: imgProfile, radius: CGFloat(height))
+        BtnProfile.setImage(imgProfile, for: .normal)
         BtnProfile.contentMode = .scaleAspectFit
         BtnProfile.isEnabled = false
         
@@ -74,4 +77,17 @@ class ProfileController: UIViewController
             self.vcTable = segue.destination as! ProfileTableController
         }
     }
+    
+    func maskRoundedImage(image: UIImage, radius: CGFloat) -> UIImage {
+        let imageView: UIImageView = UIImageView(image: image)
+        let layer = imageView.layer
+        layer.masksToBounds = true
+        layer.cornerRadius = radius
+        UIGraphicsBeginImageContext(imageView.bounds.size)
+        layer.render(in: UIGraphicsGetCurrentContext()!)
+        let roundedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return roundedImage!
+    }
 }
+
