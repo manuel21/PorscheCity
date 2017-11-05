@@ -48,7 +48,19 @@ class HomeTableController: UITableViewController
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ImageViewCell") as! ImageViewCell
             cell.selectionStyle = .none
-            cell.imageBody.image = stageIdx == 1 ? #imageLiteral(resourceName: "club993") : #imageLiteral(resourceName: "imgHomeCell")
+            if stageIdx == 0
+            {
+                cell.imageBody.image = #imageLiteral(resourceName: "club993")
+            }
+            else if stageIdx < 7
+            {
+                cell.imageBody.image = #imageLiteral(resourceName: "imgItem1")
+            }
+            else if stageIdx == 7
+            {
+                cell.imageBody.image =  #imageLiteral(resourceName: "imgHomeCell")
+            }
+            
             
             return cell
         }
