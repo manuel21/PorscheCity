@@ -15,12 +15,17 @@ class ConfigurationController: UIViewController
     @IBOutlet weak var switchSeconds: UISwitch!
     @IBOutlet weak var txtSteps: UITextField!
     @IBOutlet weak var txtSeconds: UITextField!
+    @IBOutlet weak var lblFlow: UILabel!
     
+    @IBOutlet weak var switchFlow: UISwitch!
     var seconds = 10
     var steps = 0
     var onSetConfiguration:((_ seconds:Int, _ steps:Int)->())?
     var onCancel:(()->())?
     var onJourneyByTime:((_ journeyByTime: Bool)->())?
+    var onChangeFlow:((_ flow:Int)->())?
+    
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -35,6 +40,9 @@ class ConfigurationController: UIViewController
         self.txtSteps.keyboardType = .numberPad
         self.txtSteps.tag = 2
         self.txtSteps.delegate = self
+        
+        self.lblFlow.text = "Flow 1"
+        self.switchFlow.isOn = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -79,6 +87,20 @@ class ConfigurationController: UIViewController
         }
     }
     
+    @IBAction func changeFlow(_ sender: Any)
+    {
+        if self.switchFlow.isOn == true
+        {
+            self.onChangeFlow?(1)
+            self.lblFlow.text = "flow 1"
+        }
+        else
+        {
+            self.onChangeFlow?(2)
+            self.lblFlow.text = "flow 2"
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBAction func cancel(_ sender: Any)
     {
         self.onCancel?()

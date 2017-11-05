@@ -24,6 +24,8 @@
 		8E0C69161FAA3F1E0054397F /* JourneyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0C69151FAA3F1E0054397F /* JourneyCell.swift */; };
 		8E0C69181FAA9FB40054397F /* TimerStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0C69171FAA9FB30054397F /* TimerStep.swift */; };
 		8E55B1491FAB74A5005E89E6 /* StepCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E55B1481FAB74A5005E89E6 /* StepCounter.swift */; };
+		8E811BE01FAF832300F4425E /* CityActiveFlow2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E811BDF1FAF832300F4425E /* CityActiveFlow2ViewController.swift */; };
+		8E811BE21FAF861B00F4425E /* CityActiveFlow2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E811BE11FAF861B00F4425E /* CityActiveFlow2TableViewController.swift */; };
 		8E8607BB1FABBC5200B92685 /* ConfigurationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8607BA1FABBC5200B92685 /* ConfigurationController.swift */; };
 		FF0482701FA7CD8500325EB7 /* TableViews+Porsche.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF04826F1FA7CD8500325EB7 /* TableViews+Porsche.swift */; };
 		FF27BC731FAA9F04005061C9 /* CheckoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF27BC721FAA9F04005061C9 /* CheckoutController.swift */; };
@@ -122,6 +124,8 @@
 		8E0C69151FAA3F1E0054397F /* JourneyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyCell.swift; sourceTree = "<group>"; };
 		8E0C69171FAA9FB30054397F /* TimerStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerStep.swift; sourceTree = "<group>"; };
 		8E55B1481FAB74A5005E89E6 /* StepCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCounter.swift; sourceTree = "<group>"; };
+		8E811BDF1FAF832300F4425E /* CityActiveFlow2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityActiveFlow2ViewController.swift; sourceTree = "<group>"; };
+		8E811BE11FAF861B00F4425E /* CityActiveFlow2TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityActiveFlow2TableViewController.swift; sourceTree = "<group>"; };
 		8E8607BA1FABBC5200B92685 /* ConfigurationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationController.swift; sourceTree = "<group>"; };
 		FF04826F1FA7CD8500325EB7 /* TableViews+Porsche.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableViews+Porsche.swift"; sourceTree = "<group>"; };
 		FF27BC721FAA9F04005061C9 /* CheckoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutController.swift; sourceTree = "<group>"; };
@@ -238,6 +242,15 @@
 			path = Landscape;
 			sourceTree = "<group>";
 		};
+		8E811BDE1FAF830100F4425E /* CityHomeActiveFlow2 */ = {
+			isa = PBXGroup;
+			children = (
+				8E811BDF1FAF832300F4425E /* CityActiveFlow2ViewController.swift */,
+				8E811BE11FAF861B00F4425E /* CityActiveFlow2TableViewController.swift */,
+			);
+			path = CityHomeActiveFlow2;
+			sourceTree = "<group>";
+		};
 		8E8607B31FABA62100B92685 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +315,7 @@
 		FFB040571FA7A4F300038E18 /* BaseLayer */ = {
 			isa = PBXGroup;
 			children = (
+				8E811BDE1FAF830100F4425E /* CityHomeActiveFlow2 */,
 				FFB040581FA7A4F300038E18 /* Home */,
 				FFB0405B1FA7A4F300038E18 /* Profile */,
 				FFB040591FA7A4F300038E18 /* Preferences */,
@@ -577,9 +591,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF37A8721FA7D47D0046D7D5 /* Views+Porsche.swift in Sources */,
+				8E811BE21FAF861B00F4425E /* CityActiveFlow2TableViewController.swift in Sources */,
 				FFB040781FA7A7D400038E18 /* ItineraryTableController.swift in Sources */,
 				563264331FAAA0A200C16A37 /* Enums.swift in Sources */,
 				FFB1EE251FA7DC470022D685 /* horizontalItem.swift in Sources */,
+				8E811BE01FAF832300F4425E /* CityActiveFlow2ViewController.swift in Sources */,
 				FF6002B71FA807940055782D /* ValetParkingController.swift in Sources */,
 				FF6002BD1FA807F30055782D /* RoomKeyController.swift in Sources */,
 				FFB040641FA7A5A500038E18 /* ProfileController.swift in Sources */,
