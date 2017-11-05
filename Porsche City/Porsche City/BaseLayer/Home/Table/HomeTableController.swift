@@ -10,6 +10,11 @@ import UIKit
 
 class HomeTableController: UITableViewController
 {
+    var stageIdx = 0 {
+        didSet{
+            self.tableView.reloadData()
+        }
+    }
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -43,7 +48,7 @@ class HomeTableController: UITableViewController
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ImageViewCell") as! ImageViewCell
             cell.selectionStyle = .none
-            cell.imageBody.image = #imageLiteral(resourceName: "imgHomeCell")
+            cell.imageBody.image = stageIdx == 1 ? #imageLiteral(resourceName: "club993") : #imageLiteral(resourceName: "imgHomeCell")
             
             return cell
         }

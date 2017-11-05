@@ -142,7 +142,15 @@ class HomeController: UIViewController
     
     fileprivate func showModal(_ stage: Int)
     {
-        if stage > 1 && stage <= 4
+        if stage == 0
+        {
+            self.vcTable.stageIdx = stage
+        }
+        else if stage == stage
+        {
+            self.vcTable.stageIdx = 1
+        }
+        else if stage > 1 && stage <= 4
         {
             if presentedViewController is ValetParkingController {return}
             
