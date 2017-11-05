@@ -56,7 +56,11 @@ class HomeController: UIViewController
         
         //Left Button
         let BtnProfile = UIButton(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
-        BtnProfile.setImage(#imageLiteral(resourceName: "iconUserProfile"), for: .normal)
+        var imgProfile: UIImage = #imageLiteral(resourceName: "Richard")
+        let height = (imgProfile.cgImage?.height ?? 50) / 2
+        imgProfile = maskRoundedImage(image: imgProfile, radius: CGFloat(height))
+        
+        BtnProfile.setImage(imgProfile, for: .normal)
         BtnProfile.contentMode = .scaleAspectFit
         BtnProfile.addTarget(self, action: #selector(self.showProfile), for: .touchUpInside)
         
@@ -138,6 +142,8 @@ class HomeController: UIViewController
     
     fileprivate func showModal(_ stage: Int)
     {
+        
+        self.vcTable.stageIdx = stage
         if stage > 1 && stage <= 4
         {
             if presentedViewController is ValetParkingController {return}
@@ -179,6 +185,17 @@ class HomeController: UIViewController
             
             self.present(vcCheckout, animated: true, completion: nil)
         }
+    }
+    func maskRoundedImage(image: UIImage, radius: CGFloat) -> UIImage {
+        let imageView: UIImageView = UIImageView(image: image)
+        let layer = imageView.layer
+        layer.masksToBounds = true
+        layer.cornerRadius = radius
+        UIGraphicsBeginImageContext(imageView.bounds.size)
+        layer.render(in: UIGraphicsGetCurrentContext()!)
+        let roundedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return roundedImage!
     }
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
