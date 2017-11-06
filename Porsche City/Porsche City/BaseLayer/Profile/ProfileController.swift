@@ -36,7 +36,7 @@ class ProfileController: UIViewController
     fileprivate func loadConfig()
     {
         //title
-        self.title = "Thilo Koslowski"
+        self.title = "Richard Parker"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
         //Border
