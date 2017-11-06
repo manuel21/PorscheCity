@@ -58,7 +58,7 @@ class StepCounter
             motionTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true, block: { (timer) in
                 
                 guard self.stepCounter != 0 else {return}
-                var counter = self.stepCounter / self.numberOfSteps
+                let counter = self.stepCounter / self.numberOfSteps
                 
                 if counter >= self.stageCounter
                 {
