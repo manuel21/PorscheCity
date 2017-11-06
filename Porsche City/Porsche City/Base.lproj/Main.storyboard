@@ -125,7 +125,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="akn-sS-Sus">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgJ0" translatesAutoresizingMaskIntoConstraints="NO" id="akn-sS-Sus">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" red="0.081601329147815704" green="0.10582613199949265" blue="0.11425111442804337" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
@@ -187,7 +187,7 @@
                                     <outlet property="delegate" destination="rrn-wU-cgh" id="9m6-nx-xAT"/>
                                 </connections>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UyN-Q6-48t">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UyN-Q6-48t">
                                 <rect key="frame" x="0.0" y="299" width="262" height="85"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviewing itinerary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ew9-wD-3HK">
@@ -196,7 +196,7 @@
                                             <constraint firstAttribute="height" constant="21" id="MTC-vZ-R3N"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <color key="textColor" red="0.92146831750000002" green="0.92162626979999995" blue="0.92145836349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBQ-sT-5ui">
@@ -205,11 +205,10 @@
                                             <constraint firstAttribute="height" constant="21" id="es3-z8-RsE"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.63117265700000003" green="0.63520365950000002" blue="0.64342409369999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.07767755538225174" green="0.10190398246049881" blue="0.11032871156930923" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="KBQ-sT-5ui" secondAttribute="trailing" constant="97" id="D91-fG-uvQ"/>
                                     <constraint firstItem="ew9-wD-3HK" firstAttribute="trailing" secondItem="KBQ-sT-5ui" secondAttribute="trailing" id="HbZ-uY-IHA"/>
@@ -235,19 +234,18 @@
                                 <rect key="frame" x="0.0" y="174" width="262" height="85"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviewing itinerary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0w-TZ-k7A">
-                                        <rect key="frame" x="8" y="45" width="157" height="21"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <color key="textColor" red="0.92146831750869751" green="0.92162626981735229" blue="0.92145836353302002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="8" y="45" width="224" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CP4-cN-5Qs">
-                                        <rect key="frame" x="8" y="16" width="157" height="21"/>
+                                        <rect key="frame" x="8" y="16" width="224" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.63117265701293945" green="0.63520365953445435" blue="0.64342409372329712" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.069962017238140106" green="0.090124763548374176" blue="0.098527006804943085" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="d0w-TZ-k7A" firstAttribute="leading" secondItem="b3E-4c-b3u" secondAttribute="leading" constant="8" id="D6o-kf-2fd"/>
                                     <constraint firstItem="d0w-TZ-k7A" firstAttribute="top" secondItem="CP4-cN-5Qs" secondAttribute="bottom" constant="8" symbolic="YES" id="PKV-JK-qTA"/>
@@ -683,4 +681,7 @@
             <point key="canvasLocation" x="1220" y="2812"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="imgJ0" width="2001" height="1125"/>
+    </resources>
 </document>

@@ -168,7 +168,7 @@ class LandscapeNavViewController: UIViewController
         imgTitles.forEach { (title) in
             self.imgsJourney.append(UIImage(named:title) ?? UIImage())
         }
-        imgTitles = ["imgDefaultBackground","imgJ1","imgJ2","imgJ3","imgJ4","imgJ5","imgJ6","imgJ7","imgJ8"]
+        imgTitles = ["imgJ0","imgJ1","imgJ2","imgJ3","imgJ4","imgJ5","imgJ6","imgJ7","imgJ8"]
         imgTitles.forEach { (title) in
             self.imgsBottomNav.append(UIImage(named:title) ?? UIImage())
         }
@@ -199,6 +199,8 @@ class LandscapeNavViewController: UIViewController
         self.lblSteps.isHidden = true
         //Hide nav bar
         self.HideBottomNavBar()
+        
+        self.lblTitle.isHidden = true
     }
     
     fileprivate func configureStepCounter()

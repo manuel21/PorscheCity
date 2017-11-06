@@ -16,18 +16,11 @@ class CityActiveFlow2ViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if let id = segue.identifier , id == "HomeTableController" {
-            
-            self.vcCityActive = segue.destination as! CityActiveFlow2TableViewController
+            self.vcCityActive = segue.destination as? CityActiveFlow2TableViewController
         }
         
         if segue.identifier == "CityActiveFlow2"
