@@ -92,7 +92,7 @@ extension HotelCheckInController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        (UIApplication.shared.delegate as? AppDelegate)?.createNotification(type: .shuttleDriver)
+        (UIApplication.shared.delegate as? AppDelegate)?.createNotification(type: .hotelCheckIn)
     }
 }
 
