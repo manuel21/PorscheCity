@@ -58,7 +58,7 @@ class HomeTableController: UITableViewController
             else if stageIdx < 7
             {
                 cell.imageBody.image = #imageLiteral(resourceName: "imgItem1")
-                cell.title.text = "Concert"
+                cell.title.text = "Jazz Concert"
                 cell.titleDay.text = "Tonight"
             }
             else if stageIdx == 7
@@ -74,7 +74,8 @@ class HomeTableController: UITableViewController
         else
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionCell") as! CollectionCell
-            cell.images = ["imgItem1", "imgItem2", "imgItem1", "imgItem2", "imgItem1"]
+            cell.items = ["Jazz Concert", "Porsche Design"]
+            cell.images = ["imgItem1", "imgItem2"]
             return cell
         }
     }
@@ -83,9 +84,9 @@ class HomeTableController: UITableViewController
     {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let vcItinerary: PorscheValetTableViewController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
+            let vcItinerary: PorscheValetTableViewController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
 //        let vcItinerary = Storyboard.getInstanceOf(ItineraryController.self)
-        self.navigationController?.pushViewController(vcItinerary, animated: true)
+            self.navigationController?.pushViewController(vcItinerary, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat

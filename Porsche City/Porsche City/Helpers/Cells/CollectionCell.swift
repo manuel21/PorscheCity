@@ -13,8 +13,7 @@ class CollectionCell: UITableViewCell
     //MARK: OUTLETS AND VARIABLES
     @IBOutlet weak fileprivate var collection: UICollectionView!
     var images: [String]?
-    
-    fileprivate var items = ["Jazz Concert", "Porsche Design", "", "", "", "", ""]
+    var items = [String]()
     
     //MARK: LIFE CYCLE
     override func awakeFromNib()

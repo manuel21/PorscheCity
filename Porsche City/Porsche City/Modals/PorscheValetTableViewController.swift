@@ -61,20 +61,23 @@ class PorscheValetTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.row == 0 ? 350 : indexPath.row == 1 ? 150 : 200
+        return indexPath.row == 0 ? 350 : indexPath.row == 1 ? 150 : 250
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0, 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ImageViewCell") as? ImageViewCell
-        cell?.imageBody.image = UIImage(named: indexPath.row == 0 ? mapImages[state]! : stateImages[state]!)
-            return cell!
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ImageViewCell") as! ImageViewCell
+        cell.imageBody.image = UIImage(named: indexPath.row == 0 ? mapImages[state]! : stateImages[state]!)
+            
+            return cell
             
         default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionCell") as? CollectionCell
-            cell?.images = ["fuel", "clean"]
-            return cell!
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionCell") as! CollectionCell
+            cell.items = ["Premium Fuel", "Deluxe Detail"]
+            cell.images = ["fuel", "clean"]
+            
+            return cell
         }
     }
     
