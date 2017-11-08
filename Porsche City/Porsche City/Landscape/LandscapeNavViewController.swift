@@ -76,44 +76,74 @@ class LandscapeNavViewController: UIViewController
             self.collectionView.scrollToItem(at: IndexPath(item: StageIdx, section: 0), at: .centeredHorizontally, animated: true)
             self.collectionView.reloadData()
             
-            if StageIdx == 0
+            if flow == 1
             {
-                self.journeyTimer?.stopJourney()
-                self.stepCounter?.stopsMotionTimer()
-            }
-            else if StageIdx == 1
-            {
-                //Send notification
-                (UIApplication.shared.delegate as? AppDelegate)?.createNotification(type: .restaurantHost)
-                
-                guard self.manualMode == false else {return}
-                
-                //Starts journey
-                if self.journeyBySeconds == true
+                if StageIdx == 0
                 {
-                    if self.journeyTimer?.isTraveling == false
+                    self.journeyTimer?.stopJourney()
+                    self.stepCounter?.stopsMotionTimer()
+                }
+                else if StageIdx == 1
+                {
+                    //Send notification
+                    (UIApplication.shared.delegate as? AppDelegate)?.createNotification(type: .restaurantHost)
+                    
+                    guard self.manualMode == false else {return}
+                    
+                    //Starts journey
+                    if self.journeyBySeconds == true
                     {
-                        self.journeyTimer?.startJourney()
+                        if self.journeyTimer?.isTraveling == false
+                        {
+                            self.journeyTimer?.startJourney()
+                        }
+                    }
+                    else
+                    {
+                        self.stepCounter?.initPedometer()
+                    }
+                    
+                }
+                else if StageIdx == 2
+                {
+                    (UIApplication.shared.delegate as? AppDelegate)?.createNotification(type: .restaurantValet)
+                }
+                else if StageIdx == 6
+                {
+                    (UIApplication.shared.delegate as? AppDelegate)?.createNotification(type: .shuttleDriver)
+                }
+                else if StageIdx == 8
+                {
+                    self.stepCounter?.stopsMotionTimer()
+                }
+                
+            }
+            else if flow == 2
+            {
+                if StageIdx == 0
+                {
+                    self.journeyTimer?.stopJourney()
+                    self.stepCounter?.stopsMotionTimer()
+                }
+                else if StageIdx == 1
+                {
+                    guard self.manualMode == false else {return}
+                    
+                    //Starts journey
+                    if self.journeyBySeconds == true
+                    {
+                        if self.journeyTimer?.isTraveling == false
+                        {
+                            self.journeyTimer?.startJourney()
+                        }
+                    }
+                    else
+                    {
+                        self.stepCounter?.initPedometer()
                     }
                 }
-                else
-                {
-                    self.stepCounter?.initPedometer()
-                }
-                
             }
-            else if StageIdx == 2
-            {
-                (UIApplication.shared.delegate as? AppDelegate)?.createNotification(type: .restaurantValet)
-            }
-            else if StageIdx == 6
-            {
-                (UIApplication.shared.delegate as? AppDelegate)?.createNotification(type: .shuttleDriver)
-            }
-            else if StageIdx == 8
-            {
-                self.stepCounter?.stopsMotionTimer()
-            }
+            
         }
     }
     @IBOutlet weak var lblTitleDown: UIView!
@@ -277,17 +307,24 @@ class LandscapeNavViewController: UIViewController
         self.imgPerson1.image = UIImage(named:"Richard_selected")
         self.imgPerson2.image = UIImage(named:"Taylor_unselected")
         self.flow = 1
+        self.StageIdx = 0
+        self.manualMode = true
+        self.configureTimer()
+        
     }
     @objc func didChooseFlow2()
     {
         self.imgPerson2.image = UIImage(named:"Taylor_selected")
         self.imgPerson1.image = UIImage(named:"Richard_unselected")
         self.flow = 2
+        self.StageIdx = 0
+        self.manualMode = true
+        self.configureTimer()
     }
     
     fileprivate func HideBottomNavBar()
     {
-        if StageIdx != 0
+        if StageIdx != 0 && self.manualMode == false && self.journeyTimer?.isTraveling == true
         {
             self.journeyTimer?.startJourney()
         }
@@ -331,7 +368,17 @@ class LandscapeNavViewController: UIViewController
             print("Portrait")
             self.journeyTimer?.pauseJourney()
             dismiss(animated: true, completion: {
-                self.HideBottomNavBar()
+                
+                //Hide navigation bar
+                UIView.animate(withDuration: 0.4) {
+                    
+                    self.collectionView.frame.origin = CGPoint(x: 0, y: self.view.frame.height)
+                    self.collectionView.alpha = 0.0
+                    self.lblTitleDown.alpha = 1.0
+                    self.imgPerson1.isHidden = true
+                    self.imgPerson2.isHidden = true
+                    self.imgBackground.alpha = 1.0
+                }
                 self.OnDidMoveFromLandscape?(self.StageIdx)
             })
         }

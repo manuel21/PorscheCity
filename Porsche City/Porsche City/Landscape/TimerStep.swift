@@ -42,12 +42,11 @@ class TimerStep: NSObject
         if timer == nil
         {
             self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(TimerStep.checkTimeInterval), userInfo: nil, repeats: true)
-        }        
+        }
     }
     
     public func pauseJourney()
     {
-        guard self.timer != nil else {return}
         self.timer?.invalidate()
         self.timer = nil
         self.OnJourneyPaused?(self.counter)

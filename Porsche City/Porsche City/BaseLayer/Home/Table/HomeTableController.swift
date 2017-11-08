@@ -10,6 +10,7 @@ import UIKit
 
 class HomeTableController: UITableViewController
 {
+    var flow = 1
     var stageIdx = 0 {
         didSet{
             self.tableView.reloadData()
@@ -41,7 +42,7 @@ class HomeTableController: UITableViewController
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ImageViewCell") as! ImageViewCell
             cell.selectionStyle = .none
-            cell.imageBody.image = #imageLiteral(resourceName: "imgStartJoruney")
+            cell.imageBody.image = self.flow == 1 ? #imageLiteral(resourceName: "imgStartJoruney") : #imageLiteral(resourceName: "iconHomeActive")
         
             return cell
         }
@@ -51,7 +52,7 @@ class HomeTableController: UITableViewController
             cell.selectionStyle = .none
             if stageIdx == 0
             {
-                cell.imageBody.image = #imageLiteral(resourceName: "imgHomeCell")
+                cell.imageBody.image = self.flow == 1 ? #imageLiteral(resourceName: "imgTree") :#imageLiteral(resourceName: "imgHomeCell")
                 cell.title.text = "Club 993"
                 cell.titleDay.text = "This weekend"
             }
@@ -93,7 +94,14 @@ class HomeTableController: UITableViewController
     {
         if indexPath.row == 0
         {
-            return 90
+            if self.flow == 1
+            {
+                return 90
+            }
+            else
+            {
+                return self.stageIdx == 0 ? 0: 90
+            }
         }
         else if indexPath.row == 1
         {
