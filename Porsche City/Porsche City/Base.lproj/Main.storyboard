@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1R5-6x-mWv">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="hinted-PNext-Regular.ttf">
+        <array key="PNext-Regular.otf">
             <string>PNext-Regular</string>
         </array>
     </customFonts>
@@ -19,11 +19,11 @@
             <objects>
                 <viewController storyboardIdentifier="HomeController" id="BYZ-38-t0r" customClass="HomeController" customModule="Porsche_City" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="343"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JtV-cb-F6e">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="343"/>
                                 <connections>
                                     <segue destination="b3Z-Ss-96z" kind="embed" identifier="HomeTableController" id="5qC-QR-NYU"/>
                                 </connections>
@@ -52,7 +52,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="HomeTableController" id="b3Z-Ss-96z" customClass="HomeTableController" customModule="Porsche_City" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wre-XW-TTF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="343"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <connections>
@@ -70,11 +70,11 @@
             <objects>
                 <viewController storyboardIdentifier="CityActiveFlow2ViewController" id="Led-Qx-1ML" customClass="CityActiveFlow2ViewController" customModule="Porsche_City" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fvR-mm-1O7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="343"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MBn-vA-sz9">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="343"/>
                                 <connections>
                                     <segue destination="nV4-4r-oHG" kind="embed" identifier="CityActiveFlow2TableViewController" id="diE-zZ-w9A"/>
                                 </connections>
@@ -99,15 +99,15 @@
             <objects>
                 <tableViewController storyboardIdentifier="CityActiveFlow2TableViewController" id="nV4-4r-oHG" customClass="CityActiveFlow2TableViewController" customModule="Porsche_City" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="DBp-Bh-4Ke">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="343"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="xK6-35-ofj">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="667" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xK6-35-ofj" id="Z43-72-BdF">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="667" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -127,11 +127,11 @@
             <objects>
                 <viewController storyboardIdentifier="LandscapeNavViewController" id="rrn-wU-cgh" customClass="LandscapeNavViewController" customModule="Porsche_City" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PTz-20-ILl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgJ0" translatesAutoresizingMaskIntoConstraints="NO" id="akn-sS-Sus">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <color key="backgroundColor" red="0.081601329147815704" green="0.10582613199949265" blue="0.11425111442804337" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -139,7 +139,7 @@
                                 </connections>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2F6-iB-PKV">
-                                <rect key="frame" x="0.0" y="267" width="375" height="400"/>
+                                <rect key="frame" x="0.0" y="247" width="667" height="128"/>
                                 <color key="backgroundColor" red="0.093222953379154205" green="0.12144861370325089" blue="0.13403767347335815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="Ctl-ss-n4F"/>
@@ -152,7 +152,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="yVd-D9-JuU" customClass="JourneyCell" customModule="Porsche_City" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="115"/>
+                                        <rect key="frame" x="0.0" y="6.5" width="150" height="115"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="115"/>
@@ -193,13 +193,10 @@
                                 </connections>
                             </collectionView>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UyN-Q6-48t">
-                                <rect key="frame" x="0.0" y="299" width="262" height="85"/>
+                                <rect key="frame" x="0.0" y="279" width="262" height="85"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviewing itinerary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ew9-wD-3HK">
                                         <rect key="frame" x="8" y="45" width="157" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="MTC-vZ-R3N"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -207,7 +204,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBQ-sT-5ui">
                                         <rect key="frame" x="8" y="16" width="157" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="es3-z8-RsE"/>
+                                            <constraint firstAttribute="height" constant="21" id="TyU-3i-l9j"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -215,18 +212,17 @@
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="KBQ-sT-5ui" secondAttribute="trailing" constant="97" id="D91-fG-uvQ"/>
-                                    <constraint firstItem="ew9-wD-3HK" firstAttribute="trailing" secondItem="KBQ-sT-5ui" secondAttribute="trailing" id="HbZ-uY-IHA"/>
-                                    <constraint firstItem="KBQ-sT-5ui" firstAttribute="leading" secondItem="UyN-Q6-48t" secondAttribute="leading" constant="8" id="KC2-V2-P66"/>
-                                    <constraint firstItem="ew9-wD-3HK" firstAttribute="leading" secondItem="KBQ-sT-5ui" secondAttribute="leading" id="Kg9-Fx-4dV"/>
-                                    <constraint firstAttribute="height" constant="85" id="UWC-xl-hyR"/>
-                                    <constraint firstAttribute="width" constant="262" id="VEb-XH-kqo"/>
-                                    <constraint firstItem="ew9-wD-3HK" firstAttribute="top" secondItem="KBQ-sT-5ui" secondAttribute="bottom" constant="8" id="gJF-tl-wko"/>
-                                    <constraint firstItem="KBQ-sT-5ui" firstAttribute="top" secondItem="UyN-Q6-48t" secondAttribute="top" constant="16" id="xAa-XF-I9F"/>
+                                    <constraint firstItem="KBQ-sT-5ui" firstAttribute="leading" secondItem="UyN-Q6-48t" secondAttribute="leading" constant="8" id="1Jj-Hc-Dyu"/>
+                                    <constraint firstItem="ew9-wD-3HK" firstAttribute="trailing" secondItem="KBQ-sT-5ui" secondAttribute="trailing" id="9zA-pj-10N"/>
+                                    <constraint firstItem="ew9-wD-3HK" firstAttribute="top" secondItem="KBQ-sT-5ui" secondAttribute="bottom" constant="8" id="NXd-1T-7RW"/>
+                                    <constraint firstAttribute="width" constant="262" id="UJk-Xy-b0u"/>
+                                    <constraint firstItem="KBQ-sT-5ui" firstAttribute="top" secondItem="UyN-Q6-48t" secondAttribute="top" constant="16" id="WFl-ug-gSI"/>
+                                    <constraint firstAttribute="height" constant="85" id="lRs-m2-swv"/>
+                                    <constraint firstItem="ew9-wD-3HK" firstAttribute="leading" secondItem="KBQ-sT-5ui" secondAttribute="leading" id="w8s-zO-BB4"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGS-05-4VJ">
-                                <rect key="frame" x="13" y="40" width="183" height="21"/>
+                                <rect key="frame" x="13" y="20" width="183" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="C1d-lw-ynn"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="183" id="oKq-fR-kBj"/>
@@ -235,49 +231,37 @@
                                 <color key="textColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3E-4c-b3u">
-                                <rect key="frame" x="0.0" y="174" width="262" height="85"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviewing itinerary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0w-TZ-k7A">
-                                        <rect key="frame" x="8" y="45" width="224" height="30"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                        <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CP4-cN-5Qs">
-                                        <rect key="frame" x="8" y="16" width="224" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Richard_selected" translatesAutoresizingMaskIntoConstraints="NO" id="2kR-Oh-k4R">
+                                <rect key="frame" x="136" y="49" width="180" height="180"/>
                                 <constraints>
-                                    <constraint firstItem="d0w-TZ-k7A" firstAttribute="leading" secondItem="b3E-4c-b3u" secondAttribute="leading" constant="8" id="D6o-kf-2fd"/>
-                                    <constraint firstItem="d0w-TZ-k7A" firstAttribute="top" secondItem="CP4-cN-5Qs" secondAttribute="bottom" constant="8" symbolic="YES" id="PKV-JK-qTA"/>
-                                    <constraint firstItem="CP4-cN-5Qs" firstAttribute="leading" secondItem="d0w-TZ-k7A" secondAttribute="leading" id="PsS-Ca-uva"/>
-                                    <constraint firstAttribute="height" constant="85" id="d67-Jf-YuO"/>
-                                    <constraint firstAttribute="width" constant="262" id="kWu-Fs-5bw"/>
-                                    <constraint firstItem="CP4-cN-5Qs" firstAttribute="trailing" secondItem="d0w-TZ-k7A" secondAttribute="trailing" id="ow6-Em-9Tv"/>
-                                    <constraint firstItem="CP4-cN-5Qs" firstAttribute="top" secondItem="b3E-4c-b3u" secondAttribute="top" constant="16" id="vfZ-gq-Nxa"/>
+                                    <constraint firstAttribute="height" constant="180" id="QEJ-pW-Ukr"/>
+                                    <constraint firstAttribute="width" constant="180" id="WZq-hP-tnW"/>
                                 </constraints>
-                            </view>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Taylor_unselected" translatesAutoresizingMaskIntoConstraints="NO" id="kmy-mR-s5l">
+                                <rect key="frame" x="351" y="49" width="180" height="180"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.081601329147815704" green="0.10582613199949265" blue="0.11425111442804337" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="b3E-4c-b3u" firstAttribute="leading" secondItem="DyJ-JE-PN9" secondAttribute="leading" id="2l4-O7-Z2J"/>
+                            <constraint firstItem="DyJ-JE-PN9" firstAttribute="trailing" secondItem="kmy-mR-s5l" secondAttribute="trailing" constant="136" id="2EW-rd-Yri"/>
                             <constraint firstItem="lGS-05-4VJ" firstAttribute="leading" secondItem="DyJ-JE-PN9" secondAttribute="leading" constant="13" id="5DL-5p-HGh"/>
                             <constraint firstItem="2F6-iB-PKV" firstAttribute="leading" secondItem="DyJ-JE-PN9" secondAttribute="leading" id="GQp-HW-dLz"/>
-                            <constraint firstItem="b3E-4c-b3u" firstAttribute="top" secondItem="DyJ-JE-PN9" secondAttribute="top" constant="154" id="IKv-QI-BZn"/>
-                            <constraint firstItem="UyN-Q6-48t" firstAttribute="top" secondItem="b3E-4c-b3u" secondAttribute="bottom" constant="40" id="NgZ-Ft-Uj8"/>
+                            <constraint firstItem="2kR-Oh-k4R" firstAttribute="top" secondItem="DyJ-JE-PN9" secondAttribute="top" constant="49" id="M6Y-M8-ftW"/>
+                            <constraint firstItem="UyN-Q6-48t" firstAttribute="leading" secondItem="DyJ-JE-PN9" secondAttribute="leading" id="PZM-Ed-tck"/>
+                            <constraint firstItem="kmy-mR-s5l" firstAttribute="top" secondItem="DyJ-JE-PN9" secondAttribute="top" constant="49" id="VXg-iw-PFD"/>
                             <constraint firstItem="akn-sS-Sus" firstAttribute="trailing" secondItem="DyJ-JE-PN9" secondAttribute="trailing" id="Xm9-fL-apj"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lGS-05-4VJ" secondAttribute="trailing" constant="20" symbolic="YES" id="ZSf-hj-SQ7"/>
                             <constraint firstItem="akn-sS-Sus" firstAttribute="leading" secondItem="DyJ-JE-PN9" secondAttribute="leading" id="b6c-tm-3V5"/>
+                            <constraint firstItem="2kR-Oh-k4R" firstAttribute="leading" secondItem="DyJ-JE-PN9" secondAttribute="leading" constant="136" id="bNW-Rm-oJ9"/>
                             <constraint firstItem="lGS-05-4VJ" firstAttribute="top" secondItem="DyJ-JE-PN9" secondAttribute="top" constant="20" id="cLc-AH-UoY"/>
                             <constraint firstItem="2F6-iB-PKV" firstAttribute="bottom" secondItem="DyJ-JE-PN9" secondAttribute="bottom" id="fkD-EZ-pcs"/>
+                            <constraint firstItem="kmy-mR-s5l" firstAttribute="width" secondItem="2kR-Oh-k4R" secondAttribute="width" id="fmn-hH-BxY"/>
+                            <constraint firstItem="kmy-mR-s5l" firstAttribute="leading" secondItem="2kR-Oh-k4R" secondAttribute="trailing" constant="35" id="jOD-RR-ASu"/>
+                            <constraint firstItem="kmy-mR-s5l" firstAttribute="height" secondItem="2kR-Oh-k4R" secondAttribute="height" id="jXr-Tb-Tcv"/>
+                            <constraint firstItem="DyJ-JE-PN9" firstAttribute="bottom" secondItem="UyN-Q6-48t" secondAttribute="bottom" constant="11" id="jeQ-Xa-c4w"/>
                             <constraint firstItem="akn-sS-Sus" firstAttribute="bottom" secondItem="DyJ-JE-PN9" secondAttribute="bottom" id="kZC-UA-5CL"/>
                             <constraint firstItem="akn-sS-Sus" firstAttribute="top" secondItem="DyJ-JE-PN9" secondAttribute="top" id="koQ-p4-67T"/>
-                            <constraint firstItem="UyN-Q6-48t" firstAttribute="leading" secondItem="DyJ-JE-PN9" secondAttribute="leading" id="qOs-hz-Ek4"/>
-                            <constraint firstItem="2F6-iB-PKV" firstAttribute="top" secondItem="b3E-4c-b3u" secondAttribute="bottom" constant="8" id="tAK-p5-f5l"/>
                             <constraint firstItem="2F6-iB-PKV" firstAttribute="trailing" secondItem="DyJ-JE-PN9" secondAttribute="trailing" id="uCC-no-Mbl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DyJ-JE-PN9"/>
@@ -285,8 +269,9 @@
                     <connections>
                         <outlet property="collectionView" destination="2F6-iB-PKV" id="6BN-uk-7zJ"/>
                         <outlet property="imgBackground" destination="akn-sS-Sus" id="B6k-Es-jEp"/>
+                        <outlet property="imgPerson1" destination="2kR-Oh-k4R" id="Zwd-uf-reo"/>
+                        <outlet property="imgPerson2" destination="kmy-mR-s5l" id="UoI-gs-jsF"/>
                         <outlet property="lblSteps" destination="lGS-05-4VJ" id="Mxm-zb-Z3P"/>
-                        <outlet property="lblTitle" destination="b3E-4c-b3u" id="l4P-O6-oOs"/>
                         <outlet property="lblTitleDown" destination="UyN-Q6-48t" id="Vov-cK-Mmh"/>
                     </connections>
                 </viewController>
@@ -304,13 +289,13 @@
             <objects>
                 <viewController storyboardIdentifier="ConfigurationController" id="rFj-Rc-JYs" customClass="ConfigurationController" customModule="Porsche_City" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VcU-wW-Nal">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QNg-b7-pYc">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="1K1-FE-o8P">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5r-Td-ozD">
@@ -462,7 +447,7 @@
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="grv-Z0-9IH">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -479,17 +464,17 @@
             <objects>
                 <viewController storyboardIdentifier="ProfileController" id="G8i-nD-b7O" customClass="ProfileController" customModule="Porsche_City" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8OX-mB-GYo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="343"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SAa-uY-uc5">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="520"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="260"/>
                                 <connections>
                                     <segue destination="xat-Ay-bHn" kind="embed" identifier="ProfileTableController" id="jcp-tE-b5P"/>
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxr-Wy-Ep7">
-                                <rect key="frame" x="16" y="528" width="343" height="55"/>
+                                <rect key="frame" x="16" y="268" width="635" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="awh-yX-cJm"/>
                                 </constraints>
@@ -526,7 +511,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="ProfileTableController" id="xat-Ay-bHn" customClass="ProfileTableController" customModule="Porsche_City" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="RcY-Rz-rQQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="520"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="260"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <connections>
@@ -544,11 +529,11 @@
             <objects>
                 <viewController storyboardIdentifier="PreferencesController" id="Rcr-Iv-eZL" customClass="PreferencesController" customModule="Porsche_City" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="55e-zX-ddH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="343"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TvI-vo-s0M">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="343"/>
                                 <connections>
                                     <segue destination="z3e-j7-8XS" kind="embed" identifier="PreferencesTableController" id="BpZ-ZP-wBt"/>
                                 </connections>
@@ -575,7 +560,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="PreferencesTableController" id="z3e-j7-8XS" customClass="PreferencesTableController" customModule="Porsche_City" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Vfl-WC-FCb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="343"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <connections>
@@ -593,11 +578,11 @@
             <objects>
                 <viewController storyboardIdentifier="CitySelectionController" id="5f4-ho-uP4" customClass="CitySelectionController" customModule="Porsche_City" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qM5-I1-5S6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="343"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1vJ-Vn-BFk">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="343"/>
                                 <connections>
                                     <segue destination="tyD-iS-Mio" kind="embed" identifier="CitySelectionTableController" id="cYj-Ay-G76"/>
                                 </connections>
@@ -624,7 +609,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="CitySelectionTableController" id="tyD-iS-Mio" customClass="CitySelectionTableController" customModule="Porsche_City" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NGz-Sx-cKn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="343"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <connections>
@@ -642,11 +627,11 @@
             <objects>
                 <viewController storyboardIdentifier="ItineraryController" id="xFl-gp-lr8" customClass="ItineraryController" customModule="Porsche_City" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i5N-FF-HaX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="343"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sk5-Vn-hTR">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="343"/>
                                 <connections>
                                     <segue destination="ERs-jF-IFT" kind="embed" identifier="ItineraryTableController" id="PTR-dj-BXt"/>
                                 </connections>
@@ -673,7 +658,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="ItineraryTableController" id="ERs-jF-IFT" customClass="ItineraryTableController" customModule="Porsche_City" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LLF-EK-dqY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="343"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <connections>
@@ -688,6 +673,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Richard_selected" width="592" height="596"/>
+        <image name="Taylor_unselected" width="676" height="680"/>
         <image name="imgJ0" width="2001" height="1125"/>
     </resources>
 </document>
