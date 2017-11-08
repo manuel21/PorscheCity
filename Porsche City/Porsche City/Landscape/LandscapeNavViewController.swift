@@ -14,6 +14,9 @@ class LandscapeNavViewController: UIViewController
     //MARK: Variables and outlets
     
     //FLOW
+    var onChangeFlow:((_ flow:Int)->())?    
+    @IBOutlet weak var imgPerson1: UIImageView!
+    @IBOutlet weak var imgPerson2: UIImageView!
     var flow = 1 {
         didSet{
             self.imgsJourney.removeAll()
@@ -26,21 +29,20 @@ class LandscapeNavViewController: UIViewController
                 imgTitles.forEach { (title) in
                     self.imgsJourney.append(UIImage(named:title) ?? UIImage())
                 }
-                imgTitles = ["imgDefaultBackground","imgJ1","imgJ2","imgJ3","imgJ4","imgJ5","imgJ6","imgJ7","imgJ8"]
+                imgTitles = ["imgJ0","imgJ1","imgJ2","imgJ3","imgJ4","imgJ5","imgJ6","imgJ7","imgJ8"]
                 imgTitles.forEach { (title) in
                     self.imgsBottomNav.append(UIImage(named:title) ?? UIImage())
                 }
             }
             else
             {
-                
                 //Journey images
                 var imgTitles = ["imgJ0","imgJ1","imgJ2_flow2","imgJ3_flow2","imgJ4_flow2","imgJ5_flow2","imgJ6_flow2"]
                 imgTitles.forEach { (title) in
                     self.imgsJourney.append(UIImage(named:title) ?? UIImage())
                 }
                 
-                imgTitles = ["imgDefaultBackground","imgJ1","imgJ2_flow2","imgJ3_flow2","imgJ4_flow2","imgJ5_flow2","imgJ6_flow2"]
+                imgTitles = ["imgJ0","imgJ1","imgJ2_flow2","imgJ3_flow2","imgJ4_flow2","imgJ5_flow2","imgJ6_flow2"]
                 imgTitles.forEach { (title) in
                     self.imgsBottomNav.append(UIImage(named:title) ?? UIImage())
                 }
@@ -48,7 +50,10 @@ class LandscapeNavViewController: UIViewController
             self.collectionView.reloadData()
         }
     }
-    var onChangeFlow:((_ flow:Int)->())?
+    
+    
+    
+    
     //Bottom Navigation Menu
     var imgsJourney = [UIImage]()
     var imgsBottomNav = [UIImage]()
@@ -82,6 +87,7 @@ class LandscapeNavViewController: UIViewController
                 (UIApplication.shared.delegate as? AppDelegate)?.createNotification(type: .restaurantHost)
                 
                 guard self.manualMode == false else {return}
+                
                 //Starts journey
                 if self.journeyBySeconds == true
                 {
@@ -110,7 +116,6 @@ class LandscapeNavViewController: UIViewController
             }
         }
     }
-    @IBOutlet weak var lblTitle: UIView!    
     @IBOutlet weak var lblTitleDown: UIView!
     
     //Movement    
@@ -121,6 +126,7 @@ class LandscapeNavViewController: UIViewController
     
     //Step counter
     var stepCounter: StepCounter?
+    
     //Callbacks
     var OnDidMoveFromLandscape:((_ stage: Int)->())?
     
@@ -154,15 +160,23 @@ class LandscapeNavViewController: UIViewController
         NotificationCenter.default.addObserver(self, selector: #selector(LandscapeNavViewController.OnRotation), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
         
         //Set gesture recognizers
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.moveLeft))
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.moveRight))
+        let tapOnPerson1 = UITapGestureRecognizer(target: self, action: #selector(self.didChooseFlow1))
+        let tapOnPerson2 = UITapGestureRecognizer(target: self, action: #selector(self.didChooseFlow2))
+        swipeLeft.direction = .left
+        swipeRight.direction = .right
         self.imgBackground.isUserInteractionEnabled = true
         self.imgBackground.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.OnMainScreenPressed)))
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.moveLeft))
-        swipeLeft.direction = .left
         self.imgBackground.addGestureRecognizer(swipeLeft)
-        
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.moveRight))
-        swipeRight.direction = .right
         self.imgBackground.addGestureRecognizer(swipeRight)
+        self.imgPerson1.isUserInteractionEnabled = true
+        self.imgPerson2.isUserInteractionEnabled = true
+        self.imgPerson1.addGestureRecognizer(tapOnPerson1)
+        self.imgPerson2.addGestureRecognizer(tapOnPerson2)
+        self.imgPerson1.isHidden = true
+        self.imgPerson2.isHidden = true
+        
         //Journey images
         var imgTitles = ["imgJ0","imgJ1","imgJ2","imgJ3","imgJ4","imgJ5","imgJ6","imgJ7","imgJ8"]
         imgTitles.forEach { (title) in
@@ -176,7 +190,7 @@ class LandscapeNavViewController: UIViewController
         self.origin = self.collectionView.frame.origin.y
         self.initialNavBarHeight = self.collectionView.frame.height
         
-        //Configuration
+        //Configuration Control
         self.vcConfig = Storyboard.getInstanceFromStoryboard("Main")
         self.vcConfig?.onSetConfiguration = { seconds, steps in
             self.manualMode = false
@@ -197,10 +211,9 @@ class LandscapeNavViewController: UIViewController
         }
         //Hide steps
         self.lblSteps.isHidden = true
+        
         //Hide nav bar
         self.HideBottomNavBar()
-        
-        self.lblTitle.isHidden = true
     }
     
     fileprivate func configureStepCounter()
@@ -259,26 +272,50 @@ class LandscapeNavViewController: UIViewController
         self.StageIdx -= 1
         self.collectionView.selectItem(at: IndexPath(item: self.StageIdx, section: 0), animated: true, scrollPosition: .centeredHorizontally)
     }
+    @objc func didChooseFlow1()
+    {
+        self.imgPerson1.image = UIImage(named:"Richard_selected")
+        self.imgPerson2.image = UIImage(named:"Taylor_unselected")
+        self.flow = 1
+    }
+    @objc func didChooseFlow2()
+    {
+        self.imgPerson2.image = UIImage(named:"Taylor_selected")
+        self.imgPerson1.image = UIImage(named:"Richard_unselected")
+        self.flow = 2
+    }
     
     fileprivate func HideBottomNavBar()
     {
+        if StageIdx != 0
+        {
+            self.journeyTimer?.startJourney()
+        }
+        
+        //Update screen
         UIView.animate(withDuration: 0.4) {
             
             self.collectionView.frame.origin = CGPoint(x: 0, y: self.view.frame.height)
-            self.lblTitle.alpha = 0.0
-            self.lblTitleDown.alpha = 1.0
             self.collectionView.alpha = 0.0
+            self.lblTitleDown.alpha = 1.0
+            self.imgPerson1.isHidden = true
+            self.imgPerson2.isHidden = true
+            self.imgBackground.alpha = 1.0
         }
     }
     
     fileprivate func ShowBottomNavBar()
     {
+        self.journeyTimer?.pauseJourney()
+        //Update screen
         self.collectionView.scrollToItem(at: IndexPath(item: StageIdx, section: 0), at: .centeredHorizontally, animated: true)
         UIView.animate(withDuration: 0.4) {
             self.collectionView.alpha = 1.0
-            self.lblTitle.alpha = 1.0
-            self.lblTitleDown.alpha = 0.0
             self.collectionView.frame.origin = CGPoint(x: 0, y: self.origin)
+            self.lblTitleDown.alpha = 0.0
+            self.imgPerson1.isHidden = false
+            self.imgPerson2.isHidden = false
+            self.imgBackground.alpha = 0.5
         }
     }
     
@@ -309,8 +346,7 @@ class LandscapeNavViewController: UIViewController
             self.imgBackground.alpha = 1.0
         }
         
-        //UI particular updates
-        self.lblTitle.isHidden = StageIdx == 0 ? false : true
+        //UI particular updates        
         self.lblTitleDown.isHidden = StageIdx == 0 ? false : true
     }    
 }
