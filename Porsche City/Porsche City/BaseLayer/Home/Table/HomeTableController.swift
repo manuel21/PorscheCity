@@ -67,6 +67,7 @@ class HomeTableController: UITableViewController
         else
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionCell") as! CollectionCell
+            cell.images = ["imgItem1", "imgItem2", "imgItem1", "imgItem2", "imgItem1"]
             return cell
         }
     }
@@ -75,7 +76,8 @@ class HomeTableController: UITableViewController
     {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let vcItinerary = Storyboard.getInstanceOf(ItineraryController.self)
+        let vcItinerary: PorscheValetTableViewController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
+//        let vcItinerary = Storyboard.getInstanceOf(ItineraryController.self)
         self.navigationController?.pushViewController(vcItinerary, animated: true)
     }
     

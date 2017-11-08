@@ -12,6 +12,7 @@ class CollectionCell: UITableViewCell
 {    
     //MARK: OUTLETS AND VARIABLES
     @IBOutlet weak fileprivate var collection: UICollectionView!
+    var images: [String]?
     
     //MARK: LIFE CYCLE
     override func awakeFromNib()
@@ -50,13 +51,14 @@ extension CollectionCell: UICollectionViewDelegate, UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return 5
+        return images?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "horizontalItem", for: indexPath) as! horizontalItem
-        cell.icon.image = indexPath.item % 2 == 0 ? #imageLiteral(resourceName: "imgItem1") : #imageLiteral(resourceName: "imgItem2")
+        cell.icon.image = UIImage(named: images![indexPath.row])
+//        cell.icon.image = indexPath.item % 2 == 0 ? #imageLiteral(resourceName: "imgItem1") : #imageLiteral(resourceName: "imgItem2")
         
         return cell
     }
