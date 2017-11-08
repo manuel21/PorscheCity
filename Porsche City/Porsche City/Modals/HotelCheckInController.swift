@@ -12,6 +12,9 @@ class HotelCheckInController: UIViewController
 {
     //MARK: PROPERTIES & OUTLETS
     @IBOutlet weak fileprivate var collection: UICollectionView!
+    fileprivate var items = ["Luggage Delivery", "Premium Fuel"]
+    fileprivate var images = ["item5", "imgItem4"]
+
     
     //MARK: LIFE CYCLE
     override func viewDidLoad()
@@ -52,7 +55,7 @@ class HotelCheckInController: UIViewController
         layout.minimumInteritemSpacing = 10
         layout.minimumLineSpacing = 10
         layout.sectionInset = UIEdgeInsets(top: 1, left: 8, bottom: 1, right: 8)
-        layout.itemSize = CGSize(width:  250, height: 200)
+        layout.itemSize = CGSize(width:  300, height: 200)
         
         self.collection.collectionViewLayout = layout
         self.collection.register(UINib(nibName: "horizontalItem", bundle: nil), forCellWithReuseIdentifier: "horizontalItem")
@@ -80,13 +83,14 @@ extension HotelCheckInController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return 4
+        return self.items.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "horizontalItem", for: indexPath) as! horizontalItem
-        cell.icon.image = indexPath.item % 2 == 0 ? #imageLiteral(resourceName: "item5") : #imageLiteral(resourceName: "imgItem4")
+        cell.icon.image = UIImage(named: self.images[indexPath.item])
+        cell.title.text = self.items[indexPath.item]
         
         return cell
     }
