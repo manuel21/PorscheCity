@@ -139,7 +139,7 @@ extension UIView
         self.layer.borderWidth = width
     }
     
-    func setBorder(_ width: CGFloat, color: UIColor, cornerRadius: Bool)
+    func setBorder(_ width: CGFloat = 1, color: UIColor = UIColor.groupTableViewBackground, cornerRadius: Bool)
     {
         self.layer.borderColor = color.cgColor
         self.layer.borderWidth = width

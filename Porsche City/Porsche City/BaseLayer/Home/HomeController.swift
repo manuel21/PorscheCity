@@ -30,6 +30,11 @@ class HomeController: UIViewController
         self.navigationController?.navigationBar.addGestureRecognizer(ActionsTapGestureRecognizer(onTap: {
             
             let vcSelection = Storyboard.getInstanceOf(CitySelectionController.self)
+            vcSelection.onSelectedCity = { city in
+                
+                self.title = city
+            }
+            
             let navBar = NavyController(rootViewController: vcSelection)
             
             self.present(navBar, animated: true, completion: nil)

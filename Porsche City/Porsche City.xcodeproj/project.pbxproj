@@ -57,6 +57,22 @@
 		FFB1EE251FA7DC470022D685 /* horizontalItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB1EE231FA7DC470022D685 /* horizontalItem.swift */; };
 		FFB1EE261FA7DC470022D685 /* horizontalItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB1EE241FA7DC470022D685 /* horizontalItem.xib */; };
 		FFBC69061FABFFCE008AE1C9 /* CheckoutSuccessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC69051FABFFCE008AE1C9 /* CheckoutSuccessController.swift */; };
+		FFBD2AB21FB2ABEB00367D5C /* PNext-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FFBD2AA61FB2ABEB00367D5C /* PNext-Regular.otf */; };
+		FFBD2AB31FB2ABEB00367D5C /* PNextTT-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFBD2AA71FB2ABEB00367D5C /* PNextTT-Regular.ttf */; };
+		FFBD2AB41FB2ABEB00367D5C /* PNextTT-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFBD2AA81FB2ABEB00367D5C /* PNextTT-Italic.ttf */; };
+		FFBD2AB51FB2ABEB00367D5C /* hinted-PNext-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFBD2AA91FB2ABEB00367D5C /* hinted-PNext-Regular.ttf */; };
+		FFBD2AB61FB2ABEB00367D5C /* hinted-PNextTT-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFBD2AAA1FB2ABEB00367D5C /* hinted-PNextTT-Bold.ttf */; };
+		FFBD2AB71FB2ABEB00367D5C /* hinted-PNextTT-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFBD2AAB1FB2ABEB00367D5C /* hinted-PNextTT-Italic.ttf */; };
+		FFBD2AB81FB2ABEB00367D5C /* PNext-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = FFBD2AAC1FB2ABEB00367D5C /* PNext-ThinItalic.otf */; };
+		FFBD2AB91FB2ABEB00367D5C /* PNextTT-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFBD2AAD1FB2ABEB00367D5C /* PNextTT-ThinItalic.ttf */; };
+		FFBD2ABA1FB2ABEB00367D5C /* PNextTT-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFBD2AAE1FB2ABEB00367D5C /* PNextTT-BoldItalic.ttf */; };
+		FFBD2ABB1FB2ABEB00367D5C /* PNext-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = FFBD2AAF1FB2ABEB00367D5C /* PNext-Thin.otf */; };
+		FFBD2ABC1FB2ABEB00367D5C /* PNextTT-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFBD2AB01FB2ABEB00367D5C /* PNextTT-Thin.ttf */; };
+		FFBD2ABD1FB2ABEB00367D5C /* PNextTT-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFBD2AB11FB2ABEB00367D5C /* PNextTT-Bold.ttf */; };
+		FFBD2AC01FB2B32500367D5C /* ImageViewTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBD2ABE1FB2B32500367D5C /* ImageViewTextCell.swift */; };
+		FFBD2AC11FB2B32500367D5C /* ImageViewTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFBD2ABF1FB2B32500367D5C /* ImageViewTextCell.xib */; };
+		FFBD2AC41FB2B8E000367D5C /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBD2AC21FB2B8E000367D5C /* HomeCell.swift */; };
+		FFBD2AC51FB2B8E000367D5C /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFBD2AC31FB2B8E000367D5C /* HomeCell.xib */; };
 		FFC0EAA41FA7E10200C4ED9F /* CollectionCell_Clone.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFC0EAA21FA7E10200C4ED9F /* CollectionCell_Clone.xib */; };
 		FFC0EAA51FA7E10200C4ED9F /* CollectionCell_Clone.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC0EAA31FA7E10200C4ED9F /* CollectionCell_Clone.swift */; };
 /* End PBXBuildFile section */
@@ -157,6 +173,22 @@
 		FFB1EE231FA7DC470022D685 /* horizontalItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = horizontalItem.swift; sourceTree = "<group>"; };
 		FFB1EE241FA7DC470022D685 /* horizontalItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = horizontalItem.xib; sourceTree = "<group>"; };
 		FFBC69051FABFFCE008AE1C9 /* CheckoutSuccessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutSuccessController.swift; sourceTree = "<group>"; };
+		FFBD2AA61FB2ABEB00367D5C /* PNext-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PNext-Regular.otf"; sourceTree = "<group>"; };
+		FFBD2AA71FB2ABEB00367D5C /* PNextTT-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PNextTT-Regular.ttf"; sourceTree = "<group>"; };
+		FFBD2AA81FB2ABEB00367D5C /* PNextTT-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PNextTT-Italic.ttf"; sourceTree = "<group>"; };
+		FFBD2AA91FB2ABEB00367D5C /* hinted-PNext-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "hinted-PNext-Regular.ttf"; sourceTree = "<group>"; };
+		FFBD2AAA1FB2ABEB00367D5C /* hinted-PNextTT-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "hinted-PNextTT-Bold.ttf"; sourceTree = "<group>"; };
+		FFBD2AAB1FB2ABEB00367D5C /* hinted-PNextTT-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "hinted-PNextTT-Italic.ttf"; sourceTree = "<group>"; };
+		FFBD2AAC1FB2ABEB00367D5C /* PNext-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PNext-ThinItalic.otf"; sourceTree = "<group>"; };
+		FFBD2AAD1FB2ABEB00367D5C /* PNextTT-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PNextTT-ThinItalic.ttf"; sourceTree = "<group>"; };
+		FFBD2AAE1FB2ABEB00367D5C /* PNextTT-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PNextTT-BoldItalic.ttf"; sourceTree = "<group>"; };
+		FFBD2AAF1FB2ABEB00367D5C /* PNext-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PNext-Thin.otf"; sourceTree = "<group>"; };
+		FFBD2AB01FB2ABEB00367D5C /* PNextTT-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PNextTT-Thin.ttf"; sourceTree = "<group>"; };
+		FFBD2AB11FB2ABEB00367D5C /* PNextTT-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PNextTT-Bold.ttf"; sourceTree = "<group>"; };
+		FFBD2ABE1FB2B32500367D5C /* ImageViewTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewTextCell.swift; sourceTree = "<group>"; };
+		FFBD2ABF1FB2B32500367D5C /* ImageViewTextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageViewTextCell.xib; sourceTree = "<group>"; };
+		FFBD2AC21FB2B8E000367D5C /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		FFBD2AC31FB2B8E000367D5C /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		FFC0EAA21FA7E10200C4ED9F /* CollectionCell_Clone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionCell_Clone.xib; sourceTree = "<group>"; };
 		FFC0EAA31FA7E10200C4ED9F /* CollectionCell_Clone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell_Clone.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -282,6 +314,7 @@
 		FF840B9F1FA79A0A00C63159 /* Porsche City */ = {
 			isa = PBXGroup;
 			children = (
+				FFBD2AA51FB2ABEB00367D5C /* PorscheFonts */,
 				5666A2DA1FAE28F70074BB56 /* Utils */,
 				56313D8B1FAC03F200336AF0 /* Controls */,
 				8E0C69121FAA23C00054397F /* Landscape */,
@@ -420,8 +453,31 @@
 				FFB1EE241FA7DC470022D685 /* horizontalItem.xib */,
 				FFB1EE1B1FA7DBB50022D685 /* ImageViewCell.swift */,
 				FFB1EE1C1FA7DBB50022D685 /* ImageViewCell.xib */,
+				FFBD2ABE1FB2B32500367D5C /* ImageViewTextCell.swift */,
+				FFBD2ABF1FB2B32500367D5C /* ImageViewTextCell.xib */,
+				FFBD2AC21FB2B8E000367D5C /* HomeCell.swift */,
+				FFBD2AC31FB2B8E000367D5C /* HomeCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		FFBD2AA51FB2ABEB00367D5C /* PorscheFonts */ = {
+			isa = PBXGroup;
+			children = (
+				FFBD2AA61FB2ABEB00367D5C /* PNext-Regular.otf */,
+				FFBD2AA71FB2ABEB00367D5C /* PNextTT-Regular.ttf */,
+				FFBD2AA81FB2ABEB00367D5C /* PNextTT-Italic.ttf */,
+				FFBD2AA91FB2ABEB00367D5C /* hinted-PNext-Regular.ttf */,
+				FFBD2AAA1FB2ABEB00367D5C /* hinted-PNextTT-Bold.ttf */,
+				FFBD2AAB1FB2ABEB00367D5C /* hinted-PNextTT-Italic.ttf */,
+				FFBD2AAC1FB2ABEB00367D5C /* PNext-ThinItalic.otf */,
+				FFBD2AAD1FB2ABEB00367D5C /* PNextTT-ThinItalic.ttf */,
+				FFBD2AAE1FB2ABEB00367D5C /* PNextTT-BoldItalic.ttf */,
+				FFBD2AAF1FB2ABEB00367D5C /* PNext-Thin.otf */,
+				FFBD2AB01FB2ABEB00367D5C /* PNextTT-Thin.ttf */,
+				FFBD2AB11FB2ABEB00367D5C /* PNextTT-Bold.ttf */,
+			);
+			path = PorscheFonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -547,14 +603,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFBD2AB41FB2ABEB00367D5C /* PNextTT-Italic.ttf in Resources */,
+				FFBD2ABA1FB2ABEB00367D5C /* PNextTT-BoldItalic.ttf in Resources */,
+				FFBD2ABB1FB2ABEB00367D5C /* PNext-Thin.otf in Resources */,
+				FFBD2ABC1FB2ABEB00367D5C /* PNextTT-Thin.ttf in Resources */,
 				FF6002C01FA808C40055782D /* Modals.storyboard in Resources */,
+				FFBD2AB81FB2ABEB00367D5C /* PNext-ThinItalic.otf in Resources */,
+				FFBD2AB71FB2ABEB00367D5C /* hinted-PNextTT-Italic.ttf in Resources */,
 				FFB1EE1E1FA7DBB50022D685 /* ImageViewCell.xib in Resources */,
+				FFBD2AC51FB2B8E000367D5C /* HomeCell.xib in Resources */,
 				FF840BAB1FA79A0A00C63159 /* LaunchScreen.storyboard in Resources */,
 				FFC0EAA41FA7E10200C4ED9F /* CollectionCell_Clone.xib in Resources */,
+				FFBD2AB61FB2ABEB00367D5C /* hinted-PNextTT-Bold.ttf in Resources */,
+				FFBD2AC11FB2B32500367D5C /* ImageViewTextCell.xib in Resources */,
 				FFB1EE261FA7DC470022D685 /* horizontalItem.xib in Resources */,
 				FF840BA81FA79A0A00C63159 /* Assets.xcassets in Resources */,
+				FFBD2ABD1FB2ABEB00367D5C /* PNextTT-Bold.ttf in Resources */,
 				FFB1EE221FA7DC310022D685 /* CollectionCell.xib in Resources */,
 				FF840BA61FA79A0A00C63159 /* Main.storyboard in Resources */,
+				FFBD2AB21FB2ABEB00367D5C /* PNext-Regular.otf in Resources */,
+				FFBD2AB31FB2ABEB00367D5C /* PNextTT-Regular.ttf in Resources */,
+				FFBD2AB51FB2ABEB00367D5C /* hinted-PNext-Regular.ttf in Resources */,
+				FFBD2AB91FB2ABEB00367D5C /* PNextTT-ThinItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,6 +665,7 @@
 				FF6002C21FA81D500055782D /* ActionsTapGestureRecognizer.swift in Sources */,
 				8E0C69161FAA3F1E0054397F /* JourneyCell.swift in Sources */,
 				FFB040751FA7A7B900038E18 /* ProfileTableController.swift in Sources */,
+				FFBD2AC01FB2B32500367D5C /* ImageViewTextCell.swift in Sources */,
 				56313D8D1FAC03F300336AF0 /* Toast.swift in Sources */,
 				FFB040661FA7A5B100038E18 /* ItineraryController.swift in Sources */,
 				FFB040601FA7A58500038E18 /* PreferencesController.swift in Sources */,
@@ -609,6 +680,7 @@
 				FFB0405E1FA7A51A00038E18 /* HomeController.swift in Sources */,
 				FFB1EE1D1FA7DBB50022D685 /* ImageViewCell.swift in Sources */,
 				FFB040621FA7A59700038E18 /* CitySelectionController.swift in Sources */,
+				FFBD2AC41FB2B8E000367D5C /* HomeCell.swift in Sources */,
 				FF6002B91FA807BE0055782D /* HotelCheckInController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

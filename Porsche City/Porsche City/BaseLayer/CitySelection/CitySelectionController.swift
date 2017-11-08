@@ -12,6 +12,7 @@ class CitySelectionController: UIViewController
 {
     //MARK: PROPERTIES & OUTLETS
     fileprivate var vcTable: CitySelectionTableController!
+    var onSelectedCity:((_ city: String) -> ())?
     
     //MARK: LIFE CYCLE
     override func viewDidLoad()
@@ -69,6 +70,11 @@ class CitySelectionController: UIViewController
         if let id = segue.identifier , id == "CitySelectionTableController" {
             
             self.vcTable = segue.destination as! CitySelectionTableController
+            self.vcTable.onSelect = {
+                
+                self.onSelectedCity?(self.vcTable.selectedCity)
+                self.close()
+            }
         }
     }
 }

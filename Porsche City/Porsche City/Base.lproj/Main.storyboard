@@ -8,6 +8,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="hinted-PNext-Regular.ttf">
+            <string>PNext-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Home Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -406,6 +411,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="awh-yX-cJm"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="PNext-Regular" family="PNext" pointSize="18"/>
                                 <state key="normal" title="Logout">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
