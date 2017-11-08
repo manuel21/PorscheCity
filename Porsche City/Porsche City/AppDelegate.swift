@@ -60,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             }
             else
             {
-                print("SMS sent with response null")
+                print(error?.localizedDescription)
             }
         }
     }
