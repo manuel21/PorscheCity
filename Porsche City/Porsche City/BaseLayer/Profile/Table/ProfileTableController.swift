@@ -32,6 +32,7 @@ class ProfileTableController: UITableViewController
         let cell = UITableViewCell(style: .default, reuseIdentifier:"Cell")
         cell.accessoryType = .disclosureIndicator
         cell.textLabel?.textColor = .darkGray
+        cell.textLabel?.font = UIFont(name: "PNext-Regular", size: 18)
         cell.textLabel?.text = self.options[indexPath.row]
         
         return cell

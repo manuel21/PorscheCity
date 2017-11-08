@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="hinted-PNext-Regular.ttf">
+            <string>PNext-Regular</string>
+        </array>
+        <array key="hinted-PNextTT-Bold.ttf">
+            <string>PNextTT-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeCell" id="KGk-i7-Jjw" customClass="HomeCell" customModule="Porsche_City" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="299.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This Weekend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoK-eh-JBK">
+                        <rect key="frame" x="16" y="18" width="250" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="fCz-qE-0PA"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="PNextTT-Bold" family="PNext TT" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pGv-wu-AxS">
+                        <rect key="frame" x="16" y="61" width="288" height="228"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgHomeCell" translatesAutoresizingMaskIntoConstraints="NO" id="rqx-Jo-dcm">
+                                <rect key="frame" x="0.0" y="0.0" width="288" height="176"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Club 993" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vz-On-kWr">
+                                <rect key="frame" x="11" y="184" width="277" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="HUc-UZ-EnE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PNext-Regular" family="PNext" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconRate" translatesAutoresizingMaskIntoConstraints="NO" id="wGb-zM-ybQ">
+                                <rect key="frame" x="215" y="197" width="65" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="O6I-I3-RmI"/>
+                                    <constraint firstAttribute="height" constant="19" id="g0h-S2-Rb8"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wGb-zM-ybQ" firstAttribute="centerY" secondItem="6vz-On-kWr" secondAttribute="centerY" id="O5a-Iu-8Zv"/>
+                            <constraint firstItem="rqx-Jo-dcm" firstAttribute="top" secondItem="pGv-wu-AxS" secondAttribute="top" id="RPr-Pw-SLT"/>
+                            <constraint firstAttribute="bottom" secondItem="6vz-On-kWr" secondAttribute="bottom" id="VTl-Si-6df"/>
+                            <constraint firstItem="6vz-On-kWr" firstAttribute="top" secondItem="rqx-Jo-dcm" secondAttribute="bottom" constant="8" id="YTK-xf-xDH"/>
+                            <constraint firstAttribute="trailing" secondItem="wGb-zM-ybQ" secondAttribute="trailing" constant="8" id="fDL-rW-4U3"/>
+                            <constraint firstAttribute="trailing" secondItem="6vz-On-kWr" secondAttribute="trailing" id="fU9-c9-bSU"/>
+                            <constraint firstAttribute="trailing" secondItem="rqx-Jo-dcm" secondAttribute="trailing" id="hde-sw-m85"/>
+                            <constraint firstItem="6vz-On-kWr" firstAttribute="leading" secondItem="pGv-wu-AxS" secondAttribute="leading" constant="11" id="lGt-B7-75S"/>
+                            <constraint firstItem="rqx-Jo-dcm" firstAttribute="leading" secondItem="pGv-wu-AxS" secondAttribute="leading" id="vLG-sO-Igv"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xVV-HK-VfV">
+                        <rect key="frame" x="274" y="25" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="9Jk-Ae-Rkr"/>
+                            <constraint firstAttribute="width" constant="30" id="yv0-Tf-IRH"/>
+                        </constraints>
+                        <state key="normal" image="iconFilters"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="pGv-wu-AxS" firstAttribute="top" secondItem="JoK-eh-JBK" secondAttribute="bottom" constant="-1" id="96g-Ug-HlL"/>
+                    <constraint firstItem="JoK-eh-JBK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="EGN-tc-vVc"/>
+                    <constraint firstAttribute="bottom" secondItem="pGv-wu-AxS" secondAttribute="bottom" constant="11" id="G49-tl-W7G"/>
+                    <constraint firstAttribute="trailing" secondItem="xVV-HK-VfV" secondAttribute="trailing" constant="16" id="Mif-aa-914"/>
+                    <constraint firstAttribute="trailing" secondItem="pGv-wu-AxS" secondAttribute="trailing" constant="16" id="Nxo-3y-X56"/>
+                    <constraint firstItem="xVV-HK-VfV" firstAttribute="leading" secondItem="JoK-eh-JBK" secondAttribute="trailing" constant="8" id="WdU-mF-QcO"/>
+                    <constraint firstItem="pGv-wu-AxS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="dD4-YJ-rDb"/>
+                    <constraint firstItem="JoK-eh-JBK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18" id="fWc-sS-WQ3"/>
+                    <constraint firstItem="xVV-HK-VfV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="wHU-GO-hXh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="cardView" destination="pGv-wu-AxS" id="aE3-jO-loQ"/>
+                <outlet property="filters" destination="xVV-HK-VfV" id="DsU-QI-Vwe"/>
+                <outlet property="imageBody" destination="rqx-Jo-dcm" id="lnB-i6-IuA"/>
+                <outlet property="title" destination="6vz-On-kWr" id="h8R-g9-R1z"/>
+                <outlet property="titleDay" destination="JoK-eh-JBK" id="3ii-He-Kso"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="iconFilters" width="70" height="70"/>
+        <image name="iconRate" width="205" height="56"/>
+        <image name="imgHomeCell" width="1002" height="476"/>
+    </resources>
+</document>
