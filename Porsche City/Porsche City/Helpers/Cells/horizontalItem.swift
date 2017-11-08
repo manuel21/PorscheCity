@@ -12,10 +12,12 @@ class horizontalItem: UICollectionViewCell
 {
     //MARK: OUTLETS & PROPERTIES
     @IBOutlet weak var icon: UIImageView!
+    @IBOutlet weak var title: UILabel!
     
     //MARK: LIFE CYCLE
     override func awakeFromNib()
     {
         super.awakeFromNib()
+        self.setBorder(cornerRadius: true)
     }
 }

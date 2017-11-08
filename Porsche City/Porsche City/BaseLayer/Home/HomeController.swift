@@ -25,12 +25,18 @@ class HomeController: UIViewController
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
+
         if flow == 1
         {
             self.navigationController?.navigationBar.gestureRecognizers?.removeAll()
             self.navigationController?.navigationBar.addGestureRecognizer(ActionsTapGestureRecognizer(onTap: {
                 
                 let vcSelection = Storyboard.getInstanceOf(CitySelectionController.self)
+                vcSelection.onSelectedCity = { city in
+        
+                    self.title = city
+                }
+        
                 let navBar = NavyController(rootViewController: vcSelection)
                 
                 self.present(navBar, animated: true, completion: nil)

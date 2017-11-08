@@ -21,6 +21,7 @@ class HomeTableController: UITableViewController
         self.tableView.hideEmtpyCells()
         self.tableView.separatorColor = .clear
         self.tableView.register(UINib(nibName: "ImageViewCell", bundle: nil), forCellReuseIdentifier: "ImageViewCell")
+        self.tableView.register(UINib(nibName: "HomeCell", bundle: nil), forCellReuseIdentifier: "HomeCell")
         self.tableView.register(UINib(nibName: "CollectionCell", bundle: nil), forCellReuseIdentifier: "CollectionCell")
     }
     
@@ -46,19 +47,25 @@ class HomeTableController: UITableViewController
         }
         else if indexPath.row == 1
         {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ImageViewCell") as! ImageViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell") as! HomeCell
             cell.selectionStyle = .none
             if stageIdx == 0
             {
-                cell.imageBody.image = #imageLiteral(resourceName: "club993")
+                cell.imageBody.image = #imageLiteral(resourceName: "imgHomeCell")
+                cell.title.text = "Club 993"
+                cell.titleDay.text = "This weekend"
             }
             else if stageIdx < 7
             {
                 cell.imageBody.image = #imageLiteral(resourceName: "imgItem1")
+                cell.title.text = "Concert"
+                cell.titleDay.text = "Tonight"
             }
             else if stageIdx == 7
             {
                 cell.imageBody.image =  #imageLiteral(resourceName: "imgHomeCell")
+                cell.title.text = "Club 993"
+                cell.titleDay.text = "This weekend"
             }
             
             
@@ -85,7 +92,7 @@ class HomeTableController: UITableViewController
     {
         if indexPath.row == 0
         {
-            return 100
+            return 90
         }
         else if indexPath.row == 1
         {
@@ -93,7 +100,7 @@ class HomeTableController: UITableViewController
         }
         else
         {
-            return 300
+            return 250
         }
     }
 }

@@ -14,6 +14,8 @@ class CollectionCell: UITableViewCell
     @IBOutlet weak fileprivate var collection: UICollectionView!
     var images: [String]?
     
+    fileprivate var items = ["Jazz Concert", "Porsche Design", "", "", "", "", ""]
+    
     //MARK: LIFE CYCLE
     override func awakeFromNib()
     {
@@ -32,7 +34,7 @@ class CollectionCell: UITableViewCell
         layout.minimumInteritemSpacing = 10
         layout.minimumLineSpacing = 10
         layout.sectionInset = UIEdgeInsets(top: 1, left: 8, bottom: 1, right: 8)
-        layout.itemSize = CGSize(width: 250, height: 200)
+        layout.itemSize = CGSize(width: 300, height: 200)
         
         self.collection.delegate = self
         self.collection.dataSource = self
@@ -59,6 +61,7 @@ extension CollectionCell: UICollectionViewDelegate, UICollectionViewDataSource
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "horizontalItem", for: indexPath) as! horizontalItem
         cell.icon.image = UIImage(named: images![indexPath.row])
 //        cell.icon.image = indexPath.item % 2 == 0 ? #imageLiteral(resourceName: "imgItem1") : #imageLiteral(resourceName: "imgItem2")
+        cell.title.text =  self.items[indexPath.item]
         
         return cell
     }
