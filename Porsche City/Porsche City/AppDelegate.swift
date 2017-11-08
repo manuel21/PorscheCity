@@ -48,12 +48,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         sendSMS(message: message)
     }
     
-    func sendSMS(message: String) {
+    func sendSMS(message: String)
+    {
         let json = "{'StatusID':'" + message + "'}"
         HTTPRequestApi.executeRequest(url: "http://allencass.com/clients/kaaboo/twiloPorsche.php", requestType: .post, headers: nil, json: json) {
             (response, json, error) in
             
-            print("SMS sent with response: \(response!.statusCode)")
+            if let resp = response {
+                
+                print("SMS sent with response: \(resp.statusCode)")
+            }
+            else
+            {
+                print("SMS sent with response null")
+            }
         }
     }
     
