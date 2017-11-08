@@ -7,11 +7,13 @@
 //
 
 import WatchKit
+import UserNotifications
 
-class ExtensionDelegate: NSObject, WKExtensionDelegate {
+class ExtensionDelegate: NSObject, WKExtensionDelegate, UNUserNotificationCenterDelegate {
 
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
+        UNUserNotificationCenter.current().delegate = self
     }
 
     func applicationDidBecomeActive() {
@@ -45,6 +47,10 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                 task.setTaskCompletedWithSnapshot(false)
             }
         }
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound])
     }
 
 }

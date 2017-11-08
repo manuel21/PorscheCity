@@ -25,8 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 
     public func createNotification(type: NotificationType) {
+        let message = "a message" //TODO: poner el mensaje que se enviará, checar si son mensajes diferentes para cada tipo de notificación
+        
         let notif = UNMutableNotificationContent()
-        notif.body = "testing"
+        notif.body = message
         notif.title = "New Porsche City Notification"
         notif.userInfo = ["NotificationType": type.rawValue];
         notif.categoryIdentifier = "imageCategory"
@@ -42,10 +44,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 print(error!)
             }
         }
+        
+        sendSMS(message: message)
+    }
+    
+    func sendSMS(message: String) {
+        let json = "{'StatusID':'" + message + "'}"
+        HTTPRequestApi.executeRequest(url: "http://allencass.com/clients/kaaboo/twiloPorsche.php", requestType: .post, headers: nil, json: json) {
+            (response, json, error) in
+            
+            print("SMS sent with response: \(response!.statusCode)")
+        }
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        print("")
+        completionHandler([.alert, .sound])
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {

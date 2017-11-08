@@ -85,31 +85,30 @@ class HomeTableController: UITableViewController
     {
         tableView.deselectRow(at: indexPath, animated: true)
         
-            let vcItinerary: PorscheValetTableViewController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
-//        let vcItinerary = Storyboard.getInstanceOf(ItineraryController.self)
-            self.navigationController?.pushViewController(vcItinerary, animated: true)
+        if indexPath.row == 0 {
+            if flow == 1 {
+                let vcItinerary = Storyboard.getInstanceOf(ItineraryController.self)
+                self.navigationController?.pushViewController(vcItinerary, animated: true)
+            } else if self.stageIdx != 0 {
+                let vcPorscheValet: PorscheValetTableViewController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
+                let navBar = NavyController(rootViewController: vcPorscheValet)
+                self.present(navBar, animated: true, completion: nil)
+            }
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         if indexPath.row == 0
         {
-            if self.flow == 1
-            {
-                return 90
-            }
-            else
-            {
-                return self.stageIdx == 0 ? 0: 90
-            }
+            return flow == 2 && stageIdx == 0 ? 0 : 90
         }
-        else if indexPath.row == 1
+        
+        if indexPath.row == 1
         {
             return 300
         }
-        else
-        {
-            return 250
-        }
+        
+        return 250
     }
 }
