@@ -14,7 +14,7 @@ class HomeController: UIViewController
     fileprivate var vcTable: HomeTableController!
     fileprivate var vcLandscape: LandscapeNavViewController!
     fileprivate var wasOnceOnLandscape = false
-    
+    var flow = 1
     //MARK: LIFE CYCLE
     override func viewDidLoad()
     {
@@ -25,20 +25,30 @@ class HomeController: UIViewController
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
-        
-        self.navigationController?.navigationBar.gestureRecognizers?.removeAll()
-        self.navigationController?.navigationBar.addGestureRecognizer(ActionsTapGestureRecognizer(onTap: {
-            
-            let vcSelection = Storyboard.getInstanceOf(CitySelectionController.self)
-            vcSelection.onSelectedCity = { city in
+
+        if flow == 1
+        {
+            self.navigationController?.navigationBar.gestureRecognizers?.removeAll()
+            self.navigationController?.navigationBar.addGestureRecognizer(ActionsTapGestureRecognizer(onTap: {
                 
-                self.title = city
+                let vcSelection = Storyboard.getInstanceOf(CitySelectionController.self)
+                vcSelection.onSelectedCity = { city in
+        
+                    self.title = city
+                }
+        
+                let navBar = NavyController(rootViewController: vcSelection)
+                
+                self.present(navBar, animated: true, completion: nil)
+            }))
+        }
+        else
+        {
+            if self.vcLandscape.StageIdx == 1
+            {
+                self.performSegue(withIdentifier: "CityActiveFlow2", sender: self)
             }
-            
-            let navBar = NavyController(rootViewController: vcSelection)
-            
-            self.present(navBar, animated: true, completion: nil)
-        }))
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool)
@@ -84,6 +94,9 @@ class HomeController: UIViewController
         self.vcLandscape.OnDidMoveFromLandscape = { stage in
             
             self.showModal(stage)
+        }
+        self.vcLandscape.onChangeFlow = { flow in
+            self.flow = flow
         }
     }
     
@@ -208,6 +221,11 @@ class HomeController: UIViewController
         if let id = segue.identifier , id == "HomeTableController" {
             
             self.vcTable = segue.destination as! HomeTableController
+        }
+        
+        if segue.identifier == "CityActiveFlow2"
+        {
+            print("Ok")
         }
     }
     

@@ -13,6 +13,42 @@ class LandscapeNavViewController: UIViewController
 {
     //MARK: Variables and outlets
     
+    //FLOW
+    var flow = 1 {
+        didSet{
+            self.imgsJourney.removeAll()
+            self.imgsBottomNav.removeAll()
+            self.onChangeFlow?(flow)
+            if flow == 1
+            {
+                //Journey images
+                var imgTitles = ["imgJ0","imgJ1","imgJ2","imgJ3","imgJ4","imgJ5","imgJ6","imgJ7","imgJ8"]
+                imgTitles.forEach { (title) in
+                    self.imgsJourney.append(UIImage(named:title) ?? UIImage())
+                }
+                imgTitles = ["imgDefaultBackground","imgJ1","imgJ2","imgJ3","imgJ4","imgJ5","imgJ6","imgJ7","imgJ8"]
+                imgTitles.forEach { (title) in
+                    self.imgsBottomNav.append(UIImage(named:title) ?? UIImage())
+                }
+            }
+            else
+            {
+                
+                //Journey images
+                var imgTitles = ["imgJ0","imgJ1","imgJ2_flow2","imgJ3_flow2","imgJ4_flow2","imgJ5_flow2","imgJ6_flow2"]
+                imgTitles.forEach { (title) in
+                    self.imgsJourney.append(UIImage(named:title) ?? UIImage())
+                }
+                
+                imgTitles = ["imgDefaultBackground","imgJ1","imgJ2_flow2","imgJ3_flow2","imgJ4_flow2","imgJ5_flow2","imgJ6_flow2"]
+                imgTitles.forEach { (title) in
+                    self.imgsBottomNav.append(UIImage(named:title) ?? UIImage())
+                }
+            }
+            self.collectionView.reloadData()
+        }
+    }
+    var onChangeFlow:((_ flow:Int)->())?
     //Bottom Navigation Menu
     var imgsJourney = [UIImage]()
     var imgsBottomNav = [UIImage]()
@@ -154,6 +190,10 @@ class LandscapeNavViewController: UIViewController
         self.vcConfig?.onJourneyByTime = { journeyByTime in
             
             self.journeyBySeconds = journeyByTime
+        }
+        self.vcConfig?.onChangeFlow = { flow in
+            
+            self.flow = flow
         }
         //Hide steps
         self.lblSteps.isHidden = true

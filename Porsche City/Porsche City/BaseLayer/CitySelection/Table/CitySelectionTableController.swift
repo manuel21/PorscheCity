@@ -36,6 +36,7 @@ class CitySelectionTableController: UITableViewController
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ImageViewTextCell") as! ImageViewTextCell
         cell.selectionStyle = .none
+        cell.imageBody.sizeToFit()
         cell.imageBody.image = indexPath.row %  2 == 0 ? #imageLiteral(resourceName: "selectionCell_1") : #imageLiteral(resourceName: "selectionCell_2")
         cell.title.text = self.items[indexPath.row]
         
