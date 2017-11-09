@@ -86,7 +86,7 @@ class LandscapeNavViewController: UIViewController
                 else if StageIdx == 1
                 {
                     //Send notification
-                    (UIApplication.shared.delegate as? AppDelegate)?.createNotification(type: .restaurantHost)
+                    (UIApplication.shared.delegate as? AppDelegate)?.scheduleNotification(type: .restaurantHost)
                     
                     guard self.manualMode == false else {return}
                     
@@ -106,11 +106,11 @@ class LandscapeNavViewController: UIViewController
                 }
                 else if StageIdx == 2
                 {
-                    (UIApplication.shared.delegate as? AppDelegate)?.createNotification(type: .restaurantValet)
+                    (UIApplication.shared.delegate as? AppDelegate)?.scheduleNotification(type: .restaurantValet)
                 }
                 else if StageIdx == 6
                 {
-                    (UIApplication.shared.delegate as? AppDelegate)?.createNotification(type: .shuttleDriver)
+                    (UIApplication.shared.delegate as? AppDelegate)?.scheduleNotification(type: .shuttleDriver)
                 }
                 else if StageIdx == 8
                 {

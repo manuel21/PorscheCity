@@ -57,7 +57,7 @@ class CheckoutController: UIViewController
     
     @IBAction func sendNotification()
     {
-        (UIApplication.shared.delegate as? AppDelegate)?.createNotification(type: .hotelValet)
+        (UIApplication.shared.delegate as? AppDelegate)?.scheduleNotification(type: .hotelValet)
         print("Send checkout notification")
     }
     

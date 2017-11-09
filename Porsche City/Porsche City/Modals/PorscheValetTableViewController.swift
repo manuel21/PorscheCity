@@ -93,12 +93,12 @@ class PorscheValetTableViewController: UITableViewController {
         
         if indexPath.row == 1 {
             if state == .active {
-                (UIApplication.shared.delegate as? AppDelegate)?.createNotification(type: .porscheValet)
+                (UIApplication.shared.delegate as? AppDelegate)?.scheduleNotification(type: .porscheValet)
                 state = .awaitingKeys
                 tableView.reloadData()
                 
             } else if state == .vehicleStandby {
-                (UIApplication.shared.delegate as? AppDelegate)?.createNotification(type: .porscheValet2)
+                (UIApplication.shared.delegate as? AppDelegate)?.scheduleNotification(type: .porscheValet2)
                 tableView.reloadData()
             }
         }

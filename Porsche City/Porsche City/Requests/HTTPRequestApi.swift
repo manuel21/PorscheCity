@@ -20,15 +20,15 @@ class HTTPRequestApi: NSObject {
     
     fileprivate static let TIME_OUT: TimeInterval = 60
     
-    class func executeRequest(url: String, requestType: RequestType, headers: [String: String]?, json: String?, timeout: TimeInterval = TIME_OUT, onCompletion: OnRequestCompletion? = nil) {
+    class func executeRequest(url: String, requestType: RequestType, headers: [String: String]?, body: String?, timeout: TimeInterval = TIME_OUT, onCompletion: OnRequestCompletion? = nil) {
         
         var request = URLRequest(url: URL(string: url)!)
         request.timeoutInterval = timeout
         request.httpMethod = requestType.rawValue
         request.allHTTPHeaderFields = headers
         
-        if (json != nil) {
-            request.httpBody = json!.data(using: String.Encoding.utf8)
+        if (body != nil) {
+            request.httpBody = body!.data(using: String.Encoding.utf8)
         }
             
         let session = URLSession.shared

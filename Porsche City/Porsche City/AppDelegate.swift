@@ -24,12 +24,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return true
     }
 
-    public func createNotification(type: NotificationType) {
-        let message = "a message" //TODO: poner el mensaje que se enviará, checar si son mensajes diferentes para cada tipo de notificación
+    public func scheduleNotification(type: NotificationType) {
+        let title = "Porsche City Notification"
+        let message = getMessageForNotification(type)
         
         let notif = UNMutableNotificationContent()
         notif.body = message
-        notif.title = "New Porsche City Notification"
+        notif.title = title
         notif.userInfo = ["NotificationType": type.rawValue];
         notif.categoryIdentifier = "imageCategory"
         notif.sound = UNNotificationSound.default()
@@ -39,29 +40,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         UNUserNotificationCenter.current().add(request) { (error) in
             if (error == nil) {
                 print("Scheduled notification:" + String(describing:type))
-//                Toast.showInView((self.window!.rootViewController!.presentedViewController ?? self.window!.rootViewController!).view, withText: "Notification Scheduled")
             } else {
                 print(error!)
             }
         }
         
-        sendSMS(message: message)
+        sendSMS(message: title + ": " + message)
     }
     
-    func sendSMS(message: String)
+    private func sendSMS(message: String)
     {
-        let json = "{'StatusID':'" + message + "'}"
-        HTTPRequestApi.executeRequest(url: "http://allencass.com/clients/kaaboo/twiloPorsche.php", requestType: .post, headers: nil, json: json) {
+        let body = "StatusID=" + message
+        let headers = ["Content-Type": "application/x-www-form-urlencoded"]
+        HTTPRequestApi.executeRequest(url: "http://allencass.com/clients/kaaboo/twiloPorsche.php", requestType: .post, headers: headers, body: body) {
             (response, json, error) in
             
-            if let resp = response {
-                
-                print("SMS sent with response: \(resp.statusCode)")
+            if error != nil {
+                print(error!)
+            } else {
+                if let statusCode = response?.statusCode {
+                    print("SMS sent with response: \(statusCode)")
+                } else {
+                    print("SMS sent with response: null")
+                }
             }
-            else
-            {
-                print(error?.localizedDescription)
-            }
+        }
+    }
+    
+    private func getMessageForNotification(_ type: NotificationType) -> String {
+        switch type {
+            case .hotelCheckIn:
+                return "Your luggage will be delivered to the room #964"
+            case .hotelValet:
+                return "Mr. Parker is waiting for you at the hotel entrance"
+            case .restaurantHost:
+                return "Mr. Parker will Arrive in 15 minutes"
+            case .restaurantValet:
+                return "Mr. Parker will arrive in 5 minutes with the car C66PG7"
+            case .shuttleDriver:
+                return "Mr. Parker will take you to Waldorf Astoria 9850 Wilshire Blvd"
+            case .porscheValet:
+                return "Your car GTY984 will be taken in Hermes 330 Rodeo Dr"
+            case .porscheValet2:
+                return "Your car GTY984 is arriving to Burberry, 130 Canon Dr"
         }
     }
     
