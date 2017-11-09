@@ -10,6 +10,8 @@ import UIKit
 
 class HomeController: UIViewController
 {
+    fileprivate final let dropDownChar = " ▾" //﹀
+    
     //MARK: PROPERTIES & OUTLETS
     fileprivate var vcTable: HomeTableController!
     fileprivate var vcLandscape: LandscapeNavViewController!
@@ -37,7 +39,7 @@ class HomeController: UIViewController
                 let vcSelection = Storyboard.getInstanceOf(CitySelectionController.self)
                 vcSelection.onSelectedCity = { city in
         
-                    self.title = city
+                    self.title = city + self.dropDownChar
                 }
         
                 let navBar = NavyController(rootViewController: vcSelection)
@@ -68,7 +70,7 @@ class HomeController: UIViewController
     fileprivate func loadConfig()
     {
         //title
-        self.title = "Beverly Hills ▾" //﹀
+        self.title = "Beverly Hills " + dropDownChar
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
         //Left Button
