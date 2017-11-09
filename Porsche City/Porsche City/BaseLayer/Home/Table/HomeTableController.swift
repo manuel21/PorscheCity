@@ -10,6 +10,7 @@ import UIKit
 
 class HomeTableController: UITableViewController
 {
+    var parentHome: HomeController?
     var flow = 1
     var stageIdx = 0 {
         didSet{
@@ -88,6 +89,11 @@ class HomeTableController: UITableViewController
         if indexPath.row == 0 {
             if flow == 1 {
                 let vcItinerary = Storyboard.getInstanceOf(ItineraryController.self)
+                if stageIdx >= 1  && stageIdx != 3 && stageIdx != 4 {
+                    vcItinerary.onBellTapped = {
+                        self.parentHome?.openSomething()
+                    }
+                }
                 self.navigationController?.pushViewController(vcItinerary, animated: true)
             } else if self.stageIdx != 0 {
                 let vcPorscheValet: PorscheValetTableViewController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
