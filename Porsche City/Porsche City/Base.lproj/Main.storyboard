@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="PNext-Regular.otf">
+        <array key="hinted-PNext-Regular.ttf">
             <string>PNext-Regular</string>
         </array>
     </customFonts>
@@ -134,10 +134,59 @@
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <color key="backgroundColor" red="0.081601329147815704" green="0.10582613199949265" blue="0.11425111442804337" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="84j-Gd-N0B" appends="YES" id="QL7-vt-srV"/>
-                                </connections>
                             </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sC2-TY-E1D">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="10" id="Z1T-k0-L8N">
+                                    <size key="itemSize" width="667" height="375"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="KYo-tN-lDr" customClass="JourneyCell" customModule="Porsche_City" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pbt-HU-tgn">
+                                                    <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BtR-y8-pGS">
+                                                            <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.062131121749999997" green="0.082357771689999998" blue="0.086616702379999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="BtR-y8-pGS" firstAttribute="top" secondItem="pbt-HU-tgn" secondAttribute="top" id="IAj-jF-Odz"/>
+                                                        <constraint firstItem="BtR-y8-pGS" firstAttribute="leading" secondItem="pbt-HU-tgn" secondAttribute="leading" id="gmY-gI-CVH"/>
+                                                        <constraint firstAttribute="bottom" secondItem="BtR-y8-pGS" secondAttribute="bottom" id="hPt-KJ-QMt"/>
+                                                        <constraint firstAttribute="trailing" secondItem="BtR-y8-pGS" secondAttribute="trailing" id="nvg-iQ-cY6"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="pbt-HU-tgn" secondAttribute="bottom" id="NdC-Ei-lHY"/>
+                                            <constraint firstItem="pbt-HU-tgn" firstAttribute="leading" secondItem="KYo-tN-lDr" secondAttribute="leading" id="R1w-J1-7az"/>
+                                            <constraint firstAttribute="trailing" secondItem="pbt-HU-tgn" secondAttribute="trailing" id="hYt-cU-H5G"/>
+                                            <constraint firstItem="pbt-HU-tgn" firstAttribute="top" secondItem="KYo-tN-lDr" secondAttribute="top" id="ndw-i6-d5G"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imgPlace" destination="BtR-y8-pGS" id="YjA-ZW-Bvl"/>
+                                            <outlet property="viewBackground" destination="pbt-HU-tgn" id="mEp-Q1-bfV"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="rrn-wU-cgh" id="mXx-tP-L2V"/>
+                                    <outlet property="delegate" destination="rrn-wU-cgh" id="IEP-Xn-foz"/>
+                                </connections>
+                            </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2F6-iB-PKV">
                                 <rect key="frame" x="0.0" y="247" width="667" height="128"/>
                                 <color key="backgroundColor" red="0.093222953379154205" green="0.12144861370325089" blue="0.13403767347335815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -243,12 +292,15 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.081601329147815704" green="0.10582613199949265" blue="0.11425111442804337" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="DyJ-JE-PN9" firstAttribute="trailing" secondItem="kmy-mR-s5l" secondAttribute="trailing" constant="136" id="2EW-rd-Yri"/>
                             <constraint firstItem="lGS-05-4VJ" firstAttribute="leading" secondItem="DyJ-JE-PN9" secondAttribute="leading" constant="13" id="5DL-5p-HGh"/>
+                            <constraint firstItem="sC2-TY-E1D" firstAttribute="leading" secondItem="DyJ-JE-PN9" secondAttribute="leading" id="6wE-bC-3nw"/>
                             <constraint firstItem="2F6-iB-PKV" firstAttribute="leading" secondItem="DyJ-JE-PN9" secondAttribute="leading" id="GQp-HW-dLz"/>
                             <constraint firstItem="2kR-Oh-k4R" firstAttribute="top" secondItem="DyJ-JE-PN9" secondAttribute="top" constant="49" id="M6Y-M8-ftW"/>
                             <constraint firstItem="UyN-Q6-48t" firstAttribute="leading" secondItem="DyJ-JE-PN9" secondAttribute="leading" id="PZM-Ed-tck"/>
+                            <constraint firstItem="sC2-TY-E1D" firstAttribute="top" secondItem="DyJ-JE-PN9" secondAttribute="top" id="Qyg-dc-F7V"/>
                             <constraint firstItem="kmy-mR-s5l" firstAttribute="top" secondItem="DyJ-JE-PN9" secondAttribute="top" constant="49" id="VXg-iw-PFD"/>
                             <constraint firstItem="akn-sS-Sus" firstAttribute="trailing" secondItem="DyJ-JE-PN9" secondAttribute="trailing" id="Xm9-fL-apj"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lGS-05-4VJ" secondAttribute="trailing" constant="20" symbolic="YES" id="ZSf-hj-SQ7"/>
@@ -262,12 +314,15 @@
                             <constraint firstItem="DyJ-JE-PN9" firstAttribute="bottom" secondItem="UyN-Q6-48t" secondAttribute="bottom" constant="11" id="jeQ-Xa-c4w"/>
                             <constraint firstItem="akn-sS-Sus" firstAttribute="bottom" secondItem="DyJ-JE-PN9" secondAttribute="bottom" id="kZC-UA-5CL"/>
                             <constraint firstItem="akn-sS-Sus" firstAttribute="top" secondItem="DyJ-JE-PN9" secondAttribute="top" id="koQ-p4-67T"/>
+                            <constraint firstItem="sC2-TY-E1D" firstAttribute="bottom" secondItem="DyJ-JE-PN9" secondAttribute="bottom" id="m3s-WM-i2h"/>
+                            <constraint firstItem="sC2-TY-E1D" firstAttribute="trailing" secondItem="DyJ-JE-PN9" secondAttribute="trailing" id="tkD-Bv-cF3"/>
                             <constraint firstItem="2F6-iB-PKV" firstAttribute="trailing" secondItem="DyJ-JE-PN9" secondAttribute="trailing" id="uCC-no-Mbl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DyJ-JE-PN9"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="2F6-iB-PKV" id="6BN-uk-7zJ"/>
+                        <outlet property="collectionViewBackground" destination="sC2-TY-E1D" id="TOH-UU-3DC"/>
                         <outlet property="imgBackground" destination="akn-sS-Sus" id="B6k-Es-jEp"/>
                         <outlet property="imgPerson1" destination="2kR-Oh-k4R" id="Zwd-uf-reo"/>
                         <outlet property="imgPerson2" destination="kmy-mR-s5l" id="UoI-gs-jsF"/>
@@ -276,13 +331,8 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uR5-mF-WwC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pinchGestureRecognizer id="84j-Gd-N0B">
-                    <connections>
-                        <outlet property="delegate" destination="rrn-wU-cgh" id="WHB-wM-DjR"/>
-                    </connections>
-                </pinchGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4142" y="174"/>
+            <point key="canvasLocation" x="4141.9790104947533" y="173.59999999999999"/>
         </scene>
         <!--Configuration Controller-->
         <scene sceneID="yI4-lk-hYp">

@@ -58,6 +58,9 @@ class LandscapeNavViewController: UIViewController
     var imgsJourney = [UIImage]()
     var imgsBottomNav = [UIImage]()
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    @IBOutlet weak var collectionViewBackground: UICollectionView!
+    
     @IBOutlet weak var imgBackground: UIImageView!
     let defaultBackground = UIColor(displayP3Red: 25/255, green: 31/255, blue: 34/255, alpha: 1.0)
     var origin:CGFloat = 0.0
@@ -185,7 +188,7 @@ class LandscapeNavViewController: UIViewController
     {
         //Collection view
         self.collectionView.delegate = self
-        
+        self.collectionViewBackground.delegate = self
         //Notifications
         NotificationCenter.default.addObserver(self, selector: #selector(LandscapeNavViewController.OnRotation), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
         
@@ -197,7 +200,6 @@ class LandscapeNavViewController: UIViewController
         swipeLeft.direction = .left
         swipeRight.direction = .right
         self.imgBackground.isUserInteractionEnabled = true
-        self.imgBackground.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.OnMainScreenPressed)))
         self.imgBackground.addGestureRecognizer(swipeLeft)
         self.imgBackground.addGestureRecognizer(swipeRight)
         self.imgPerson1.isUserInteractionEnabled = true
@@ -206,6 +208,9 @@ class LandscapeNavViewController: UIViewController
         self.imgPerson2.addGestureRecognizer(tapOnPerson2)
         self.imgPerson1.isHidden = true
         self.imgPerson2.isHidden = true
+        
+        self.collectionViewBackground.addGestureRecognizer(UIPinchGestureRecognizer(target: self, action: #selector(self.OnPinchScreen(_: ))))
+        self.collectionViewBackground.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.OnMainScreenPressed)))
         
         //Journey images
         var imgTitles = ["imgJ0","imgJ1","imgJ2","imgJ3","imgJ4","imgJ5","imgJ6","imgJ7","imgJ8"]
@@ -288,6 +293,18 @@ class LandscapeNavViewController: UIViewController
         else
         {
             self.ShowBottomNavBar()
+        }
+    }
+    
+    @objc func OnPinchScreen(_ sender: UIPinchGestureRecognizer)
+    {
+        guard  self.StageIdx == 0 else {
+            
+            return 
+        }
+        if sender.state == .began
+        {
+            self.present(self.vcConfig!, animated: true, completion: nil)
         }
     }
     
@@ -395,7 +412,8 @@ class LandscapeNavViewController: UIViewController
         
         //UI particular updates        
         self.lblTitleDown.isHidden = StageIdx == 0 ? false : true
-    }    
+    }
+    
 }
 
 extension LandscapeNavViewController: UICollectionViewDelegate, UICollectionViewDataSource
@@ -419,17 +437,26 @@ extension LandscapeNavViewController: UICollectionViewDelegate, UICollectionView
         self.StageIdx = indexPath.row
         self.collectionView.reloadData()
     }
-}
-
-extension LandscapeNavViewController: UIGestureRecognizerDelegate
-{
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath)
     {
-        guard  self.StageIdx == 0 else {
-
-            return false
-        }
-        self.present(self.vcConfig!, animated: true, completion: nil)
-        return true
+            if collectionView.tag == 1
+            {
+                print(indexPath.row)
+            }
     }
 }
+
+//extension LandscapeNavViewController: UIGestureRecognizerDelegate
+//{
+//    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool
+//    {
+//        guard  self.StageIdx == 0 else {
+//
+//            return false
+//        }
+//        self.present(self.vcConfig!, animated: true, completion: nil)
+//        return true
+//    }
+//}
+
