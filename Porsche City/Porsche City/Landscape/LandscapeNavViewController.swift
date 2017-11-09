@@ -48,6 +48,8 @@ class LandscapeNavViewController: UIViewController
                 }
             }
             self.collectionView.reloadData()
+            self.collectionViewBackground.reloadData()
+            self.collectionViewBackground.isHidden = false
         }
     }
     
@@ -75,10 +77,10 @@ class LandscapeNavViewController: UIViewController
             }
             
             self.UpdateScreen()
-            self.HideBottomNavBar()
+            //self.HideBottomNavBar()
             self.collectionView.scrollToItem(at: IndexPath(item: StageIdx, section: 0), at: .centeredHorizontally, animated: true)
-            self.collectionView.reloadData()
             
+            self.collectionView.reloadData()
             if flow == 1
             {
                 if StageIdx == 0
@@ -182,6 +184,14 @@ class LandscapeNavViewController: UIViewController
         {
             self.journeyTimer?.startJourney()
         }
+        let delayTimeAfeterHide = DispatchTime.now() + Double(Int64(0.1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: delayTimeAfeterHide) {
+            
+           self.collectionViewBackground.scrollToItem(at: IndexPath(item: self.StageIdx, section: 0), at: .centeredHorizontally, animated: true)
+            
+        }
+        
+        
     }
     //MARK: CONFIGURATION
     fileprivate func loadConfig()
@@ -321,22 +331,26 @@ class LandscapeNavViewController: UIViewController
     }
     @objc func didChooseFlow1()
     {
+        self.collectionViewBackground.isHidden = true
         self.imgPerson1.image = UIImage(named:"Richard_selected")
         self.imgPerson2.image = UIImage(named:"Taylor_unselected")
-        self.flow = 1
         self.StageIdx = 0
         self.manualMode = true
         self.configureTimer()
-        
+        self.flow = 1
     }
+    
     @objc func didChooseFlow2()
     {
+        
         self.imgPerson2.image = UIImage(named:"Taylor_selected")
         self.imgPerson1.image = UIImage(named:"Richard_unselected")
-        self.flow = 2
+        
+        
         self.StageIdx = 0
         self.manualMode = true
         self.configureTimer()
+        self.flow = 2
     }
     
     fileprivate func HideBottomNavBar()
@@ -406,8 +420,9 @@ class LandscapeNavViewController: UIViewController
         self.imgBackground.alpha = 0.0
         UIView.animate(withDuration: 0.5) {
             
-            self.imgBackground.image = self.imgsJourney[self.StageIdx]
-            self.imgBackground.alpha = 1.0
+//            self.imgBackground.image = self.imgsJourney[self.StageIdx]
+//            self.imgBackground.alpha = 1.0
+            self.collectionViewBackground.scrollToItem(at: IndexPath(item: self.StageIdx, section: 0), at: .centeredHorizontally, animated: true)
         }
         
         //UI particular updates        
@@ -434,29 +449,29 @@ extension LandscapeNavViewController: UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
+        self.HideBottomNavBar()
         self.StageIdx = indexPath.row
+        self.collectionViewBackground.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         self.collectionView.reloadData()
     }
+
+//    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath)
+//    {
+//            if collectionView.tag == 1
+//            {
+//                self.StageIdx = indexPath.row
+//            }
+//    }
     
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath)
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView)
     {
-            if collectionView.tag == 1
-            {
-                print(indexPath.row)
-            }
+        let delayTimeAfeterHide = DispatchTime.now() + Double(Int64(0.5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: delayTimeAfeterHide) {
+            
+            let cells = self.collectionViewBackground.visibleCells
+            let indexPath = self.collectionViewBackground.indexPath(for: cells[0])
+            self.StageIdx = indexPath?.row ?? 0
+            print(indexPath)
+        }
     }
 }
-
-//extension LandscapeNavViewController: UIGestureRecognizerDelegate
-//{
-//    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool
-//    {
-//        guard  self.StageIdx == 0 else {
-//
-//            return false
-//        }
-//        self.present(self.vcConfig!, animated: true, completion: nil)
-//        return true
-//    }
-//}
-

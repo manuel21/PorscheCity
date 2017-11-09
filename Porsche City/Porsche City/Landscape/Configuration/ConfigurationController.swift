@@ -43,6 +43,8 @@ class ConfigurationController: UIViewController
         
         self.lblFlow.text = "Flow 1"
         self.switchFlow.isOn = true
+        self.lblFlow.isHidden = true
+        self.switchFlow.isHidden = true
     }
     
     override func didReceiveMemoryWarning() {
