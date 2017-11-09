@@ -13,8 +13,11 @@ class HotelCheckInController: UIViewController
     //MARK: PROPERTIES & OUTLETS
     @IBOutlet weak fileprivate var collection: UICollectionView!
     fileprivate var items = ["Luggage Delivery", "Premium Fuel"]
-    fileprivate var images = ["item5", "imgItem4"]
-
+    fileprivate static let firstItem = "item5"
+    fileprivate static let secondItem = "imgItem4"
+    fileprivate var images = [firstItem + "_unchecked", secondItem + "_unchecked"]
+    fileprivate var firstChecked = false
+    fileprivate var secondChecked = false
     
     //MARK: LIFE CYCLE
     override func viewDidLoad()
@@ -96,7 +99,19 @@ extension HotelCheckInController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        (UIApplication.shared.delegate as? AppDelegate)?.scheduleNotification(type: .hotelCheckIn)
+        if indexPath.row == 0 {
+            firstChecked = !firstChecked
+            if firstChecked {
+                (UIApplication.shared.delegate as? AppDelegate)?.scheduleNotification(type: .hotelCheckIn)
+            }
+            
+            images[0] = HotelCheckInController.firstItem + (firstChecked ? "" : "_unchecked")
+            collectionView.reloadItems(at: [indexPath])
+        } else {
+            secondChecked = !secondChecked
+            images[1] = HotelCheckInController.secondItem + (secondChecked ? "" : "_unchecked")
+            collectionView.reloadItems(at: [indexPath])
+        }
     }
 }
 
