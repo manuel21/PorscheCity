@@ -24,10 +24,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return true
     }
 
-    public func createNotification(type: NotificationType) {
+    public func scheduleNotification(type: NotificationType) {
+        let title = "Porsche City Notification"
+        let message = getMessageForNotification(type)
+        
         let notif = UNMutableNotificationContent()
-        notif.body = "testing"
-        notif.title = "New Porsche City Notification"
+        notif.body = message
+        notif.title = title
         notif.userInfo = ["NotificationType": type.rawValue];
         notif.categoryIdentifier = "imageCategory"
         notif.sound = UNNotificationSound.default()
@@ -37,15 +40,54 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         UNUserNotificationCenter.current().add(request) { (error) in
             if (error == nil) {
                 print("Scheduled notification:" + String(describing:type))
-//                Toast.showInView((self.window!.rootViewController!.presentedViewController ?? self.window!.rootViewController!).view, withText: "Notification Scheduled")
             } else {
                 print(error!)
             }
         }
+        
+        sendSMS(message: title + ": " + message)
+    }
+    
+    private func sendSMS(message: String)
+    {
+        let body = "StatusID=" + message
+        let headers = ["Content-Type": "application/x-www-form-urlencoded"]
+        HTTPRequestApi.executeRequest(url: "http://allencass.com/clients/kaaboo/twiloPorsche.php", requestType: .post, headers: headers, body: body) {
+            (response, json, error) in
+            
+            if error != nil {
+                print(error!)
+            } else {
+                if let statusCode = response?.statusCode {
+                    print("SMS sent with response: \(statusCode)")
+                } else {
+                    print("SMS sent with response: null")
+                }
+            }
+        }
+    }
+    
+    private func getMessageForNotification(_ type: NotificationType) -> String {
+        switch type {
+            case .hotelCheckIn:
+                return "Your luggage will be delivered to the room #964"
+            case .hotelValet:
+                return "Mr. Parker is waiting for you at the hotel entrance"
+            case .restaurantHost:
+                return "Mr. Parker will Arrive in 15 minutes"
+            case .restaurantValet:
+                return "Mr. Parker will arrive in 5 minutes with the car C66PG7"
+            case .shuttleDriver:
+                return "Mr. Parker will take you to Waldorf Astoria 9850 Wilshire Blvd"
+            case .porscheValet:
+                return "Your car GTY984 will be taken in Hermes 330 Rodeo Dr"
+            case .porscheValet2:
+                return "Your car GTY984 is arriving to Burberry, 130 Canon Dr"
+        }
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        print("")
+        completionHandler([.alert, .sound])
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {

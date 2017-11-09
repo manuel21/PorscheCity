@@ -10,6 +10,7 @@ import UIKit
 
 class HomeTableController: UITableViewController
 {
+    var flow = 1
     var stageIdx = 0 {
         didSet{
             self.tableView.reloadData()
@@ -41,7 +42,7 @@ class HomeTableController: UITableViewController
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ImageViewCell") as! ImageViewCell
             cell.selectionStyle = .none
-            cell.imageBody.image = #imageLiteral(resourceName: "imgStartJoruney")
+            cell.imageBody.image = self.flow == 1 ? #imageLiteral(resourceName: "imgStartJoruney") : #imageLiteral(resourceName: "iconHomeActive")
         
             return cell
         }
@@ -51,7 +52,7 @@ class HomeTableController: UITableViewController
             cell.selectionStyle = .none
             if stageIdx == 0
             {
-                cell.imageBody.image = #imageLiteral(resourceName: "imgHomeCell")
+                cell.imageBody.image = self.flow == 1 ? #imageLiteral(resourceName: "imgTree") :#imageLiteral(resourceName: "imgHomeCell")
                 cell.title.text = "Club 993"
                 cell.titleDay.text = "This weekend"
             }
@@ -84,24 +85,30 @@ class HomeTableController: UITableViewController
     {
         tableView.deselectRow(at: indexPath, animated: true)
         
-            let vcItinerary: PorscheValetTableViewController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
-//        let vcItinerary = Storyboard.getInstanceOf(ItineraryController.self)
-            self.navigationController?.pushViewController(vcItinerary, animated: true)
+        if indexPath.row == 0 {
+            if flow == 1 {
+                let vcItinerary = Storyboard.getInstanceOf(ItineraryController.self)
+                self.navigationController?.pushViewController(vcItinerary, animated: true)
+            } else if self.stageIdx != 0 {
+                let vcPorscheValet: PorscheValetTableViewController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
+                let navBar = NavyController(rootViewController: vcPorscheValet)
+                self.present(navBar, animated: true, completion: nil)
+            }
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         if indexPath.row == 0
         {
-            return 90
+            return flow == 2 && stageIdx == 0 ? 0 : 90
         }
-        else if indexPath.row == 1
+        
+        if indexPath.row == 1
         {
             return 300
         }
-        else
-        {
-            return 250
-        }
+        
+        return 250
     }
 }

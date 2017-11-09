@@ -14,10 +14,10 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WatchApp" customModuleProvider="target">
                     <items>
-                        <imageView height="158" alignment="left" image="logo" id="nsV-Bu-MEm"/>
                         <label width="136" height="37" alignment="left" text="DEMO" textAlignment="center" id="wNF-U4-Saz">
                             <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                         </label>
+                        <imageView height="158" alignment="left" image="logo" id="nsV-Bu-MEm"/>
                     </items>
                 </controller>
             </objects>

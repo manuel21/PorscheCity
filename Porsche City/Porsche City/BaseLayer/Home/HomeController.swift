@@ -28,6 +28,9 @@ class HomeController: UIViewController
 
         if flow == 1
         {
+            self.vcTable.flow = 1
+            self.vcTable.stageIdx = self.vcLandscape.StageIdx
+            self.vcTable.tableView.reloadData()
             self.navigationController?.navigationBar.gestureRecognizers?.removeAll()
             self.navigationController?.navigationBar.addGestureRecognizer(ActionsTapGestureRecognizer(onTap: {
                 
@@ -44,10 +47,9 @@ class HomeController: UIViewController
         }
         else
         {
-            if self.vcLandscape.StageIdx == 1
-            {
-                self.performSegue(withIdentifier: "CityActiveFlow2", sender: self)
-            }
+            self.vcTable.flow = 2
+            self.vcTable.stageIdx = self.vcLandscape.StageIdx
+            self.vcTable.tableView.reloadData()
         }
     }
     
@@ -160,48 +162,82 @@ class HomeController: UIViewController
     
     fileprivate func showModal(_ stage: Int)
     {
-        
-        self.vcTable.stageIdx = stage
-        if stage > 1 && stage <= 4
+        if self.vcLandscape.flow == 1
         {
-            if presentedViewController is ValetParkingController {return}
-            
-            let vcParking: ValetParkingController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
-            self.present(vcParking, animated: true, completion: nil)
-        }
-        else if stage == 5
-        {
-            if presentedViewController is HotelCheckInController {return}
-            
-            let vcHotelCheckin: HotelCheckInController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
-            self.present(vcHotelCheckin, animated: true, completion: nil)
-        }
-        else if stage == 6
-        {
-            if presentedViewController is RideController {return}
-            
-            let vcRide: RideController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
-            self.present(vcRide, animated: true, completion: nil)
-        }
-        else if stage == 7
-        {
-            if presentedViewController is RoomKeyController {return}
-            
-            let vcRoomKey: RoomKeyController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
-            self.present(vcRoomKey, animated: true, completion: nil)
-        }
-        else if stage == 8
-        {
-            if presentedViewController is CheckoutController {return}
-            
-            let vcCheckout: CheckoutController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
-            vcCheckout.onDeinit = {
+            self.vcTable.stageIdx = stage
+            if stage > 1 && stage <= 4
+            {
+                if presentedViewController is ValetParkingController {return}
                 
-                let vcCheckoutSuccess: CheckoutSuccessController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
-                self.present(vcCheckoutSuccess, animated: true, completion: nil)
+                let vcParking: ValetParkingController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
+                self.present(vcParking, animated: true, completion: nil)
             }
+            else if stage == 5
+            {
+                if presentedViewController is HotelCheckInController {return}
+                
+                let vcHotelCheckin: HotelCheckInController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
+                self.present(vcHotelCheckin, animated: true, completion: nil)
+            }
+            else if stage == 6
+            {
+                if presentedViewController is RideController {return}
+                
+                let vcRide: RideController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
+                self.present(vcRide, animated: true, completion: nil)
+            }
+            else if stage == 7
+            {
+                if presentedViewController is RoomKeyController {return}
+                
+                let vcRoomKey: RoomKeyController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
+                self.present(vcRoomKey, animated: true, completion: nil)
+            }
+            else if stage == 8
+            {
+                if presentedViewController is CheckoutController {return}
+                
+                let vcCheckout: CheckoutController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
+                vcCheckout.onDeinit = {
+                    
+                    let vcCheckoutSuccess: CheckoutSuccessController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
+                    self.present(vcCheckoutSuccess, animated: true, completion: nil)
+                }
+                
+                self.present(vcCheckout, animated: true, completion: nil)
+            }
+        }
+        else if flow == 2
+        {
+            if stage == 2
+            {
+                let vcPorscheValet: PorscheValetTableViewController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
+                vcPorscheValet.setState(state: .active)
+                let navBar = NavyController(rootViewController: vcPorscheValet)
+                self.present(navBar, animated: true, completion: nil)
+            }
+            else if stage == 3
+            {
+                let vcPorscheValet: PorscheValetTableViewController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
+                vcPorscheValet.setState(state: .pickupInProgress)
+                let navBar = NavyController(rootViewController: vcPorscheValet)
+                self.present(navBar, animated: true, completion: nil)
+            }
+            else if stage == 4
+            {
+                let vcPorscheValet: PorscheValetTableViewController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
+                vcPorscheValet.setState(state: .standby)
+                let navBar = NavyController(rootViewController: vcPorscheValet)
+                self.present(navBar, animated: true, completion: nil)
+            }
+            else if stage >= 5
+            {
+                let vcPorscheValet: PorscheValetTableViewController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
+                vcPorscheValet.setState(state: .awaitingKeyPickup)
+                let navBar = NavyController(rootViewController: vcPorscheValet)
+                self.present(navBar, animated: true, completion: nil)
+            }           
             
-            self.present(vcCheckout, animated: true, completion: nil)
         }
     }
     func maskRoundedImage(image: UIImage, radius: CGFloat) -> UIImage {

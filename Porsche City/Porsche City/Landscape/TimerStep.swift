@@ -10,7 +10,7 @@ import UIKit
 
 class TimerStep: NSObject
 {
-    var timer:Timer!
+    var timer:Timer?
     var journeyStages:Int = 5
     var timeStep:TimeInterval!
     var counter = 1
@@ -26,7 +26,6 @@ class TimerStep: NSObject
     override init()
     {
         self.timeStep = 5.0
-        self.timer = Timer()
     }
     
     convenience init(journeyStages:Int, timeStep: TimeInterval)
@@ -34,27 +33,30 @@ class TimerStep: NSObject
         self.init()
         self.timeStep = timeStep
         self.journeyStages = journeyStages
-        self.timer = Timer()
     }
     
     public func startJourney()
     {
         self.isTraveling = true
         self.OnJourneyStarted?(self.counter)
-        self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(TimerStep.checkTimeInterval), userInfo: nil, repeats: true)
+        if timer == nil
+        {
+            self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(TimerStep.checkTimeInterval), userInfo: nil, repeats: true)
+        }
     }
     
     public func pauseJourney()
     {
-        guard self.timer != nil else {return}
-        self.timer.invalidate()
+        self.timer?.invalidate()
+        self.timer = nil
         self.OnJourneyPaused?(self.counter)
     }
     
     public func stopJourney()
     {
         guard self.timer != nil else {return}
-        self.timer.invalidate()
+        self.timer?.invalidate()
+        self.timer = nil
         self.isTraveling = false
         self.timeInterval = 0
         self.counter = 1
@@ -63,6 +65,7 @@ class TimerStep: NSObject
     
     @objc private func checkTimeInterval()
     {
+        print("Time interval: \(self.timeInterval)")
         self.timeInterval += 1
         if self.timeInterval == self.timeStep
         {

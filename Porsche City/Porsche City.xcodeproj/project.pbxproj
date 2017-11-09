@@ -19,6 +19,7 @@
 		563264301FAA90E000C16A37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5632640F1FA95C2400C16A37 /* Assets.xcassets */; };
 		563264331FAAA0A200C16A37 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563264321FAAA0A200C16A37 /* Enums.swift */; };
 		563264341FAAA0B000C16A37 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563264321FAAA0A200C16A37 /* Enums.swift */; };
+		563FE1131FB3B5A900DEBC71 /* HTTPRequestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563FE1121FB3B5A900DEBC71 /* HTTPRequestApi.swift */; };
 		5666A2DC1FAE29440074BB56 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5666A2DB1FAE29440074BB56 /* Utils.swift */; };
 		569B97EE1FB27C1E00D5DCAA /* PorscheValetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B97ED1FB27C1E00D5DCAA /* PorscheValetTableViewController.swift */; };
 		8E0C69141FAA23D10054397F /* LandscapeNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0C69131FAA23D10054397F /* LandscapeNavViewController.swift */; };
@@ -136,6 +137,7 @@
 		563264231FA95C2400C16A37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		563264241FA95C2400C16A37 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		563264321FAAA0A200C16A37 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		563FE1121FB3B5A900DEBC71 /* HTTPRequestApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequestApi.swift; sourceTree = "<group>"; };
 		5666A2DB1FAE29440074BB56 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		569B97ED1FB27C1E00D5DCAA /* PorscheValetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PorscheValetTableViewController.swift; sourceTree = "<group>"; };
 		8E0C69131FAA23D10054397F /* LandscapeNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeNavViewController.swift; sourceTree = "<group>"; };
@@ -256,6 +258,14 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		563FE1111FB3B57B00DEBC71 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				563FE1121FB3B5A900DEBC71 /* HTTPRequestApi.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
 		5666A2DA1FAE28F70074BB56 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,6 +340,7 @@
 		FF840B9F1FA79A0A00C63159 /* Porsche City */ = {
 			isa = PBXGroup;
 			children = (
+				563FE1111FB3B57B00DEBC71 /* Requests */,
 				FFBD2AA51FB2ABEB00367D5C /* PorscheFonts */,
 				5666A2DA1FAE28F70074BB56 /* Utils */,
 				56313D8B1FAC03F200336AF0 /* Controls */,
@@ -665,6 +676,7 @@
 			files = (
 				FF37A8721FA7D47D0046D7D5 /* Views+Porsche.swift in Sources */,
 				8E811BE21FAF861B00F4425E /* CityActiveFlow2TableViewController.swift in Sources */,
+				563FE1131FB3B5A900DEBC71 /* HTTPRequestApi.swift in Sources */,
 				FFB040781FA7A7D400038E18 /* ItineraryTableController.swift in Sources */,
 				563264331FAAA0A200C16A37 /* Enums.swift in Sources */,
 				FFB1EE251FA7DC470022D685 /* horizontalItem.swift in Sources */,

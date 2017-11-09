@@ -48,12 +48,19 @@ class PorscheValetTableViewController: UITableViewController {
         title = "Porsche Valet"
 
         tableView.register(UINib(nibName: "ImageViewCell", bundle: nil), forCellReuseIdentifier: "ImageViewCell")
-        self.tableView.register(UINib(nibName: "CollectionCell", bundle: nil), forCellReuseIdentifier: "CollectionCell")
+        tableView.register(UINib(nibName: "CollectionCell", bundle: nil), forCellReuseIdentifier: "CollectionCell")
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(close))
     }
     
     func setState(state: PorscheValetState) {
         self.state = state
         tableView.reloadData()
+    }
+    
+    @objc fileprivate func close() {
+        dismiss(animated: true, completion: nil)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -82,14 +89,16 @@ class PorscheValetTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        
         if indexPath.row == 1 {
             if state == .active {
-                (UIApplication.shared.delegate as? AppDelegate)?.createNotification(type: .porscheValet)
+                (UIApplication.shared.delegate as? AppDelegate)?.scheduleNotification(type: .porscheValet)
                 state = .awaitingKeys
                 tableView.reloadData()
                 
             } else if state == .vehicleStandby {
-                (UIApplication.shared.delegate as? AppDelegate)?.createNotification(type: .porscheValet2)
+                (UIApplication.shared.delegate as? AppDelegate)?.scheduleNotification(type: .porscheValet2)
                 tableView.reloadData()
             }
         }
