@@ -68,7 +68,7 @@ class HomeController: UIViewController
     fileprivate func loadConfig()
     {
         //title
-        self.title = "Beverly Hills"
+        self.title = "Beverly Hills ▾" //﹀
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
         //Left Button
@@ -112,7 +112,7 @@ class HomeController: UIViewController
     
     @objc func openSomething()
     {
-        showModal(vcLandscape.StageIdx)
+        showModal(vcLandscape.StageIdx, animated: true)
     }
     
     @objc func rotated()
@@ -140,7 +140,7 @@ class HomeController: UIViewController
             if self.wasOnceOnLandscape == true
             {
                 //Right Button
-                if (vcLandscape.StageIdx > 1) {
+                if (vcLandscape.StageIdx > 1 && vcLandscape.StageIdx != 3 && vcLandscape.StageIdx != 4) {
                     let BtnBell = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
                     BtnBell.setImage(#imageLiteral(resourceName: "iconBell"), for: .normal)
                     BtnBell.contentMode = .scaleAspectFit
@@ -160,38 +160,38 @@ class HomeController: UIViewController
         }
     }
     
-    fileprivate func showModal(_ stage: Int)
+    fileprivate func showModal(_ stage: Int, animated: Bool = false)
     {
         if self.vcLandscape.flow == 1
         {
             self.vcTable.stageIdx = stage
-            if stage > 1 && stage <= 4
+            if stage == 2
             {
                 if presentedViewController is ValetParkingController {return}
                 
                 let vcParking: ValetParkingController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
-                self.present(vcParking, animated: true, completion: nil)
+                self.present(vcParking, animated: animated, completion: nil)
             }
             else if stage == 5
             {
                 if presentedViewController is HotelCheckInController {return}
                 
                 let vcHotelCheckin: HotelCheckInController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
-                self.present(vcHotelCheckin, animated: true, completion: nil)
+                self.present(vcHotelCheckin, animated: animated, completion: nil)
             }
             else if stage == 6
             {
                 if presentedViewController is RideController {return}
                 
                 let vcRide: RideController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
-                self.present(vcRide, animated: true, completion: nil)
+                self.present(vcRide, animated: animated, completion: nil)
             }
             else if stage == 7
             {
                 if presentedViewController is RoomKeyController {return}
                 
                 let vcRoomKey: RoomKeyController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
-                self.present(vcRoomKey, animated: true, completion: nil)
+                self.present(vcRoomKey, animated: animated, completion: nil)
             }
             else if stage == 8
             {
@@ -204,7 +204,7 @@ class HomeController: UIViewController
                     self.present(vcCheckoutSuccess, animated: true, completion: nil)
                 }
                 
-                self.present(vcCheckout, animated: true, completion: nil)
+                self.present(vcCheckout, animated: animated, completion: nil)
             }
         }
         else if flow == 2
@@ -226,7 +226,7 @@ class HomeController: UIViewController
             else if stage == 4
             {
                 let vcPorscheValet: PorscheValetTableViewController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
-                vcPorscheValet.setState(state: .standby)
+                vcPorscheValet.setState(state: .vehicleStandby)
                 let navBar = NavyController(rootViewController: vcPorscheValet)
                 self.present(navBar, animated: true, completion: nil)
             }
@@ -257,6 +257,7 @@ class HomeController: UIViewController
         if let id = segue.identifier , id == "HomeTableController" {
             
             self.vcTable = segue.destination as! HomeTableController
+            vcTable.parentHome = self
         }
         
         if segue.identifier == "CityActiveFlow2"
