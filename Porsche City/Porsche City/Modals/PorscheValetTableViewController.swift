@@ -99,6 +99,7 @@ class PorscheValetTableViewController: UITableViewController {
                 
             } else if state == .vehicleStandby {
                 (UIApplication.shared.delegate as? AppDelegate)?.scheduleNotification(type: .porscheValet2)
+                state = .deliveryInProgress
                 tableView.reloadData()
             }
         }

@@ -28,13 +28,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let title = "Porsche City Notification"
         let message = getMessageForNotification(type)
         
+//        scheduleLocalNotification(type: type, title: title, message: message)
+        sendSMS(message: title + ": " + message)
+    }
+    
+    private func scheduleLocalNotification(type: NotificationType, title: String, message: String) {
         let notif = UNMutableNotificationContent()
         notif.body = message
         notif.title = title
         notif.userInfo = ["NotificationType": type.rawValue];
         notif.categoryIdentifier = "imageCategory"
         notif.sound = UNNotificationSound.default()
-        
+    
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         let request = UNNotificationRequest(identifier: "localNotif", content: notif, trigger: trigger)
         UNUserNotificationCenter.current().add(request) { (error) in
@@ -44,8 +49,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 print(error!)
             }
         }
-        
-        sendSMS(message: title + ": " + message)
     }
     
     private func sendSMS(message: String)

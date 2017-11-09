@@ -98,7 +98,7 @@ class HomeTableController: UITableViewController
             } else if self.stageIdx != 0 {
                 let vcPorscheValet: PorscheValetTableViewController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
                 let navBar = NavyController(rootViewController: vcPorscheValet)
-                self.present(navBar, animated: true, completion: nil)
+                self.present(navBar, animated: false, completion: nil)
             }
         }
     }
