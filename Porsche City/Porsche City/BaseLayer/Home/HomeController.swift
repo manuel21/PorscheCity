@@ -226,7 +226,7 @@ class HomeController: UIViewController
             else if stage == 4
             {
                 let vcPorscheValet: PorscheValetTableViewController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
-                vcPorscheValet.setState(state: .standby)
+                vcPorscheValet.setState(state: .vehicleStandby)
                 let navBar = NavyController(rootViewController: vcPorscheValet)
                 self.present(navBar, animated: true, completion: nil)
             }
