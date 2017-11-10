@@ -27,6 +27,7 @@ class HomeController: UIViewController
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
+        self.backArrow()
 
         if flow == 1
         {
