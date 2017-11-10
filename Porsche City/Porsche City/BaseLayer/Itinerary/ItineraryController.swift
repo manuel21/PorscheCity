@@ -21,6 +21,12 @@ class ItineraryController: UIViewController
         self.loadConfig()
     }
     
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        self.backArrow()
+    }
+    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator)
     {
 //        let orientationValue = UIInterfaceOrientation.portrait.rawValue

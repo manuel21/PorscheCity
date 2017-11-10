@@ -286,3 +286,11 @@ extension UIView
     }
 }
 
+extension UIViewController
+{
+    func backArrow()
+    {
+        navigationItem.backBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "iconInvisible"), style: .plain, target: self, action: nil)
+    }
+}
+
