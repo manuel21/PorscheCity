@@ -17,6 +17,7 @@ class HomeController: UIViewController
     fileprivate var vcLandscape: LandscapeNavViewController!
     fileprivate var wasOnceOnLandscape = false
     var flow = 1
+    var BtnProfile: UIButton?
     //MARK: LIFE CYCLE
     override func viewDidLoad()
     {
@@ -54,6 +55,12 @@ class HomeController: UIViewController
             self.vcTable.stageIdx = self.vcLandscape.StageIdx
             self.vcTable.tableView.reloadData()
         }
+        
+        var imgProfile: UIImage = flow == 1 ?  #imageLiteral(resourceName: "Richard") :  #imageLiteral(resourceName: "Taylor_raw")
+        let height = (imgProfile.cgImage?.height ?? 50) / 2
+        imgProfile = maskRoundedImage(image: imgProfile, radius: CGFloat(height))
+        
+        self.BtnProfile?.setImage(imgProfile, for: .normal)
     }
     
     override func viewWillDisappear(_ animated: Bool)
@@ -70,25 +77,27 @@ class HomeController: UIViewController
     //MARK: CONFIG
     fileprivate func loadConfig()
     {
+        
+        let flow = (UIApplication.shared.delegate as! AppDelegate).flow
         //title
         self.title = "Beverly Hills " + dropDownChar
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
         //Left Button
-        let BtnProfile = UIButton(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
-        var imgProfile: UIImage = #imageLiteral(resourceName: "Richard")
+        self.BtnProfile = UIButton(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
+        var imgProfile: UIImage = flow == 1 ?  #imageLiteral(resourceName: "Richard") :  #imageLiteral(resourceName: "Taylor_raw")
         let height = (imgProfile.cgImage?.height ?? 50) / 2
         imgProfile = maskRoundedImage(image: imgProfile, radius: CGFloat(height))
         
-        BtnProfile.setImage(imgProfile, for: .normal)
-        BtnProfile.contentMode = .scaleAspectFit
-        BtnProfile.addTarget(self, action: #selector(self.showProfile), for: .touchUpInside)
+        self.BtnProfile?.setImage(imgProfile, for: .normal)
+        self.BtnProfile?.contentMode = .scaleAspectFit
+        self.BtnProfile?.addTarget(self, action: #selector(self.showProfile), for: .touchUpInside)
         
-        let barBtnProfile = UIBarButtonItem(customView: BtnProfile)
-        let widthConstraint = BtnProfile.widthAnchor.constraint(equalToConstant: 32)
-        let heightConstraint = BtnProfile.heightAnchor.constraint(equalToConstant: 32)
-        heightConstraint.isActive = true
-        widthConstraint.isActive = true
+        let barBtnProfile = UIBarButtonItem(customView: self.BtnProfile!)
+        let widthConstraint = self.BtnProfile?.widthAnchor.constraint(equalToConstant: 32)
+        let heightConstraint = self.BtnProfile?.heightAnchor.constraint(equalToConstant: 32)
+        heightConstraint?.isActive = true
+        widthConstraint?.isActive = true
         navigationItem.leftBarButtonItem =  barBtnProfile
         
         //Config for Landscape mode

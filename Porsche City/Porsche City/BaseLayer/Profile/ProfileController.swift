@@ -35,8 +35,9 @@ class ProfileController: UIViewController
     //MARK: CONFIG
     fileprivate func loadConfig()
     {
+        let flow = (UIApplication.shared.delegate as! AppDelegate).flow
         //title
-        self.title = "Richard Parker"
+        self.title = flow == 1 ? "Richard Parker": "Taylor Miller"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
         //Border
@@ -44,7 +45,7 @@ class ProfileController: UIViewController
         
         //Left Button
         let BtnProfile = UIButton(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
-        var imgProfile: UIImage = #imageLiteral(resourceName: "Richard")
+        var imgProfile: UIImage = flow == 1 ?  #imageLiteral(resourceName: "Richard") : #imageLiteral(resourceName: "Taylor_raw")
         let height = (imgProfile.cgImage?.height ?? 50) / 2
         imgProfile = maskRoundedImage(image: imgProfile, radius: CGFloat(height))
         BtnProfile.setImage(imgProfile, for: .normal)
