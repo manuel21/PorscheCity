@@ -75,15 +75,14 @@ class PorscheValetTableViewController: UITableViewController {
         switch indexPath.row {
         case 0, 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ImageViewCell") as! ImageViewCell
-        cell.imageBody.image = UIImage(named: indexPath.row == 0 ? mapImages[state]! : stateImages[state]!)
-            
+            cell.imageBody.image = UIImage(named: indexPath.row == 0 ? mapImages[state]! : stateImages[state]!)
+            cell.imageBody.contentMode = .scaleAspectFill
             return cell
             
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionCell") as! CollectionCell
             cell.items = ["Premium Fuel", "Deluxe Detail"]
             cell.images = ["fuel", "clean"]
-            
             return cell
         }
     }
