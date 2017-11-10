@@ -36,18 +36,6 @@ class HomeController: UIViewController
             self.vcTable.stageIdx = self.vcLandscape.StageIdx
             self.vcTable.tableView.reloadData()
             self.navigationController?.navigationBar.gestureRecognizers?.removeAll()
-            self.navigationController?.navigationBar.addGestureRecognizer(ActionsTapGestureRecognizer(onTap: {
-                
-                let vcSelection = Storyboard.getInstanceOf(CitySelectionController.self)
-                vcSelection.onSelectedCity = { city in
-        
-                    self.title = city + self.dropDownChar
-                }
-        
-                let navBar = NavyController(rootViewController: vcSelection)
-                
-                self.present(navBar, animated: true, completion: nil)
-            }))
         }
         else
         {
@@ -55,6 +43,21 @@ class HomeController: UIViewController
             self.vcTable.stageIdx = self.vcLandscape.StageIdx
             self.vcTable.tableView.reloadData()
         }
+        
+       
+       self.navigationController?.navigationBar.gestureRecognizers?.removeAll()
+        self.navigationController?.navigationBar.addGestureRecognizer(ActionsTapGestureRecognizer(onTap: {
+            
+            let vcSelection = Storyboard.getInstanceOf(CitySelectionController.self)
+            vcSelection.onSelectedCity = { city in
+                
+                self.title = city + self.dropDownChar
+            }
+            
+            let navBar = NavyController(rootViewController: vcSelection)
+            
+            self.present(navBar, animated: true, completion: nil)
+        }))
         
         var imgProfile: UIImage = flow == 1 ?  #imageLiteral(resourceName: "Richard") :  #imageLiteral(resourceName: "Taylor_raw")
         let height = (imgProfile.cgImage?.height ?? 50) / 2
