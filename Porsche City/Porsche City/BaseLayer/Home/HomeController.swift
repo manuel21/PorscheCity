@@ -44,6 +44,8 @@ class HomeController: UIViewController
             self.vcTable.tableView.reloadData()
         }
         
+       
+       self.navigationController?.navigationBar.gestureRecognizers?.removeAll()
         self.navigationController?.navigationBar.addGestureRecognizer(ActionsTapGestureRecognizer(onTap: {
             
             let vcSelection = Storyboard.getInstanceOf(CitySelectionController.self)
