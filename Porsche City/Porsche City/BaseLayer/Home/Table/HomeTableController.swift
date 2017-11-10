@@ -54,20 +54,20 @@ class HomeTableController: UITableViewController
             if stageIdx == 0
             {
                 cell.imageBody.image = self.flow == 1 ? #imageLiteral(resourceName: "imgTree") :#imageLiteral(resourceName: "imgHomeCell")
-                cell.title.text = "Club 993"
-                cell.titleDay.text = "This weekend"
+                cell.title.text = self.flow == 1 ? "Club 993" : "Porsche Design"
+                cell.titleDay.text = self.flow == 1 ? "This weekend":"Today"
             }
             else if stageIdx < 7
             {
-                cell.imageBody.image = #imageLiteral(resourceName: "imgItem1")
-                cell.title.text = "Jazz Concert"
-                cell.titleDay.text = "Tonight"
+                cell.imageBody.image = self.flow == 1 ? #imageLiteral(resourceName: "imgItem1") :#imageLiteral(resourceName: "imgHomeCell")
+                cell.title.text = self.flow == 1 ? "Jazz Concert" : "Porsche Design"
+                cell.titleDay.text = self.flow == 1 ? "Tonight" : "Today"
             }
             else if stageIdx == 7
             {
                 cell.imageBody.image =  #imageLiteral(resourceName: "imgHomeCell")
-                cell.title.text = "Club 993"
-                cell.titleDay.text = "This weekend"
+                cell.title.text = "Porsche Design"
+                cell.titleDay.text = "Tomorrow"
             }
             
             
@@ -107,7 +107,7 @@ class HomeTableController: UITableViewController
     {
         if indexPath.row == 0
         {
-            return flow == 2 && stageIdx == 0 ? 0 : 90
+            return flow == 2 && stageIdx == 0 ? 90 : 0
         }
         
         if indexPath.row == 1
