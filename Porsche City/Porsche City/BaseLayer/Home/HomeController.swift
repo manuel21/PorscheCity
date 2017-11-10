@@ -221,28 +221,28 @@ class HomeController: UIViewController
         }
         else if flow == 2
         {
-            if stage == 2
+            if stage == 1
             {
                 let vcPorscheValet: PorscheValetTableViewController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
                 vcPorscheValet.setState(state: .active)
                 let navBar = NavyController(rootViewController: vcPorscheValet)
                 self.present(navBar, animated: false, completion: nil)
             }
-            else if stage == 3
+            else if stage == 2
             {
                 let vcPorscheValet: PorscheValetTableViewController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
                 vcPorscheValet.setState(state: .pickupInProgress)
                 let navBar = NavyController(rootViewController: vcPorscheValet)
                 self.present(navBar, animated: false, completion: nil)
             }
-            else if stage == 4
+            else if stage == 3
             {
                 let vcPorscheValet: PorscheValetTableViewController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
                 vcPorscheValet.setState(state: .vehicleStandby)
                 let navBar = NavyController(rootViewController: vcPorscheValet)
                 self.present(navBar, animated: false, completion: nil)
             }
-            else if stage == 5
+            else if stage == 4
             {
                 let vcPorscheValet: PorscheValetTableViewController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
                 vcPorscheValet.setState(state: .awaitingKeyPickup)
