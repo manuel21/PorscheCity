@@ -60,7 +60,6 @@
 		FFB1EE221FA7DC310022D685 /* CollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB1EE201FA7DC310022D685 /* CollectionCell.xib */; };
 		FFB1EE251FA7DC470022D685 /* horizontalItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB1EE231FA7DC470022D685 /* horizontalItem.swift */; };
 		FFB1EE261FA7DC470022D685 /* horizontalItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB1EE241FA7DC470022D685 /* horizontalItem.xib */; };
-		FFBC69061FABFFCE008AE1C9 /* CheckoutSuccessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC69051FABFFCE008AE1C9 /* CheckoutSuccessController.swift */; };
 		FFBD2AB21FB2ABEB00367D5C /* PNext-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FFBD2AA61FB2ABEB00367D5C /* PNext-Regular.otf */; };
 		FFBD2AB31FB2ABEB00367D5C /* PNextTT-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFBD2AA71FB2ABEB00367D5C /* PNextTT-Regular.ttf */; };
 		FFBD2AB41FB2ABEB00367D5C /* PNextTT-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFBD2AA81FB2ABEB00367D5C /* PNextTT-Italic.ttf */; };
@@ -180,7 +179,6 @@
 		FFB1EE201FA7DC310022D685 /* CollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionCell.xib; sourceTree = "<group>"; };
 		FFB1EE231FA7DC470022D685 /* horizontalItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = horizontalItem.swift; sourceTree = "<group>"; };
 		FFB1EE241FA7DC470022D685 /* horizontalItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = horizontalItem.xib; sourceTree = "<group>"; };
-		FFBC69051FABFFCE008AE1C9 /* CheckoutSuccessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutSuccessController.swift; sourceTree = "<group>"; };
 		FFBD2AA61FB2ABEB00367D5C /* PNext-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PNext-Regular.otf"; sourceTree = "<group>"; };
 		FFBD2AA71FB2ABEB00367D5C /* PNextTT-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PNextTT-Regular.ttf"; sourceTree = "<group>"; };
 		FFBD2AA81FB2ABEB00367D5C /* PNextTT-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PNextTT-Italic.ttf"; sourceTree = "<group>"; };
@@ -311,7 +309,6 @@
 				FF6002BA1FA807E30055782D /* RideController.swift */,
 				FF6002BC1FA807F30055782D /* RoomKeyController.swift */,
 				FF27BC721FAA9F04005061C9 /* CheckoutController.swift */,
-				FFBC69051FABFFCE008AE1C9 /* CheckoutSuccessController.swift */,
 				569B97ED1FB27C1E00D5DCAA /* PorscheValetTableViewController.swift */,
 			);
 			path = Modals;
@@ -691,7 +688,6 @@
 				FF27BC731FAA9F04005061C9 /* CheckoutController.swift in Sources */,
 				FF6002BB1FA807E30055782D /* RideController.swift in Sources */,
 				FFB0407A1FA7AFD500038E18 /* NavyController.swift in Sources */,
-				FFBC69061FABFFCE008AE1C9 /* CheckoutSuccessController.swift in Sources */,
 				FF0482701FA7CD8500325EB7 /* TableViews+Porsche.swift in Sources */,
 				FF6002C21FA81D500055782D /* ActionsTapGestureRecognizer.swift in Sources */,
 				8E0C69161FAA3F1E0054397F /* JourneyCell.swift in Sources */,

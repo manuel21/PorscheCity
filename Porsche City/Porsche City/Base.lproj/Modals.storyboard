@@ -210,7 +210,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgCheckout" translatesAutoresizingMaskIntoConstraints="NO" id="tID-Lj-ubs">
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgCheckout_End" translatesAutoresizingMaskIntoConstraints="NO" id="Ftl-VE-FeQ" userLabel="imageCheckoutSuccess">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgCheckout" translatesAutoresizingMaskIntoConstraints="NO" id="tID-Lj-ubs">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -228,6 +231,13 @@
                                     <action selector="close" destination="IRc-Nu-p8q" eventType="touchUpInside" id="9iv-Vp-MsH"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slideTocheckOut" translatesAutoresizingMaskIntoConstraints="NO" id="reR-qV-8Vs">
+                                <rect key="frame" x="115" y="362" width="145" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="OkB-AG-AJb"/>
+                                    <constraint firstAttribute="width" constant="145" id="v6n-D0-TYu"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9P-2q-U0a">
                                 <rect key="frame" x="0.0" y="466" width="375" height="201"/>
                                 <constraints>
@@ -237,14 +247,30 @@
                                     <action selector="sendNotification" destination="IRc-Nu-p8q" eventType="touchUpInside" id="HTc-R1-H92"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconCheckoutPass" translatesAutoresizingMaskIntoConstraints="NO" id="RLz-Ed-ahb">
+                                <rect key="frame" x="15" y="125" width="345" height="223"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="345" id="iC6-eO-KSr"/>
+                                    <constraint firstAttribute="height" constant="223" id="mpL-lU-Ap2"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="l9P-2q-U0a" firstAttribute="top" secondItem="RLz-Ed-ahb" secondAttribute="bottom" constant="118" id="01s-wH-Prn"/>
                             <constraint firstItem="vLY-OZ-cyp" firstAttribute="top" secondItem="EGt-Zp-tJu" secondAttribute="top" constant="30" id="2UM-pd-apu"/>
                             <constraint firstItem="tID-Lj-ubs" firstAttribute="trailing" secondItem="EGt-Zp-tJu" secondAttribute="trailing" id="40N-QP-15H"/>
+                            <constraint firstItem="Ftl-VE-FeQ" firstAttribute="top" secondItem="uBo-ob-fJm" secondAttribute="top" id="E9B-ew-lJy"/>
+                            <constraint firstItem="reR-qV-8Vs" firstAttribute="centerX" secondItem="tID-Lj-ubs" secondAttribute="centerX" id="HeV-0g-Hoa"/>
+                            <constraint firstAttribute="trailing" secondItem="Ftl-VE-FeQ" secondAttribute="trailing" id="OvF-5Y-CBF"/>
+                            <constraint firstItem="Ftl-VE-FeQ" firstAttribute="bottom" secondItem="EGt-Zp-tJu" secondAttribute="bottom" id="Rgm-hm-aLq"/>
                             <constraint firstItem="l9P-2q-U0a" firstAttribute="trailing" secondItem="EGt-Zp-tJu" secondAttribute="trailing" id="S5k-AJ-3KF"/>
+                            <constraint firstItem="Ftl-VE-FeQ" firstAttribute="leading" secondItem="EGt-Zp-tJu" secondAttribute="leading" id="dyl-jA-4pu"/>
                             <constraint firstItem="tID-Lj-ubs" firstAttribute="leading" secondItem="EGt-Zp-tJu" secondAttribute="leading" id="fUL-Ro-VoJ"/>
+                            <constraint firstItem="RLz-Ed-ahb" firstAttribute="centerX" secondItem="tID-Lj-ubs" secondAttribute="centerX" id="fr5-jz-gnm"/>
                             <constraint firstItem="l9P-2q-U0a" firstAttribute="leading" secondItem="EGt-Zp-tJu" secondAttribute="leading" id="iem-UB-yrm"/>
+                            <constraint firstItem="l9P-2q-U0a" firstAttribute="top" secondItem="reR-qV-8Vs" secondAttribute="bottom" constant="24" id="qWD-3z-YbM"/>
                             <constraint firstItem="tID-Lj-ubs" firstAttribute="bottom" secondItem="EGt-Zp-tJu" secondAttribute="bottom" id="qrG-9n-gdq"/>
                             <constraint firstItem="tID-Lj-ubs" firstAttribute="top" secondItem="uBo-ob-fJm" secondAttribute="top" id="uOJ-zd-Gqy"/>
                             <constraint firstItem="EGt-Zp-tJu" firstAttribute="trailing" secondItem="vLY-OZ-cyp" secondAttribute="trailing" constant="16" id="yik-R3-ybg"/>
@@ -253,6 +279,14 @@
                         <viewLayoutGuide key="safeArea" id="EGt-Zp-tJu"/>
                     </view>
                     <navigationItem key="navigationItem" id="4At-Yk-TIR"/>
+                    <connections>
+                        <outlet property="btnNotification" destination="l9P-2q-U0a" id="7z6-3h-lrn"/>
+                        <outlet property="contraintCard" destination="01s-wH-Prn" id="fUf-MS-oRN"/>
+                        <outlet property="ivCheckout" destination="tID-Lj-ubs" id="1J2-gN-R3W"/>
+                        <outlet property="ivCheckoutCard" destination="RLz-Ed-ahb" id="0uO-ck-Eoj"/>
+                        <outlet property="ivCheckoutSuccess" destination="Ftl-VE-FeQ" id="RUK-Pn-id0"/>
+                        <outlet property="ivSlideText" destination="reR-qV-8Vs" id="Vta-6q-BA6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wEe-7k-tVo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="down" id="sjE-DQ-Pge">
@@ -263,46 +297,6 @@
                 </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1824.8" y="-182.15892053973016"/>
-        </scene>
-        <!--Checkout Success Controller-->
-        <scene sceneID="Ozv-Dy-awN">
-            <objects>
-                <viewController storyboardIdentifier="CheckoutSuccessController" id="PtV-a1-Nww" customClass="CheckoutSuccessController" customModule="Porsche_City" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0GP-c4-pj4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgCheckout_End" translatesAutoresizingMaskIntoConstraints="NO" id="zXn-N2-075">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2z5-Ed-o7n">
-                                <rect key="frame" x="324" y="50" width="35" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="35" id="TzR-7X-2dZ"/>
-                                    <constraint firstAttribute="height" constant="35" id="znX-Pl-v4r"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="iconClose"/>
-                                <connections>
-                                    <action selector="close" destination="PtV-a1-Nww" eventType="touchUpInside" id="hEb-ve-fmz"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="UFR-1g-s2b" firstAttribute="trailing" secondItem="2z5-Ed-o7n" secondAttribute="trailing" constant="16" id="2rU-Tl-AGN"/>
-                            <constraint firstItem="zXn-N2-075" firstAttribute="trailing" secondItem="UFR-1g-s2b" secondAttribute="trailing" id="53p-pn-jcJ"/>
-                            <constraint firstItem="zXn-N2-075" firstAttribute="leading" secondItem="UFR-1g-s2b" secondAttribute="leading" id="hes-qd-8mo"/>
-                            <constraint firstItem="zXn-N2-075" firstAttribute="top" secondItem="0GP-c4-pj4" secondAttribute="top" id="ib8-hm-XZM"/>
-                            <constraint firstItem="zXn-N2-075" firstAttribute="bottom" secondItem="UFR-1g-s2b" secondAttribute="bottom" id="ks1-Q3-JlW"/>
-                            <constraint firstItem="2z5-Ed-o7n" firstAttribute="top" secondItem="UFR-1g-s2b" secondAttribute="top" constant="30" id="wKX-bH-llo"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="UFR-1g-s2b"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="5f3-HH-IKL"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ems-Mu-pJ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2578" y="-192"/>
         </scene>
         <!--Porsche Valet Table View Controller-->
         <scene sceneID="0fZ-yj-R6g">
@@ -334,6 +328,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="iconCheckoutPass" width="940" height="573"/>
         <image name="iconClose" width="256" height="256"/>
         <image name="imgCheckout" width="1125" height="2001"/>
         <image name="imgCheckout_End" width="1125" height="2001"/>
@@ -341,5 +336,6 @@
         <image name="imgRomKey" width="1125" height="2001"/>
         <image name="imgValet" width="1125" height="2001"/>
         <image name="imgheckin" width="1125" height="1405"/>
+        <image name="slideTocheckOut" width="441" height="239"/>
     </resources>
 </document>

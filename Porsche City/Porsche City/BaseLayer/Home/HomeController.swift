@@ -212,8 +212,10 @@ class HomeController: UIViewController
                 let vcCheckout: CheckoutController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
                 vcCheckout.onDeinit = {
                     
+                    /*
                     let vcCheckoutSuccess: CheckoutSuccessController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
                     self.present(vcCheckoutSuccess, animated: true, completion: nil)
+                     */
                 }
                 
                 self.present(vcCheckout, animated: animated, completion: nil)
