@@ -30,6 +30,7 @@ class ProfileTableController: UITableViewController
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = UITableViewCell(style: .default, reuseIdentifier:"Cell")
+        cell.selectionStyle = .none
         cell.accessoryType = .disclosureIndicator
         cell.textLabel?.textColor = .darkGray
         cell.textLabel?.font = UIFont(name: "PNext-Regular", size: 18)
@@ -37,18 +38,6 @@ class ProfileTableController: UITableViewController
         
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-    {
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-        if indexPath.row == 2
-        {
-            let vcPreferences = Storyboard.getInstanceOf(PreferencesController.self)
-            self.navigationController?.pushViewController(vcPreferences, animated: true)
-        }
-    }
-    
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
