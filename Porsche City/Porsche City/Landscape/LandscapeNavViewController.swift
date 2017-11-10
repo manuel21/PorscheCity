@@ -23,10 +23,12 @@ class LandscapeNavViewController: UIViewController
             self.onChangeFlow?(flow)
             setImages(images:
                 flow == 1 ? ["imgJ0","imgJ1","imgJ2","imgJ3","imgJ4","imgJ5","imgJ6","imgJ7","imgJ8"]
-                : ["imgJ0","imgJ1","imgJ2_flow2","imgJ3_flow2","imgJ4_flow2","imgJ5_flow2","imgJ6_flow2"]
+                : ["imgJ1","imgJ2_flow2","imgJ3_flow2","imgJ4_flow2","imgJ5_flow2","imgJ6_flow2"]
             )
             
             self.collectionView.reloadData()
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.flow = flow
         }
     }
     
