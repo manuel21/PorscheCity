@@ -140,7 +140,7 @@ class LandscapeNavViewController: UIViewController
     fileprivate func setImages(images: [String]) {
         self.imgsJourney.removeAll()
         self.imgsBottomNav.removeAll()
-        
+        self.scrollView.subviews.forEach({$0.removeFromSuperview()})
         for (index, title) in images.enumerated() {
             let image = UIImage(named:title) ?? UIImage()
             self.imgsJourney.append(image)
