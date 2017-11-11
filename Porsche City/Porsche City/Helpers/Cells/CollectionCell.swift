@@ -40,6 +40,11 @@ class CollectionCell: UITableViewCell
         self.collection.collectionViewLayout = layout
         self.collection.register(UINib(nibName: "horizontalItem", bundle: nil), forCellWithReuseIdentifier: "horizontalItem")
     }
+    
+    func reloadCollection()
+    {
+        self.collection.reloadData()
+    }
 }
 
 //MARK: COLLECTION VIEW
@@ -59,7 +64,6 @@ extension CollectionCell: UICollectionViewDelegate, UICollectionViewDataSource
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "horizontalItem", for: indexPath) as! horizontalItem
         cell.icon.image = UIImage(named: images![indexPath.row])
-//        cell.icon.image = indexPath.item % 2 == 0 ? #imageLiteral(resourceName: "imgItem1") : #imageLiteral(resourceName: "imgItem2")
         cell.title.text =  self.items[indexPath.item]
         
         return cell
