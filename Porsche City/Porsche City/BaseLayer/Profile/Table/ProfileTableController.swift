@@ -38,7 +38,17 @@ class ProfileTableController: UITableViewController
         
         return cell
     }
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        if appDelegate.flow == 1
+        {
+            print("Richard preferences")
+            let vcPreferences:PreferencesController = Storyboard.getInstanceFromStoryboard("Main")
+            self.navigationController?.pushViewController(vcPreferences, animated: true)
+        }
+    }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         return 80

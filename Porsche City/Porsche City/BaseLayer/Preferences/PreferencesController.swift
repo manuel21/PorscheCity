@@ -37,6 +37,7 @@ class PreferencesController: UIViewController
         //title
         self.title = "Preferences"
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.items?.forEach({$0.title = ""})
     }
     
     //MARK: ACTIONS

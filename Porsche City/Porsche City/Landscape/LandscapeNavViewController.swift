@@ -23,7 +23,7 @@ class LandscapeNavViewController: UIViewController
             self.onChangeFlow?(flow)
             setImages(images:
                 flow == 1 ? ["imgJ0","imgJ1","imgJ2","imgJ3","imgJ4","imgJ5","imgJ6","imgJ7","imgJ8"]
-                : ["imgJ1","imgJ2_flow2","imgJ3_flow2","imgJ4_flow2","imgJ5_flow2","imgJ6_flow2"]
+                : ["imgResidence", "imgJ1","imgJ2_flow2","imgJ3_flow2","imgJ4_flow2","imgJ5_flow2","imgJ6_flow2"]
             )
             
             self.collectionView.reloadData()
@@ -140,7 +140,7 @@ class LandscapeNavViewController: UIViewController
     fileprivate func setImages(images: [String]) {
         self.imgsJourney.removeAll()
         self.imgsBottomNav.removeAll()
-        
+        self.scrollView.subviews.forEach({$0.removeFromSuperview()})
         for (index, title) in images.enumerated() {
             let image = UIImage(named:title) ?? UIImage()
             self.imgsJourney.append(image)

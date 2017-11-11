@@ -42,32 +42,59 @@ class HomeTableController: UITableViewController
         if indexPath.row == 0
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ImageViewCell") as! ImageViewCell
-            cell.selectionStyle = .none
-            cell.imageBody.image = self.flow == 1 ? #imageLiteral(resourceName: "imgStartJoruney") : #imageLiteral(resourceName: "iconHomeActive")
-        
+            //FLOWS
+            if self.flow == 1
+            {
+                cell.selectionStyle = .none
+                cell.imageBody.image =  #imageLiteral(resourceName: "imgStartJoruney")
+            }
+            else
+            {
+                cell.selectionStyle = .none
+                cell.imageBody.image =  #imageLiteral(resourceName: "iconHomeActive")
+            }
             return cell
         }
         else if indexPath.row == 1
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell") as! HomeCell
             cell.selectionStyle = .none
-            if stageIdx == 0
+            //FLOWS
+            if self.flow == 1
             {
-                cell.imageBody.image = self.flow == 1 ? #imageLiteral(resourceName: "imgTree") :#imageLiteral(resourceName: "imgHomeCell")
-                cell.title.text = self.flow == 1 ? "Club 993" : "Porsche Design"
-                cell.titleDay.text = self.flow == 1 ? "This weekend":"Today"
+                if stageIdx == 0
+                {
+                    cell.imageBody.image = #imageLiteral(resourceName: "imgTree")
+                    cell.title.text = "Club 993"
+                    cell.titleDay.text = "This weekend"
+                }
+                else if stageIdx < 7
+                {
+                    cell.imageBody.image = #imageLiteral(resourceName: "imgItem1")
+                    cell.title.text = "Jazz Concert"
+                    cell.titleDay.text = "Tonight"
+                }
+                else if stageIdx == 7
+                {
+                    cell.imageBody.image =  #imageLiteral(resourceName: "imgHomeCell")
+                    cell.title.text = "Porsche Design"
+                    cell.titleDay.text = "Tomorrow"
+                }
             }
-            else if stageIdx < 7
+            else
             {
-                cell.imageBody.image = self.flow == 1 ? #imageLiteral(resourceName: "imgItem1") :#imageLiteral(resourceName: "imgHomeCell")
-                cell.title.text = self.flow == 1 ? "Jazz Concert" : "Porsche Design"
-                cell.titleDay.text = self.flow == 1 ? "Tonight" : "Today"
-            }
-            else if stageIdx == 7
-            {
-                cell.imageBody.image =  #imageLiteral(resourceName: "imgHomeCell")
-                cell.title.text = "Porsche Design"
-                cell.titleDay.text = "Tomorrow"
+                if stageIdx < 7
+                {
+                    cell.imageBody.image = #imageLiteral(resourceName: "PersonalStylist")
+                    cell.title.text = "Personal Stylist"
+                    cell.titleDay.text = "Today"
+                }
+                else if stageIdx == 7
+                {
+                    cell.imageBody.image =  #imageLiteral(resourceName: "imgHomeCell")
+                    cell.title.text = "Porsche Design"
+                    cell.titleDay.text = "Tomorrow"
+                }
             }
             
             
@@ -76,8 +103,17 @@ class HomeTableController: UITableViewController
         else
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionCell") as! CollectionCell
-            cell.items = ["Jazz Concert", "Porsche Design"]
-            cell.images = ["imgItem1", "imgItem2"]
+            if self.flow == 1
+            {
+                cell.items = ["Jazz Concert", "Porsche Design"]
+                cell.images = ["imgItem1", "imgItem2"]
+            }
+            else
+            {
+                cell.items = ["Rossano Ferreti", "Montage Spa", "Porsche Design"]
+                cell.images = ["RossanoFerreti", "MontageSpa", "imgItem2"]
+            }
+            cell.reloadCollection()
             return cell
         }
     }
@@ -87,7 +123,8 @@ class HomeTableController: UITableViewController
         tableView.deselectRow(at: indexPath, animated: true)
         
         if indexPath.row == 0 {
-            if flow == 1 {
+            if flow == 1
+            {
                 let vcItinerary = Storyboard.getInstanceOf(ItineraryController.self)
                 if stageIdx >= 1  && stageIdx != 3 && stageIdx != 4 {
                     vcItinerary.onBellTapped = {
@@ -109,7 +146,7 @@ class HomeTableController: UITableViewController
         {
             if flow == 2
             {
-                return stageIdx == 0 ? 90: 0
+                return stageIdx == 0 ? 0: 90
             }
             else
             {
