@@ -64,8 +64,8 @@ class HomeTableController: UITableViewController
             {
                 if stageIdx == 0
                 {
-                    cell.imageBody.image = #imageLiteral(resourceName: "imgTree")
-                    cell.title.text = "Club 993"
+                    cell.imageBody.image = #imageLiteral(resourceName: "wine")
+                    cell.title.text = "The Wine Merchant"
                     cell.titleDay.text = "This weekend"
                 }
                 else if stageIdx < 7
@@ -105,8 +105,21 @@ class HomeTableController: UITableViewController
             let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionCell") as! CollectionCell
             if self.flow == 1
             {
-                cell.items = ["Jazz Concert", "Porsche Design"]
-                cell.images = ["imgItem1", "imgItem2"]
+                if stageIdx == 0
+                {
+                    cell.items = ["Jazz Concert", "Avenue of the Stars", "The Garden Bar"]
+                    cell.images = ["imgItem1", "starsAvenue", "gardenBar"]
+                }
+                else //if stageIdx == 1
+                {
+                    cell.items = ["The Garden Bar",  "Avenue of the Stars", ]
+                    cell.images = ["gardenBar", "starsAvenue"]
+                }
+//                else
+//                {
+//                    cell.items = ["Jazz Concert", "Porsche Design"]
+//                    cell.images = ["imgItem1", "imgItem2"]
+//                }
             }
             else
             {
