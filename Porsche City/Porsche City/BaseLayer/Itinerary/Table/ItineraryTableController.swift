@@ -31,17 +31,24 @@ class ItineraryTableController: UITableViewController
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        if indexPath.row %  2 == 0
+        if indexPath.row == 0
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ImageViewCell") as! ImageViewCell
             cell.selectionStyle = .none
-            cell.imageBody.image = #imageLiteral(resourceName: "imgItineraryCell")
+            cell.imageBody.image = #imageLiteral(resourceName: "spago")
             
+            return cell
+        }
+        else if indexPath.row == 1
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionCell_Clone") as! CollectionCell_Clone
             return cell
         }
         else
         {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionCell_Clone") as! CollectionCell_Clone
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ImageViewCell") as! ImageViewCell
+            cell.selectionStyle = .none
+            cell.imageBody.image = #imageLiteral(resourceName: "theBeverlyHills")
             return cell
         }
     }
