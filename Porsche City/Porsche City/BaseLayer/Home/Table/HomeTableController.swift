@@ -110,6 +110,11 @@ class HomeTableController: UITableViewController
                     cell.items = ["Jazz Concert", "Avenue of the Stars", "The Garden Bar"]
                     cell.images = ["imgItem1", "starsAvenue", "gardenBar"]
                 }
+                else if stageIdx == 7
+                {
+                    cell.items = ["Bouchon",  "Beverly Hills Country Club"]
+                    cell.images = ["bouchon", "countryClub"]
+                }
                 else //if stageIdx == 1
                 {
                     cell.items = ["The Garden Bar",  "Avenue of the Stars", ]
