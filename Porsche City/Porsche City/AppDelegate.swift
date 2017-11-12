@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let message = getMessageForNotification(type)
         
 //        scheduleLocalNotification(type: type, title: title, message: message)
-        sendSMS(message: title + ": " + message)
+//        sendSMS(message: title + ": " + message)
     }
     
     private func scheduleLocalNotification(type: NotificationType, title: String, message: String) {

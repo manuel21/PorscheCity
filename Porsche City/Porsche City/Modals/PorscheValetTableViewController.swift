@@ -20,14 +20,14 @@ enum PorscheValetState {
 
 class PorscheValetTableViewController: UITableViewController {
     
-    private var state: PorscheValetState = .standby
+    var state: PorscheValetState = .standby
     private var mapImages: [PorscheValetState: String] = [
                              .standby: "mapStandby",
                              .active: "mapActive",
                              .awaitingKeys: "mapAwaitingKeys",
                              .pickupInProgress: "mapPickupInProgress",
                              .vehicleStandby: "mapVehicleStandby",
-                             .deliveryInProgress: "mapDeliveryInProgress",
+                             .deliveryInProgress: "mapAwaitingKeyPickup",
                              .awaitingKeyPickup: "mapAwaitingKeyPickup"]
     private var stateImages: [PorscheValetState: String] = [
         .standby: "stateStandby",
@@ -41,7 +41,6 @@ class PorscheValetTableViewController: UITableViewController {
     
     private var statusImageName: String?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,12 +50,10 @@ class PorscheValetTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "CollectionCell", bundle: nil), forCellReuseIdentifier: "CollectionCell")
         
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(close))
-    }
-    
-    func setState(state: PorscheValetState) {
-        self.state = state
-        tableView.reloadData()
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(close))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "❮", style: .plain, target: self, action: #selector(close))
+        
+        tableView.contentInset.bottom = 10
     }
     
     @objc fileprivate func close() {
@@ -68,7 +65,7 @@ class PorscheValetTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.row == 0 ? 350 : indexPath.row == 1 ? 150 : 250
+        return indexPath.row == 0 ? 350 : indexPath.row == 1 ? 150 : 180
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -80,9 +77,19 @@ class PorscheValetTableViewController: UITableViewController {
             return cell
             
         default:
+            if state == .vehicleStandby {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "ImageViewCell") as! ImageViewCell
+                cell.imageBody.image = UIImage(named: "cleanLarge")
+                cell.imageBody.contentMode = .scaleToFill
+                return cell
+            }
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionCell") as! CollectionCell
             cell.items = ["Premium Fuel", "Deluxe Detail"]
             cell.images = ["fuel", "clean"]
+            cell.cellWidth = 250
+            cell.imageContentMode = .scaleToFill
+            cell.adoptCollectionViewHeight = true
             return cell
         }
     }
@@ -94,11 +101,13 @@ class PorscheValetTableViewController: UITableViewController {
             if state == .active {
                 (UIApplication.shared.delegate as? AppDelegate)?.scheduleNotification(type: .porscheValet)
                 state = .awaitingKeys
+                tableView.contentOffset.y = 0
                 tableView.reloadData()
                 
             } else if state == .vehicleStandby {
                 (UIApplication.shared.delegate as? AppDelegate)?.scheduleNotification(type: .porscheValet2)
                 state = .deliveryInProgress
+                tableView.contentOffset.y = 0
                 tableView.reloadData()
             }
         }
