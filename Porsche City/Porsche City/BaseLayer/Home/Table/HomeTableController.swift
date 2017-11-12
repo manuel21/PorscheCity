@@ -145,7 +145,7 @@ class HomeTableController: UITableViewController
                     }
                 }
                 self.navigationController?.pushViewController(vcItinerary, animated: true)
-            } else if self.stageIdx == 0 {
+            } else if self.stageIdx == 1 {
                 let vcPorscheValet: PorscheValetTableViewController = Storyboard.getInstanceFromStoryboard(StoryboardName.modals.rawValue)
                 let navBar = NavyController(rootViewController: vcPorscheValet)
                 self.present(navBar, animated: false, completion: nil)
@@ -159,7 +159,7 @@ class HomeTableController: UITableViewController
         {
             if flow == 2
             {
-                return stageIdx == 0 ? 0: 90
+                return stageIdx != 1 ? 0: 90
             }
             else
             {
