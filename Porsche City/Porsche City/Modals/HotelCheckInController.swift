@@ -16,8 +16,8 @@ class HotelCheckInController: UIViewController
     fileprivate static let firstItem = "item5"
     fileprivate static let secondItem = "imgItem4"
     fileprivate var images = [firstItem + "_unchecked", "spaPackage"]
-    fileprivate var firstChecked = false
-    fileprivate var secondChecked = false
+    fileprivate static var firstChecked = false
+//    fileprivate var secondChecked = false
     
     //MARK: LIFE CYCLE
     override func viewDidLoad()
@@ -52,6 +52,10 @@ class HotelCheckInController: UIViewController
     //MARK: CONFIG
     fileprivate func loadConfig()
     {
+        if HotelCheckInController.firstChecked {
+            images[0] = HotelCheckInController.firstItem
+        }
+        
         //COLLECTION VIEW
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -102,12 +106,12 @@ extension HotelCheckInController: UICollectionViewDelegate, UICollectionViewData
        
         if indexPath.row == 0
         {
-            firstChecked = !firstChecked
-            if firstChecked {
+            HotelCheckInController.firstChecked = !HotelCheckInController.firstChecked
+            if HotelCheckInController.firstChecked {
                 (UIApplication.shared.delegate as? AppDelegate)?.scheduleNotification(type: .hotelCheckIn)
             }
             
-            images[0] = HotelCheckInController.firstItem + (firstChecked ? "" : "_unchecked")
+            images[0] = HotelCheckInController.firstItem + (HotelCheckInController.firstChecked ? "" : "_unchecked")
             collectionView.reloadItems(at: [indexPath])
         }
             /*
