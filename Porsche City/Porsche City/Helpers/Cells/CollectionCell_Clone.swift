@@ -12,7 +12,7 @@ class CollectionCell_Clone: UITableViewCell
 {    
     //MARK: OUTLETS AND VARIABLES
     @IBOutlet weak fileprivate var collection: UICollectionView!
-    fileprivate var items = ["Appetizer on arrival", "Sommelier", "Luggage Delivery", "Spa Package"]
+    fileprivate var items = ["Appetizer on arrival", "Sommelier"]
     
     //MARK: LIFE CYCLE
     override func awakeFromNib()
