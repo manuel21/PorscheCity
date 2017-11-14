@@ -70,6 +70,11 @@ class LandscapeNavViewController: UIViewController
         self.configureTimer()
         self.configureStepCounter()
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        scrollView.contentOffset.x = CGFloat(StageIdx) * view.bounds.width
+    }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -85,7 +90,7 @@ class LandscapeNavViewController: UIViewController
             self.journeyTimer?.startJourney()
         }
         
-        scrollToPage(page: StageIdx, duration: 0.1)
+//        scrollToPage(page: StageIdx, duration: 0.1)
     }
     
     //MARK: CONFIGURATION
