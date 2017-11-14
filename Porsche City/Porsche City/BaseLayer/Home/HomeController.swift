@@ -113,6 +113,8 @@ class HomeController: UIViewController
             self.showModal(stage)
         }
         self.vcLandscape.onChangeFlow = { flow in
+            
+            self.vcTable.navigationController?.popViewController(animated: true)
             self.flow = flow
         }
     }

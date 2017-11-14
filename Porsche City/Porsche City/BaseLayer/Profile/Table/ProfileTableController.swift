@@ -45,8 +45,11 @@ class ProfileTableController: UITableViewController
         if appDelegate.flow == 1
         {
             print("Richard preferences")
-            let vcPreferences:PreferencesController = Storyboard.getInstanceFromStoryboard("Main")
-            self.navigationController?.pushViewController(vcPreferences, animated: true)
+            if indexPath.row == 2
+            {
+                let vcPreferences:PreferencesController = Storyboard.getInstanceFromStoryboard("Main")
+                self.navigationController?.pushViewController(vcPreferences, animated: true)
+            }
         }
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat

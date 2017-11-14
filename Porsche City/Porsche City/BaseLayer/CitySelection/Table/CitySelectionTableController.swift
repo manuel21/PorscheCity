@@ -46,6 +46,7 @@ class CitySelectionTableController: UITableViewController
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         tableView.deselectRow(at: indexPath, animated: true)
+        guard indexPath.row != 1 else {return}
         self.selectedCity = self.items[indexPath.row]
         
         self.onSelect?()
