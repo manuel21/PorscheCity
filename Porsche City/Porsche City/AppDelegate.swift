@@ -81,7 +81,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             case .restaurantValet:
                 return "Mr. Parker will arrive in 5 minutes with the car C66PG7"
             case .shuttleDriver:
-                return "Mr. Parker will take you to Waldorf Astoria 9850 Wilshire Blvd"
+                return "Mr. Parker will take you to The Beverly Hills 9641 Sunset Blvd"
             case .porscheValet:
                 return "Your car GTY984 will be taken in Hermes 330 Rodeo Dr"
             case .porscheValet2:
